@@ -1,0 +1,2 @@
+# Haunted Biome Mod
+This mod for Necesse implements a spooky new biome with new items, new enemies, and more bosses to fight. This biome is intended to serve as an alternative route to acquiring demonic bars, void shards, and other equipment, in addition to adding new content for the early/mid game experience.

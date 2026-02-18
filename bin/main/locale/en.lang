@@ -1,0 +1,66 @@
+[object]
+void_rock=Void Rock
+deep_haunted_rock=Deep Void Rock
+void_rock_small=Small Void Rock
+void_rock_large=Large Void Rock
+demonic_ore=Demonic Ore
+void_wall=Void Wall
+void_door=Void Door
+void_chalice=Void Chalice
+haunted_log_bench=Haunted Log Bench
+haunted_grass=Haunted Grass
+haunted_tree=Haunted Tree
+haunted_sapling=Haunted Sapling
+
+[tile]
+haunted_grass_tile=Haunted Grass
+void_rock_tile=Void Rock
+void_stone_floor=Void Stone Floor
+
+[item]
+// Crafting materials
+haunted_log=Haunted Log
+void_fragment=Void Fragment
+void_stone=Void Stone
+demonfish=Demonfish
+demonic_ore=Demonic Ore
+
+// Tiles
+haunted_grass_tile=Haunted Grass
+haunted_rock_tile=Haunted Rock
+void_stone_floor=Void Stone Floor
+
+// Objects
+haunted_rock=Void Rock
+deep_haunted_rock=Deep Void Rock
+haunted_rock_small=Small Void Rock
+haunted_rock_large=Large Void Rock
+void_wall=Void Wall
+void_door=Void Door
+haunted_log_bench=Haunted Log Bench
+haunted_grass=Haunted Grass
+haunted_tree=Haunted Tree
+haunted_sapling=Haunted Sapling
+
+// Weapons
+cursed_fire=Cursed Fire
+
+// Trinkets
+void_amulet=Void Amulet
+ruinstone=Ruinstone
+
+// Miscellaneous
+haunted_grass_seed=Haunted Grass Seed
+
+[mob]
+ghoul=Ghoul
+bone_construct=Bone Construct
+ancient_ghoul=Ancient Ghoul
+void_caveling=Void Caveling
+
+[deaths]
+ghoul1=<victim> was devoured by <attacker>.
+ghoul2=<victim> was torn apart by <attacker>.
+
+boneconstruct1=<victim> was crushed by <attacker>.
+boneconstruct2=<victim> was smashed to bits by <attacker>.
