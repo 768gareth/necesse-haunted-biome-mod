@@ -5,12 +5,14 @@ void_rock_small=Small Void Rock
 void_rock_large=Large Void Rock
 demonic_ore=Demonic Ore
 void_wall=Void Wall
+void_wall_flame_trap=Void Wall Flame Trap
 void_door=Void Door
 void_chalice=Void Chalice
 haunted_log_bench=Haunted Log Bench
 haunted_grass=Haunted Grass
 haunted_tree=Haunted Tree
 haunted_sapling=Haunted Sapling
+haunted_caveglow=Caveglow
 
 [tile]
 haunted_grass_tile=Haunted Grass
@@ -36,11 +38,13 @@ deep_haunted_rock=Deep Void Rock
 haunted_rock_small=Small Void Rock
 haunted_rock_large=Large Void Rock
 void_wall=Void Wall
+void_wall_flame_trap=Void Wall Flame Trap
 void_door=Void Door
 haunted_log_bench=Haunted Log Bench
 haunted_grass=Haunted Grass
 haunted_tree=Haunted Tree
 haunted_sapling=Haunted Sapling
+haunted_caveglow=Caveglow
 
 // Weapons
 cursed_fire=Cursed Fire
