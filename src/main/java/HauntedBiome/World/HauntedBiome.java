@@ -244,6 +244,7 @@ public class HauntedBiome extends Biome {
     public RandomCaveChestRoom getNewCaveChestRoomPreset(GameRandom random, AtomicInteger lootRotation) {
         RandomCaveChestRoom chestRoom = new RandomCaveChestRoom(random, HauntedLootTables.HauntedCavesChest,
                 lootRotation, RegisterChestRoomSets.HauntedBiomeSet);
+        chestRoom.replaceTile("stonefloor", "void_stone_floor");
         return chestRoom;
     }
 
@@ -251,6 +252,7 @@ public class HauntedBiome extends Biome {
     public RandomCaveChestRoom getNewDeepCaveChestRoomPreset(GameRandom random, AtomicInteger lootRotation) {
         RandomCaveChestRoom chestRoom = new RandomCaveChestRoom(random, HauntedLootTables.DeepHauntedCavesChest,
                 lootRotation, RegisterChestRoomSets.HauntedBiomeSet);
+        chestRoom.replaceTile("stonefloor", "void_stone_floor");
         return chestRoom;
     }
 

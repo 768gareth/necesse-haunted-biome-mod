@@ -2,8 +2,8 @@ package HauntedBiome.Mobs;
 
 import java.awt.Color;
 
-import necesse.engine.registries.MobRegistry;
 import necesse.engine.util.GameRandom;
+import necesse.entity.mobs.HumanTexture;
 import necesse.entity.mobs.friendly.critters.caveling.CavelingMob;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.lootTable.LootItemInterface;
@@ -12,6 +12,8 @@ import necesse.inventory.lootTable.lootItem.LootItem;
 
 public class VoidCaveling extends CavelingMob 
 {
+   public static HumanTexture TextureTemp;
+
    public VoidCaveling() 
    {
       super(280, 35);
@@ -19,7 +21,7 @@ public class VoidCaveling extends CavelingMob
 
    public void init() {
       super.init();
-      this.texture = MobRegistry.Textures.stoneCaveling;
+      this.texture = TextureTemp;
       this.popParticleColor = new Color(98, 29, 162);
       this.singleRockSmallStringID = "void_rock_small";
       if (this.item == null) {

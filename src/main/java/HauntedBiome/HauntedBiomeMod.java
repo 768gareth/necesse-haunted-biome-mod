@@ -3,6 +3,7 @@ package HauntedBiome;
 import HauntedBiome.Mobs.AncientGhoulMob;
 import HauntedBiome.Mobs.BoneConstructMob;
 import HauntedBiome.Mobs.GhoulMob;
+import HauntedBiome.Mobs.VoidCaveling;
 import HauntedBiome.Registry.RegisterItems;
 import HauntedBiome.Registry.RegisterMobs;
 import HauntedBiome.Registry.RegisterObjects;
@@ -26,7 +27,7 @@ public class HauntedBiomeMod
         RegisterTiles.Register();
         RegisterMobs.Register();
         RegisterStatusEffects.Register();
-        System.out.println("[Haunted Biome Mod] Mod initialisation complete. Please enjoy!");
+        System.out.println("[Haunted Biome Mod] Mod initialisation complete.");
     }
 
     public void initResources() 
@@ -34,11 +35,12 @@ public class HauntedBiomeMod
         GhoulMob.Texture = new HumanTexture(fromFile("ghoul"), fromFile("ghoul_arms_left"), fromFile("ghoul_arms_right"));
         BoneConstructMob.Texture = new HumanTexture(fromFile("bone_construct"), fromFile("bone_construct_arms_left"), fromFile("bone_construct_arms_right"));
         AncientGhoulMob.Texture = new HumanTexture(fromFile("ancient_ghoul"), fromFile("ancient_ghoul_arms_left"), fromFile("ancient_ghoul_arms_right"));
+        VoidCaveling.TextureTemp = new HumanTexture(fromFile("void_caveling"), fromFile("void_caveling_arms_back"), fromFile("void_caveling_arms_front"));
     }
 
     public void postInit() 
     {
-        
+        System.out.println("[Haunted Biome Mod] Mod post-initialisation complete. Please enjoy!");
     }
 
 }
