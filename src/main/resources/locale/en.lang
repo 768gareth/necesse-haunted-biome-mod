@@ -1,8 +1,9 @@
 [object]
 void_rock=Void Rock
-deep_haunted_rock=Deep Void Rock
+deep_void_rock=Deep Void Rock
 void_rock_small=Small Void Rock
 void_rock_large=Large Void Rock
+void_fragment_cluster=Void Fragment Cluster
 demonic_ore=Demonic Ore
 void_wall=Void Wall
 void_wall_flame_trap=Void Wall Flame Trap
@@ -34,9 +35,10 @@ void_stone_floor=Void Stone Floor
 
 // Objects
 haunted_rock=Void Rock
-deep_haunted_rock=Deep Void Rock
-haunted_rock_small=Small Void Rock
-haunted_rock_large=Large Void Rock
+deep_void_rock=Deep Void Rock
+void_rock_small=Small Void Rock
+void_rock_large=Large Void Rock
+void_fragment_cluster=Void Fragment Cluster
 void_wall=Void Wall
 void_wall_flame_trap=Void Wall Flame Trap
 void_door=Void Door

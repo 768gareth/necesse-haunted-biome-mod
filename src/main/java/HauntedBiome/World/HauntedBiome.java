@@ -197,7 +197,7 @@ public class HauntedBiome extends Biome {
     @Override
     public void generateRegionCaveTerrain(Region region, BiomeGeneratorStack stack, GameRandom random) {
         super.generateRegionCaveTerrain(region, stack, random);
-        int RockID = ObjectRegistry.getObjectID("haunted_rock");
+        int RockID = ObjectRegistry.getObjectID("void_rock");
         stack.startPlaceOnVein(this, region, random, "hauntedClay").onlyOnObject(RockID).placeObjectForced("clayrock");
         stack.startPlaceOnVein(this, region, random, "hauntedCopper").onlyOnObject(RockID)
                 .placeObjectForced("copper_ore_void_rock");
@@ -209,6 +209,7 @@ public class HauntedBiome extends Biome {
                 .placeObjectForced("demonic_ore_void_rock");
         stack.startPlace(this, region, random).chance(0.004).placeObject("void_rock_small");
         stack.startPlace(this, region, random).chance(0.002).placeObject("void_rock_large");
+        stack.startPlace(this, region, random).chance(0.001).placeObject("void_fragment_cluster");
         stack.startPlace(this, region, random).chance(0.029999999329447746D).placeCrates(new String[] { "crate" });
         region.updateLiquidManager();
     }
@@ -236,6 +237,7 @@ public class HauntedBiome extends Biome {
                 .placeObjectForced("demonic_ore_deep_void_rock");
         stack.startPlace(this, region, random).chance(0.004).placeObject("void_rock_small");
         stack.startPlace(this, region, random).chance(0.003).placeObject("void_rock_large");
+        stack.startPlace(this, region, random).chance(0.001).placeObject("void_fragment_cluster");
         stack.startPlace(this, region, random).chance(0.029999999329447746D).placeCrates(new String[] { "crate" });
         region.updateLiquidManager();
     }

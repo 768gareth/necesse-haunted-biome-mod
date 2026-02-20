@@ -6,6 +6,7 @@ import HauntedBiome.Objects.HauntedGrassObject;
 import necesse.engine.registries.ObjectRegistry;
 import static necesse.engine.registries.ObjectRegistry.getObject;
 import necesse.inventory.item.toolItem.ToolType;
+import necesse.level.gameObject.CrystalClusterSmallObject;
 import necesse.level.gameObject.CustomWildFlowerObject;
 import necesse.level.gameObject.FireChaliceObject;
 import necesse.level.gameObject.GameObject;
@@ -39,6 +40,9 @@ public class RegisterObjects
         LogBenchObject.registerLogBench("haunted_log_bench", "haunted_log_bench", "haunted_log", ToolType.AXE, new Color(99, 52, 50), 8.0F);
 
         String[] genericRocksCategory = new String[]{"objects", "landscaping"};
+        String[] crystalsCategory = new String[]{"objects", "landscaping", "crystals"};
+
+        ObjectRegistry.registerObject("void_fragment_cluster", new CrystalClusterSmallObject("void_fragment_cluster", new Color(97, 31, 127), 240.0F, "void_fragment", 1, 2, 1, crystalsCategory), 5f, true);
 
         RockObject VoidRock;
         RockObject DeepVoidRock;
