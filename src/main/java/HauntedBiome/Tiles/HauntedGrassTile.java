@@ -9,7 +9,9 @@ import necesse.engine.util.GameRandom;
 import necesse.entity.particle.Particle;
 import necesse.gfx.GameResources;
 import necesse.gfx.gameTexture.GameTextureSection;
+import necesse.inventory.lootTable.LootItemInterface;
 import necesse.inventory.lootTable.LootTable;
+import necesse.inventory.lootTable.lootItem.LootItem;
 import necesse.level.gameObject.GameObject;
 import necesse.level.gameTile.GrassTile.CanPlacePredicate;
 import necesse.level.gameTile.TerrainSplatterTile;
@@ -30,6 +32,7 @@ public class HauntedGrassTile extends TerrainSplatterTile
     this.isOrganic = true;
   }
 
+  @Override
   public void addSimulateLogic(Level level, int x, int y, long ticks, SimulatePriorityList list, boolean sendChanges) 
   {
     addSimulateGrow(level, x, y, growChance, ticks, "haunted_grass", list, sendChanges);
@@ -61,6 +64,7 @@ public class HauntedGrassTile extends TerrainSplatterTile
     }
   }
 
+   @Override
   public void tick(Level level, int x, int y) 
   {
     if (!level.isServer())
@@ -75,9 +79,10 @@ public class HauntedGrassTile extends TerrainSplatterTile
     }
   }
 
+  @Override
   public void tickEffect(Level level, int x, int y) {
     super.tickEffect(level, x, y);
-    if (GameRandom.globalRandom.getChance(0.1F) &&
+    if (GameRandom.globalRandom.getChance(0.01F) &&
         !level.getObject(x, y).drawsFullTile() && level.getLightLevel(x, y).getLevel() > 0.0F) {
       int posX = x * 32 + GameRandom.globalRandom.nextInt(32);
       int posY = y * 32 + GameRandom.globalRandom.nextInt(32);
@@ -90,16 +95,18 @@ public class HauntedGrassTile extends TerrainSplatterTile
           }).height(30.0F)
           .dontRotate()
           .movesConstant(GameRandom.globalRandom.getFloatBetween(2.0F, 5.0F) * ((Float) GameRandom.globalRandom
-              .getOneOf((Object[]) new Float[] { Float.valueOf(1.0F), Float.valueOf(-1.0F) })).floatValue(), 0.0F)
+                  .getOneOf((Object[]) new Float[] { 1.0F, -1.0F})), 0.0F)
           .modify((options, lifeTime, timeAlive, lifePercent) -> options.mirror(mirror, false))
           .lifeTime(3000);
     }
   }
 
+  @Override
   public LootTable getLootTable(Level level, int tileX, int tileY) {
-    return new LootTable();
+    return new LootTable(new LootItemInterface[] { (LootItemInterface)new LootItem("haunted_grass_tile", 1) });
   }
 
+  @Override
   public Point getTerrainSprite(GameTextureSection terrainTexture, Level level, int tileX, int tileY) {
     int tile;
     synchronized (this.drawRandom) {
@@ -108,6 +115,7 @@ public class HauntedGrassTile extends TerrainSplatterTile
     return new Point(0, tile);
   }
 
+  @Override
   public int getTerrainPriority() {
     return 200;
   }

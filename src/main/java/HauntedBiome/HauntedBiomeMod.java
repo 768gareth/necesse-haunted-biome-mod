@@ -4,10 +4,10 @@ import HauntedBiome.Mobs.AncientGhoulMob;
 import HauntedBiome.Mobs.BoneConstructMob;
 import HauntedBiome.Mobs.GhoulMob;
 import HauntedBiome.Mobs.VoidCaveling;
+import HauntedBiome.Registry.RegisterBuffs;
 import HauntedBiome.Registry.RegisterItems;
 import HauntedBiome.Registry.RegisterMobs;
 import HauntedBiome.Registry.RegisterObjects;
-import HauntedBiome.Registry.RegisterStatusEffects;
 import HauntedBiome.Registry.RegisterTiles;
 import HauntedBiome.World.HauntedBiome;
 import necesse.engine.modLoader.annotations.ModEntry;
@@ -36,7 +36,7 @@ public class HauntedBiomeMod
         RegisterObjects.Register();
         RegisterTiles.Register();
         RegisterMobs.Register();
-        RegisterStatusEffects.Register();
+        RegisterBuffs.Register();
         System.out.println("[Haunted Biome Mod] Mod initialisation complete.");
     }
 

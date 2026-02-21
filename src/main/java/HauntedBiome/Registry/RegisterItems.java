@@ -1,5 +1,6 @@
 package HauntedBiome.Registry;
 
+import HauntedBiome.Items.RuinstoneItem;
 import necesse.engine.registries.ItemRegistry;
 import necesse.inventory.item.Item;
 import necesse.inventory.item.Item.Rarity;
@@ -12,6 +13,9 @@ public class RegisterItems
 {
     public static void Register()
     {
+        // Trinkets
+        ItemRegistry.registerItem("ruinstone", new RuinstoneItem(), 200f, true);
+
         // Crafting Materials
         ItemRegistry.registerItem("demonic_ore", (new MatItem(500, Item.Rarity.COMMON, new String[0])).setItemCategory(new String[] { "materials", "ore" }), 4.0F, true);
         ItemRegistry.registerItem("void_fragment", (new MatItem(500, Rarity.UNCOMMON, new String[0])).setItemCategory(new String[]{"materials", "mobdrops"}), 10.0F, true);

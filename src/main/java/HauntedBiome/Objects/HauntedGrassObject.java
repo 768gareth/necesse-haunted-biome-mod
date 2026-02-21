@@ -19,6 +19,7 @@ public class HauntedGrassObject extends GrassObject
       this.mapColor = new Color(30, 100, 25);
     }
     
+    @Override
     public LootTable getLootTable(Level level, int layerID, int tileX, int tileY)  
     {
       if (level.objectLayer.isPlayerPlaced(tileX, tileY))
@@ -35,11 +36,13 @@ public class HauntedGrassObject extends GrassObject
       return new LootTable(new LootItemInterface[] { (LootItemInterface)new ChanceLootItem(0.04F, "haunted_grass_seed") });
     }
     
+    @Override
     public boolean canPlaceOn(Level level, int layerID, int x, int y, GameObject other) 
     {
-      return (other.getID() == 0 || !other.getValidObjectLayers().contains(Integer.valueOf(ObjectLayerRegistry.TILE_LAYER)));
+      return (other.getID() == 0 || !other.getValidObjectLayers().contains(ObjectLayerRegistry.TILE_LAYER));
     }
     
+    @Override
     public String canPlace(Level level, int layerID, int x, int y, int rotation, boolean byPlayer, boolean ignoreOtherLayers) 
     {
       String error = super.canPlace(level, layerID, x, y, rotation, byPlayer, ignoreOtherLayers);
@@ -54,6 +57,7 @@ public class HauntedGrassObject extends GrassObject
       return null;
     }
     
+    @Override
     public boolean isValid(Level level, int layerID, int x, int y) {
       if (!super.isValid(level, layerID, x, y))
         return false; 

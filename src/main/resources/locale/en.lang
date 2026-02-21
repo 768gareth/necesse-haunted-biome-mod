@@ -52,11 +52,17 @@ haunted_caveglow=Caveglow
 cursed_fire=Cursed Fire
 
 // Trinkets
-void_amulet=Void Amulet
+cursed_amulet=Cursed Amulet
 ruinstone=Ruinstone
 
 // Miscellaneous
 haunted_grass_seed=Haunted Grass Seed
+
+[itemtooltip]
+ruinstone_tooltip=Melee critical hits inflict a stack of Ruin.\nEach stack of Ruin causes the target to take +5% damage, up to a maximum of +25% damage at 5 stacks.\nAll stacks expire eight seconds after the last stack was applied.
+
+[buff]
+ruin_debuff=Ruinstone Debuff
 
 [mob]
 ghoul=Ghoul
