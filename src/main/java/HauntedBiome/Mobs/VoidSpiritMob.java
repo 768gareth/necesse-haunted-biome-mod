@@ -1,6 +1,6 @@
 package HauntedBiome.Mobs;
 
-public class WraithMob 
+public class VoidSpiritMob 
 {
     
 }

@@ -51,23 +51,35 @@ public class HauntedBiome extends Biome {
     }
 
     @Override
-    public FishingLootTable getFishingLootTable(FishingSpot Spot) {
-        if (Spot.tile.level.getIdentifier() == LevelIdentifier.DEEP_CAVE_IDENTIFIER) {
+    public FishingLootTable getFishingLootTable(FishingSpot Spot) 
+    {
+        if (Spot.tile.level.getIdentifier() == LevelIdentifier.DEEP_CAVE_IDENTIFIER) 
+        {
             return DeepCaveFish;
-        } else if (Spot.tile.level.isCave) {
+        } 
+        else if (Spot.tile.level.isCave) 
+        {
             return CaveFish;
-        } else {
+        } 
+        else 
+        {
             return SurfaceFish;
         }
     }
 
     @Override
-    public MobSpawnTable getCritterSpawnTable(Level Level) {
-        if (Level.getIdentifier() == LevelIdentifier.DEEP_CAVE_IDENTIFIER) {
+    public MobSpawnTable getCritterSpawnTable(Level Level) 
+    {
+        if (Level.getIdentifier() == LevelIdentifier.DEEP_CAVE_IDENTIFIER) 
+        {
             return DeepCaveCritters;
-        } else if (Level.isCave) {
+        } 
+        else if (Level.isCave) 
+        {
             return CaveCritters;
-        } else {
+        } 
+        else 
+        {
             return SurfaceCritters;
         }
     }
@@ -76,9 +88,13 @@ public class HauntedBiome extends Biome {
     public MobSpawnTable getMobSpawnTable(Level Level) {
         if (Level.getIdentifier() == LevelIdentifier.DEEP_CAVE_IDENTIFIER) {
             return DeepCaveMobs;
-        } else if (Level.isCave) {
+        } 
+        else if (Level.isCave) 
+        {
             return CaveMobs;
-        } else {
+        } 
+        else 
+        {
             return SurfaceMobs;
         }
     }
@@ -276,10 +292,12 @@ public class HauntedBiome extends Biome {
                         LootTablePresets.plainsDeepCaveRuinsChest, lootRotation);
     }
 
+    @Override
     public float getGenerationCaveRockObjectChance() {
         return 0.30F;
     }
 
+    @Override
     public float getGenerationDeepCaveRockObjectChance() {
         return 0.32F;
     }

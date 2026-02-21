@@ -54,21 +54,25 @@ public class BoneConstructMob extends HostileMob {
                 (java.util.function.Supplier) null, 512, new GameDamage(35f), 100, 40000));
     }
 
+    @Override
     public DeathMessageTable getDeathMessages() {
         return getDeathMessages("boneconstruct", 2);
     }
 
+    @Override
     public void spawnDeathParticles(float knockbackX, float knockbackY) {
         for (int i = 0; i < 4; i++)
-            (getLevel()).entityManager.addParticle((Particle) new FleshParticle(getLevel(), this.Texture.body,
+            (getLevel()).entityManager.addParticle((Particle) new FleshParticle(getLevel(), BoneConstructMob.Texture.body,
                     GameRandom.globalRandom.nextInt(5), 8, 32, this.x, this.y, 20.0F, knockbackX, knockbackY),
                     Particle.GType.IMPORTANT_COSMETIC);
     }
 
+    @Override
     public LootTable getLootTable() {
         return LootTable;
     }
 
+    @Override
     public boolean isValidSpawnLocation(Server server, ServerClient client, int targetX, int targetY) {
         MobSpawnLocation location = (new MobSpawnLocation((Mob) this, targetX, targetY)).checkMobSpawnLocation();
         if ((getLevel()).isCave) {
@@ -80,6 +84,7 @@ public class BoneConstructMob extends HostileMob {
                 .validAndApply();
     }
 
+    @Override
     public void addDrawables(List<MobDrawable> list, OrderableDrawables tileList, OrderableDrawables topList,
             Level level, int x, int y, TickManager tickManager, GameCamera camera, PlayerMob perspective) {
         super.addDrawables(list, tileList, topList, level, x, y, tickManager, camera, perspective);
@@ -91,10 +96,11 @@ public class BoneConstructMob extends HostileMob {
         drawY += getBobbing(x, y);
         drawY += level.getTile(getTileCoordinate(x), getTileCoordinate(y)).getMobSinkingAmount((Mob) this);
         MaskShaderOptions swimMask = getSwimMaskShaderOptions(inLiquidFloat(x, y));
-        HumanDrawOptions humanDrawOptions = (new HumanDrawOptions(level, this.Texture)).sprite(sprite).dir(dir)
+        HumanDrawOptions humanDrawOptions = (new HumanDrawOptions(level, BoneConstructMob.Texture)).sprite(sprite).dir(dir)
                 .mask(swimMask).light(light);
         final DrawOptions drawOptions = humanDrawOptions.pos(drawX, drawY);
         list.add(new MobDrawable() {
+            @Override
             public void draw(TickManager tickManager) {
                 drawOptions.draw();
             }
@@ -102,14 +108,17 @@ public class BoneConstructMob extends HostileMob {
         addShadowDrawables(tileList, level, x, y, light, camera);
     }
 
+    @Override
     public int getRockSpeed() {
         return 20;
     }
 
+    @Override
     protected SoundSettings getAmbientSound() {
         return (new SoundSettings(GameResources.reaperbegin)).volume(0.45F).basePitch(0.8f);
     }
 
+    @Override
     protected SoundSettings getDeathSound() {
         return (new SoundSettings(GameResources.reaperdeath)).volume(0.45F).basePitch(0.8f);
     }

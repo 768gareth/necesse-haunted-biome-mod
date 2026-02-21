@@ -55,22 +55,26 @@ public class GhoulMob extends HostileMob
       this.ai = new BehaviourTreeAI(this, new ConfusedCollisionPlayerChaserWandererAI((java.util.function.Supplier)null, 512, new GameDamage(25f), 100, 40000));
   }
 
+  @Override
   public DeathMessageTable getDeathMessages() 
   {
     return getDeathMessages("ghoul", 2);
   }
   
+  @Override
   public void spawnDeathParticles(float knockbackX, float knockbackY) 
   {
     for (int i = 0; i < 4; i++)
-      (getLevel()).entityManager.addParticle((Particle)new FleshParticle(getLevel(), this.Texture.body, GameRandom.globalRandom.nextInt(5), 8, 32, this.x, this.y, 20.0F, knockbackX, knockbackY), Particle.GType.IMPORTANT_COSMETIC); 
+      (getLevel()).entityManager.addParticle((Particle)new FleshParticle(getLevel(), GhoulMob.Texture.body, GameRandom.globalRandom.nextInt(5), 8, 32, this.x, this.y, 20.0F, knockbackX, knockbackY), Particle.GType.IMPORTANT_COSMETIC); 
   }
 
+  @Override
   public LootTable getLootTable() 
   {
     return LootTable;
   }
 
+  @Override
   public boolean isValidSpawnLocation(Server server, ServerClient client, int targetX, int targetY) {
     MobSpawnLocation location = (new MobSpawnLocation((Mob)this, targetX, targetY)).checkMobSpawnLocation();
     if ((getLevel()).isCave) {
@@ -82,6 +86,7 @@ public class GhoulMob extends HostileMob
       .validAndApply();
   }
   
+  @Override
   public void addDrawables(List<MobDrawable> list, OrderableDrawables tileList, OrderableDrawables topList, Level level, int x, int y, TickManager tickManager, GameCamera camera, PlayerMob perspective) {
     super.addDrawables(list, tileList, topList, level, x, y, tickManager, camera, perspective);
     GameLight light = level.getLightLevel(getTileCoordinate(x), getTileCoordinate(y));
@@ -92,9 +97,10 @@ public class GhoulMob extends HostileMob
     drawY += getBobbing(x, y);
     drawY += level.getTile(getTileCoordinate(x), getTileCoordinate(y)).getMobSinkingAmount((Mob)this);
     MaskShaderOptions swimMask = getSwimMaskShaderOptions(inLiquidFloat(x, y));
-    HumanDrawOptions humanDrawOptions = (new HumanDrawOptions(level, this.Texture)).sprite(sprite).dir(dir).mask(swimMask).light(light);
+    HumanDrawOptions humanDrawOptions = (new HumanDrawOptions(level, GhoulMob.Texture)).sprite(sprite).dir(dir).mask(swimMask).light(light);
     final DrawOptions drawOptions = humanDrawOptions.pos(drawX, drawY);
     list.add(new MobDrawable() {
+          @Override
           public void draw(TickManager tickManager) {
             drawOptions.draw();
           }
@@ -102,14 +108,17 @@ public class GhoulMob extends HostileMob
     addShadowDrawables(tileList, level, x, y, light, camera);
   }
   
+  @Override
   public int getRockSpeed() {
     return 20;
   }
   
+  @Override
   protected SoundSettings getAmbientSound() {
     return (new SoundSettings(GameResources.zombieGroans[GameRandom.globalRandom.getIntBetween(10, 14)])).volume(0.85F).basePitch(0.5f);
   }
   
+  @Override
   protected SoundSettings getDeathSound() {
     return (new SoundSettings(GameResources.zombieGroans[6], new GameSound[] { GameResources.zombieGroans[7], GameResources.zombieGroans[13], GameResources.zombieGroans[18] })).volume(0.8F).basePitch(0.5f);
   }

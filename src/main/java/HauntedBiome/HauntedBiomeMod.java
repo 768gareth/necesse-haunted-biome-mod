@@ -15,6 +15,16 @@ import necesse.engine.registries.BiomeRegistry;
 import static necesse.engine.registries.MobRegistry.Textures.fromFile;
 import necesse.entity.mobs.HumanTexture;
 
+// TODO: List of tasks to complete below.
+/*  1. Tweak mob sprites until suitable for art style.
+    2. Implement void spirit for deep caves.
+    3. Implement more mobs generally to fill out spawn lists. Could do mini spiders for the surface?
+    4. Implement mini-bosses and relevant presets for them to spawn in. Dark Disciple? Necromancer? Drop large numbers of void fragments and a trinket from
+    the list of biome trinkets, that should work.
+    5. Implement new trinkets to fill out spawn lists for treasures. Ruinstone, Void Amulet, what else?
+    6. Need presets for the surface, too. Could do miniature shrines with some treasure instead, like that old pirate outpost preset idea?
+*/
+
 @ModEntry
 public class HauntedBiomeMod 
 {

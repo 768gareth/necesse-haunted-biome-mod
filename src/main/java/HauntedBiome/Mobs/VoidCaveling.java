@@ -19,6 +19,7 @@ public class VoidCaveling extends CavelingMob
       super(280, 35);
    }
 
+   @Override
    public void init() {
       super.init();
       this.texture = TextureTemp;
@@ -34,10 +35,12 @@ public class VoidCaveling extends CavelingMob
 
    }
 
+   @Override
    public LootTable getLootTable() {
       return super.getLootTable();
    }
 
+   @Override
    public LootTable getCavelingDropsAsLootTable() {
       return new LootTable(new LootItemInterface[]{new LootItem("voidshard", 1)});
    }
