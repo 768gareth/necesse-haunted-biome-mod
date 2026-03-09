@@ -59,7 +59,8 @@ ruinstone=Ruinstone
 haunted_grass_seed=Haunted Grass Seed
 
 [itemtooltip]
-ruinstone_tooltip=Melee critical hits inflict a stack of Ruin.\nEach stack of Ruin causes the target to take +5% damage, up to a maximum of +25% damage at 5 stacks.\nAll stacks expire eight seconds after the last stack was applied.
+ruinstone_tooltip=Melee critical hits inflict upon your target a stack of Ruin for eight seconds.\nEach stack of Ruin causes the target to take +5% damage, up to a maximum of +25% damage at 5 stacks.
+cursed_amulet_tooltip=Upon killing an enemy with summon damage, gain a stack of Void Blessing for ten seconds,\nincreasing your summons' damage, critical chance, and speed by +10% per stack.\nMaximum of five stacks.
 
 [buff]
 ruin_debuff=Ruinstone Debuff

@@ -10,11 +10,11 @@ import necesse.inventory.lootTable.LootItemInterface;
 import necesse.inventory.lootTable.LootTable;
 import necesse.inventory.lootTable.lootItem.LootItem;
 
-public class VoidCaveling extends CavelingMob 
+public class VoidCavelingMob extends CavelingMob 
 {
    public static HumanTexture TextureTemp;
 
-   public VoidCaveling() 
+   public VoidCavelingMob() 
    {
       super(280, 35);
    }
