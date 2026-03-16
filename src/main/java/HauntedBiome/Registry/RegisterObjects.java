@@ -9,6 +9,7 @@ import necesse.inventory.item.toolItem.ToolType;
 import necesse.level.gameObject.CrystalClusterSmallObject;
 import necesse.level.gameObject.CustomWildFlowerObject;
 import necesse.level.gameObject.FireChaliceObject;
+import necesse.level.gameObject.FruitBushObject;
 import necesse.level.gameObject.GameObject;
 import necesse.level.gameObject.RockObject;
 import necesse.level.gameObject.RockOreObject;
@@ -27,6 +28,7 @@ public class RegisterObjects
         ObjectRegistry.registerObject("haunted_grass", (GameObject)new HauntedGrassObject(), 0.0F, false, false, true, new String[0]);
         ObjectRegistry.registerObject("haunted_tree", new TreeObject("haunted_tree", "haunted_log", "haunted_sapling", new Color(75, 65, 36), 32, 60, 120, "pineleaves"), 0.0F, false, false, true, new String[0]);
         ObjectRegistry.registerObject("haunted_sapling", (GameObject)new TreeSaplingObject("haunted_log", "haunted_tree", 1800, 2700, true), 5.0F, true);
+        ObjectRegistry.registerObject("bloodberry_bush", (new FruitBushObject("bloodberry_bush", "bloodberry_sapling", 900.0F, 1800.0F, "bloodberry", 1.0F, 2, new Color(135, 1, 1))).setDebrisColor(new Color(46, 99, 39)), 0.0F, false, false, true);
 
         CustomWildFlowerObject CustomCaveglow = new CustomWildFlowerObject("wildcaveglow", 0, "caveglowsprout", "caveglow", 4, new Color(85, 182, 91), new String[]{"void_rock_tile"});
         CustomCaveglow.lightLevel = 50;

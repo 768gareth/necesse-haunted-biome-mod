@@ -14,6 +14,7 @@ import necesse.engine.sound.SoundSettings;
 import necesse.engine.sound.SoundSettingsRegistry;
 import necesse.engine.util.GameRandom;
 import necesse.engine.util.LevelIdentifier;
+import necesse.engine.util.TicketSystemList;
 import necesse.engine.world.biomeGenerator.BiomeGeneratorStack;
 import necesse.entity.mobs.PlayerMob;
 import necesse.inventory.lootTable.LootTablePresets;
@@ -29,24 +30,23 @@ import necesse.level.maps.presets.set.FurnitureSet;
 import necesse.level.maps.presets.set.VillageSet;
 import necesse.level.maps.regionSystem.Region;
 
-public class HauntedBiome extends Biome {
+public class HauntedBiome extends Biome 
+{
     public static FishingLootTable SurfaceFish = new FishingLootTable().addAll(Biome.defaultSurfaceFish);
-    public static FishingLootTable CaveFish = new FishingLootTable().addAll(Biome.defaultCaveFish);
-    public static FishingLootTable DeepCaveFish = new FishingLootTable().addAll(Biome.defaultCaveFish);
-    public static MobSpawnTable SurfaceMobs = new MobSpawnTable().add(80, "ghoul").add(20, "voidapprentice");
-    public static MobSpawnTable CaveMobs = new MobSpawnTable().add(50, "ghoul").add(50, "bone_construct");
-    public static MobSpawnTable DeepCaveMobs = new MobSpawnTable().add(25, "ancient_ghoul");
-    public static MobSpawnTable SurfaceCritters = new MobSpawnTable().add(100, "spider").add(100, "mouse");
-    public static MobSpawnTable CaveCritters = new MobSpawnTable().include(Biome.defaultCaveCritters).add(50,
-            "void_caveling");
-    public static MobSpawnTable DeepCaveCritters = new MobSpawnTable().include(Biome.defaultCaveCritters).add(50,
-            "void_caveling");
+    public static FishingLootTable CaveFish = new FishingLootTable().addAll(Biome.defaultCaveFish).addWater(20, "demonfish");
+    public static FishingLootTable DeepCaveFish = new FishingLootTable().addAll(Biome.defaultCaveFish).addWater(20, "demonfish");
+    public static MobSpawnTable SurfaceMobs = new MobSpawnTable().add(100, "zombie_villager");
+    public static MobSpawnTable CaveMobs = new MobSpawnTable().add(60, "zombie_warrior").add(20, "zombie_mage").add(20, "vampire");
+    public static MobSpawnTable DeepCaveMobs = new MobSpawnTable().add(60, "zombie_warrior").add(20, "zombie_mage").add(20, "vampire");
+    public static MobSpawnTable SurfaceCritters = new MobSpawnTable().include(Biome.defaultSurfaceCritters).add(100, "spider").add(100, "mouse");
+    public static MobSpawnTable CaveCritters = new MobSpawnTable().include(Biome.defaultCaveCritters).add(50, "void_caveling");
+    public static MobSpawnTable DeepCaveCritters = new MobSpawnTable().include(Biome.defaultCaveCritters).add(10, "croppleronion").add(50, "void_caveling");
 
-    public HauntedBiome() {
-    }
+    public HauntedBiome() {}
 
     @Override
-    public boolean canRain(Level level) {
+    public boolean canRain(Level level) 
+    {
         return true;
     }
 
@@ -85,8 +85,10 @@ public class HauntedBiome extends Biome {
     }
 
     @Override
-    public MobSpawnTable getMobSpawnTable(Level Level) {
-        if (Level.getIdentifier() == LevelIdentifier.DEEP_CAVE_IDENTIFIER) {
+    public MobSpawnTable getMobSpawnTable(Level Level) 
+    {
+        if (Level.getIdentifier() == LevelIdentifier.DEEP_CAVE_IDENTIFIER) 
+        {
             return DeepCaveMobs;
         } 
         else if (Level.isCave) 
@@ -100,85 +102,103 @@ public class HauntedBiome extends Biome {
     }
 
     @Override
-    public AbstractMusicList getLevelMusic(Level Level, PlayerMob perspective) {
-        if (Level.getIdentifier() == LevelIdentifier.DEEP_CAVE_IDENTIFIER) {
+    public AbstractMusicList getLevelMusic(Level Level, PlayerMob perspective) 
+    {
+        if (Level.getIdentifier() == LevelIdentifier.DEEP_CAVE_IDENTIFIER) 
+        {
             return new MusicList(MusicRegistry.GrindTheAlarms);
-        } else if (Level.isCave) {
+        } 
+        else if (Level.isCave) 
+        {
             return new MusicList(MusicRegistry.CaravanTusks);
-        } else {
+        } 
+        else 
+        {
             return new MusicList(MusicRegistry.SilverLake);
         }
     }
 
     @Override
-    public GameTile getUnderLiquidTile(Level level, int tileX, int tileY) {
+    public GameTile getUnderLiquidTile(Level level, int tileX, int tileY) 
+    {
         return TileRegistry.getTile(TileRegistry.dirtID);
     }
 
     @Override
-    public int getGenerationWaterTileID() {
-
+    public int getGenerationWaterTileID() 
+    {
         return TileRegistry.waterID;
     }
 
     @Override
-    public int getGenerationCaveLavaTileID() {
+    public int getGenerationCaveLavaTileID() 
+    {
         return TileRegistry.lavaID;
     }
 
     @Override
-    public int getGenerationDeepCaveLavaTileID() {
+    public int getGenerationDeepCaveLavaTileID() 
+    {
         return TileRegistry.lavaID;
     }
 
     @Override
-    public int getGenerationTerrainTileID() {
+    public int getGenerationTerrainTileID() 
+    {
         return TileRegistry.getTileID("haunted_grass_tile");
     }
 
     @Override
-    public int getGenerationCaveRockObjectID() {
+    public int getGenerationCaveRockObjectID() 
+    {
         return ObjectRegistry.getObjectID("void_rock");
     }
 
     @Override
-    public int getGenerationCaveTileID() {
+    public int getGenerationCaveTileID() 
+    {
         return TileRegistry.getTileID("void_rock_tile");
     }
 
     @Override
-    public int getGenerationDeepCaveTileID() {
+    public int getGenerationDeepCaveTileID() 
+    {
         return TileRegistry.getTileID("void_rock_tile");
     }
 
     @Override
-    public int getGenerationDeepCaveRockObjectID() {
+    public int getGenerationDeepCaveRockObjectID() 
+    {
         return ObjectRegistry.getObjectID("deep_void_rock");
     }
 
     @Override
-    public int getGenerationBeachTileID() {
+    public int getGenerationBeachTileID() 
+    {
         return TileRegistry.sandID;
     }
 
     @Override
-    public SoundSettings getWindSound(Level level) {
+    public SoundSettings getWindSound(Level level) 
+    {
         return SoundSettingsRegistry.wind;
     }
 
     @Override
-    public VillageSet[] getVillageSets() {
+    public VillageSet[] getVillageSets() 
+    {
         return null;
     }
 
     @Override
-    public void initializeGeneratorStack(BiomeGeneratorStack stack) {
+    public void initializeGeneratorStack(BiomeGeneratorStack stack) 
+    {
         super.initializeGeneratorStack(stack);
         stack.addRandomSimplexVeinsBranch("hauntedTrees", 2.0F, 0.2F, 0.4F, 0);
         stack.addRandomSimplexVeinsBranch("hauntedMudPatches", 2.0F, 0.5F, 0.7F, 2);
-        stack.addRandomVeinsBranch("hauntedBlackberries", 0.065F, 8, 10, 0.1F, 0, false);
+        stack.addRandomVeinsBranch("hauntedBloodberries", 0.065F, 8, 10, 0.1F, 0, false);
         stack.addRandomVeinsBranch("hauntedReeds", 0.5F, 5, 7, 0.7F, 0, false);
-        stack.addRandomVeinsBranch("hauntedClay", 0.9F, 5, 10, 0.4F, 2, false);
+        stack.addRandomVeinsBranch("hauntedClay", 0.4F, 5, 10, 0.4F, 2, false);
         stack.addRandomVeinsBranch("hauntedCopper", 0.72F, 3, 6, 0.4F, 2, false);
         stack.addRandomVeinsBranch("hauntedIron", 0.56F, 3, 6, 0.4F, 2, false);
         stack.addRandomVeinsBranch("hauntedGold", 0.16F, 3, 6, 0.4F, 2, false);
@@ -192,6 +212,8 @@ public class HauntedBiome extends Biome {
         stack.addRandomVeinsBranch("hauntedDeepTungsten", 0.32F, 3, 6, 0.4F, 2, false);
         stack.addRandomVeinsBranch("hauntedDeepLifeQuartz", 0.08F, 3, 6, 0.4F, 2, false);
         stack.addRandomVeinsBranch("hauntedDeepObsidian", 0.4F, 5, 10, 0.4F, 2, false);
+
+        stack.addRandomVeinsBranch("hauntedPigs", 0.02F, 4, 8, 0.1F, 0, false);
     }
 
     @Override
@@ -205,8 +227,11 @@ public class HauntedBiome extends Biome {
         stack.startPlace(this, region, random).onlyOnTile(GrassTile).chance(0.7).placeObject("haunted_grass");
         stack.startPlace(this, region, random).chance(0.004).placeObject("void_rock_small");
         stack.startPlace(this, region, random).chance(0.002).placeObject("void_rock_large");
-        stack.startPlaceOnVein(this, region, random, "hauntedBlackberries").onlyOnTile(GrassTile)
-                .placeObjectFruitGrower("blackberrybush");
+        stack.startPlaceOnVein(this, region, random, "hauntedBloodberries").onlyOnTile(GrassTile).placeObjectFruitGrower("bloodberry_bush");
+
+        TicketSystemList<String> MobSpawns = (new TicketSystemList()).addObject(100, "pig").addObject(25, "boar");
+        stack.startPlaceOnVein(this, region, random, "hauntedPigs").onlyOnTile(GrassTile).placeMob(MobSpawns);
+
         region.updateLiquidManager();
     }
 
@@ -226,7 +251,7 @@ public class HauntedBiome extends Biome {
         stack.startPlace(this, region, random).chance(0.004).placeObject("void_rock_small");
         stack.startPlace(this, region, random).chance(0.002).placeObject("void_rock_large");
         stack.startPlace(this, region, random).chance(0.001).placeObject("void_fragment_cluster");
-        stack.startPlace(this, region, random).chance(0.029999999329447746D).placeCrates(new String[] { "crate" });
+        stack.startPlace(this, region, random).chance(0.024999999329447746D).placeCrates(new String[] { "crate" });
         region.updateLiquidManager();
     }
 
@@ -253,13 +278,14 @@ public class HauntedBiome extends Biome {
                 .placeObjectForced("demonic_ore_deep_void_rock");
         stack.startPlace(this, region, random).chance(0.004).placeObject("void_rock_small");
         stack.startPlace(this, region, random).chance(0.003).placeObject("void_rock_large");
-        stack.startPlace(this, region, random).chance(0.001).placeObject("void_fragment_cluster");
-        stack.startPlace(this, region, random).chance(0.029999999329447746D).placeCrates(new String[] { "crate" });
+        stack.startPlace(this, region, random).chance(0.002).placeObject("void_fragment_cluster");
+        stack.startPlace(this, region, random).chance(0.024999999329447746D).placeCrates(new String[] { "crate" });
         region.updateLiquidManager();
     }
 
     @Override
-    public RandomCaveChestRoom getNewCaveChestRoomPreset(GameRandom random, AtomicInteger lootRotation) {
+    public RandomCaveChestRoom getNewCaveChestRoomPreset(GameRandom random, AtomicInteger lootRotation) 
+    {
         RandomCaveChestRoom chestRoom = new RandomCaveChestRoom(random, HauntedLootTables.HauntedCavesChest,
                 lootRotation, RegisterChestRoomSets.HauntedBiomeSet);
         chestRoom.replaceTile("stonefloor", "void_stone_floor");
@@ -267,7 +293,8 @@ public class HauntedBiome extends Biome {
     }
 
     @Override
-    public RandomCaveChestRoom getNewDeepCaveChestRoomPreset(GameRandom random, AtomicInteger lootRotation) {
+    public RandomCaveChestRoom getNewDeepCaveChestRoomPreset(GameRandom random, AtomicInteger lootRotation) 
+    {
         RandomCaveChestRoom chestRoom = new RandomCaveChestRoom(random, HauntedLootTables.DeepHauntedCavesChest,
                 lootRotation, RegisterChestRoomSets.HauntedBiomeSet);
         chestRoom.replaceTile("stonefloor", "void_stone_floor");
@@ -275,7 +302,8 @@ public class HauntedBiome extends Biome {
     }
 
     @Override
-    public CaveRuins getNewCaveRuinsPreset(GameRandom random, AtomicInteger lootRotation) {
+    public CaveRuins getNewCaveRuinsPreset(GameRandom random, AtomicInteger lootRotation) 
+    {
         FurnitureSet furnitureSet = FurnitureSet.dungeon;
         String floorStringID = "void_stone_floor";
         return ((CaveRuins.CaveRuinGetter) random.getOneOf(CaveRuins.caveRuinGetters))
@@ -284,7 +312,8 @@ public class HauntedBiome extends Biome {
     }
 
     @Override
-    public CaveRuins getNewDeepCaveRuinsPreset(GameRandom random, AtomicInteger lootRotation) {
+    public CaveRuins getNewDeepCaveRuinsPreset(GameRandom random, AtomicInteger lootRotation) 
+    {
         FurnitureSet furnitureSet = FurnitureSet.dungeon;
         String floorStringID = "void_stone_floor";
         return ((CaveRuins.CaveRuinGetter) random.getOneOf(CaveRuins.caveRuinGetters))
@@ -293,12 +322,14 @@ public class HauntedBiome extends Biome {
     }
 
     @Override
-    public float getGenerationCaveRockObjectChance() {
+    public float getGenerationCaveRockObjectChance() 
+    {
         return 0.30F;
     }
 
     @Override
-    public float getGenerationDeepCaveRockObjectChance() {
+    public float getGenerationDeepCaveRockObjectChance() 
+    {
         return 0.32F;
     }
 }

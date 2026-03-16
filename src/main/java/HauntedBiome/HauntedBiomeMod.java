@@ -12,11 +12,6 @@ import necesse.engine.registries.BiomeRegistry;
 import static necesse.engine.registries.MobRegistry.Textures.fromFile;
 import necesse.entity.mobs.HumanTexture;
 
-// TODO: List of tasks to complete below.
-/*  1. Need to rework the mobs into something more interesting.
-    
-*/
-
 @ModEntry
 public class HauntedBiomeMod 
 {
