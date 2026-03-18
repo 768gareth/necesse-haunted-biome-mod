@@ -35,9 +35,9 @@ public class HauntedBiome extends Biome
     public static FishingLootTable SurfaceFish = new FishingLootTable().addAll(Biome.defaultSurfaceFish);
     public static FishingLootTable CaveFish = new FishingLootTable().addAll(Biome.defaultCaveFish).addWater(20, "demonfish");
     public static FishingLootTable DeepCaveFish = new FishingLootTable().addAll(Biome.defaultCaveFish).addWater(20, "demonfish");
-    public static MobSpawnTable SurfaceMobs = new MobSpawnTable().add(100, "zombie_villager");
-    public static MobSpawnTable CaveMobs = new MobSpawnTable().add(60, "zombie_warrior").add(20, "zombie_mage").add(20, "vampire");
-    public static MobSpawnTable DeepCaveMobs = new MobSpawnTable().add(60, "zombie_warrior").add(20, "zombie_mage").add(20, "vampire");
+    public static MobSpawnTable SurfaceMobs = new MobSpawnTable().add(60, "zombie_warrior").add(40, "zombie_mage");
+    public static MobSpawnTable CaveMobs = new MobSpawnTable().add(60, "zombie_warrior").add(40, "zombie_mage");
+    public static MobSpawnTable DeepCaveMobs = new MobSpawnTable().add(60, "zombie_warrior").add(40, "zombie_mage");;
     public static MobSpawnTable SurfaceCritters = new MobSpawnTable().include(Biome.defaultSurfaceCritters).add(100, "spider").add(100, "mouse");
     public static MobSpawnTable CaveCritters = new MobSpawnTable().include(Biome.defaultCaveCritters).add(50, "void_caveling");
     public static MobSpawnTable DeepCaveCritters = new MobSpawnTable().include(Biome.defaultCaveCritters).add(10, "croppleronion").add(50, "void_caveling");

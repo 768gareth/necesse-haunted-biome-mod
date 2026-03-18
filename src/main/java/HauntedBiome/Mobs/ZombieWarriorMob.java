@@ -70,7 +70,7 @@ public class ZombieWarriorMob extends HostileItemAttackerMob
 
     public LootTable getLootTable() 
     {
-      return new LootTable(new LootItemInterface[]{ new ChanceLootItem(0.05f, weapon.getItemDisplayName())});
+      return new LootTable(new LootItemInterface[]{ new ChanceLootItem(0.01f, weapon.getGndData().getStringID()), new ChanceLootItem(0.1f, "healthpotion", 1)});
     }
 
     public void addDrawables(List<MobDrawable> list, OrderableDrawables tileList, OrderableDrawables topList, Level level, int x, int y, TickManager tickManager, GameCamera camera, PlayerMob perspective) 
@@ -88,7 +88,7 @@ public class ZombieWarriorMob extends HostileItemAttackerMob
         if (this.helmet != null)
         {
             humanDrawOptions.helmet(this.helmet); 
-            humanDrawOptions.hatTexture((HumanDrawOptionsGetter)null, ArmorItem.HairDrawMode.NO_HAIR);
+            humanDrawOptions.hatTexture((HumanDrawOptionsGetter)null, ArmorItem.HairDrawMode.NO_HEAD);
         }
         if (this.chest != null) 
         {

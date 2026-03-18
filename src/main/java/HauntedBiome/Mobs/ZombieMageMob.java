@@ -53,7 +53,7 @@ public class ZombieMageMob extends HostileItemAttackerMob
         this.swimSinkOffset = -4;
         this.weapon = GameRandom.globalRandom.getOneOf(new InventoryItem("sparkler"), new InventoryItem("sprinkler"));
         this.helmet = null;
-        this.chest = new InventoryItem("clothrobe");
+        this.chest = new InventoryItem("leathershirt");
         this.boots = new InventoryItem("leatherboots");
         this.ai = new BehaviourTreeAI
         (
@@ -70,7 +70,7 @@ public class ZombieMageMob extends HostileItemAttackerMob
 
     public LootTable getLootTable() 
     {
-      return new LootTable(new LootItemInterface[]{ new ChanceLootItem(0.05f, weapon.getItemDisplayName())});
+      return new LootTable(new LootItemInterface[]{ new ChanceLootItem(0.05f, weapon.getGndData().getStringID()), new ChanceLootItem(0.1f, "manapotion", 1)});
     }
 
     public void addDrawables(List<MobDrawable> list, OrderableDrawables tileList, OrderableDrawables topList, Level level, int x, int y, TickManager tickManager, GameCamera camera, PlayerMob perspective) 
@@ -84,7 +84,7 @@ public class ZombieMageMob extends HostileItemAttackerMob
         drawY += getBobbing(x, y);
         drawY += getLevel().getTile(x / 32, y / 32).getMobSinkingAmount((Mob)this);
         MaskShaderOptions swimMask = getSwimMaskShaderOptions(inLiquidFloat(x, y));
-        HumanDrawOptions humanDrawOptions = (new HumanDrawOptions(level, MobRegistry.Textures.zombie)).sprite(sprite).dir(dir).mask(swimMask).light(light);
+        HumanDrawOptions humanDrawOptions = (new HumanDrawOptions(level, MobRegistry.Textures.zombieArcher)).sprite(sprite).dir(dir).mask(swimMask).light(light);
         if (this.helmet != null)
         {
             humanDrawOptions.helmet(this.helmet); 

@@ -14,12 +14,17 @@ haunted_grass=Haunted Grass
 haunted_tree=Haunted Tree
 haunted_sapling=Haunted Sapling
 haunted_caveglow=Caveglow
+bloodberry_bush=Bloodberry Bush
+bloodberry_sapling=Bloodberry Sapling
+painting_eye_of_the_void=Painting (Eye of the Void)
+void_column=Void Column
 
 [tile]
 haunted_grass_tile=Haunted Grass
 void_rock_tile=Void Rock
 void_stone_floor=Void Stone Floor
 void_stone_path=Void Stone Path
+void_gravel_tile=Void Gravel Tile
 
 [item]
 // Crafting materials
@@ -32,8 +37,10 @@ bloodberry=Bloodberry
 
 // Tiles
 haunted_grass_tile=Haunted Grass
-haunted_rock_tile=Haunted Rock
+void_rock_tile=Void Rock
 void_stone_floor=Void Stone Floor
+void_stone_path=Void Stone Path
+void_gravel_tile=Void Gravel Tile
 
 // Objects
 haunted_rock=Void Rock
@@ -49,6 +56,8 @@ haunted_grass=Haunted Grass
 haunted_tree=Haunted Tree
 haunted_sapling=Haunted Sapling
 haunted_caveglow=Caveglow
+bloodberry_bush=Bloodberry Bush
+bloodberry_sapling=Bloodberry Sapling
 
 // Weapons
 cursed_fire=Cursed Fire
@@ -70,7 +79,6 @@ ruin_debuff=Ruinstone Debuff
 [mob]
 zombie_warrior=Zombie Warrior
 zombie_mage=Zombie Mage
-zombie_villager=Zombie Villager
 void_caveling=Void Caveling
 
 [deaths]
