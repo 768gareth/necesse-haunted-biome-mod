@@ -14,9 +14,9 @@ import necesse.engine.sound.SoundSettings;
 import necesse.engine.sound.SoundSettingsRegistry;
 import necesse.engine.util.GameRandom;
 import necesse.engine.util.LevelIdentifier;
-import necesse.engine.util.TicketSystemList;
 import necesse.engine.world.biomeGenerator.BiomeGeneratorStack;
 import necesse.entity.mobs.PlayerMob;
+import necesse.entity.objectEntity.FruitGrowerObjectEntity;
 import necesse.inventory.lootTable.LootTablePresets;
 import necesse.level.gameTile.GameTile;
 import necesse.level.maps.Level;
@@ -195,10 +195,9 @@ public class HauntedBiome extends Biome
     {
         super.initializeGeneratorStack(stack);
         stack.addRandomSimplexVeinsBranch("hauntedTrees", 2.0F, 0.2F, 0.4F, 0);
-        stack.addRandomSimplexVeinsBranch("hauntedMudPatches", 2.0F, 0.5F, 0.7F, 2);
+        stack.addRandomSimplexVeinsBranch("hauntedMudPatches", 2.0F, 0.7F, 0.9F, 2);
         stack.addRandomVeinsBranch("hauntedBloodberries", 0.065F, 8, 10, 0.1F, 0, false);
-        stack.addRandomVeinsBranch("hauntedReeds", 0.5F, 5, 7, 0.7F, 0, false);
-        stack.addRandomVeinsBranch("hauntedClay", 0.4F, 5, 10, 0.4F, 2, false);
+        stack.addRandomVeinsBranch("hauntedFlowers", 0.2F, 5, 8, 0.4F, 0, false);
         stack.addRandomVeinsBranch("hauntedCopper", 0.72F, 3, 6, 0.4F, 2, false);
         stack.addRandomVeinsBranch("hauntedIron", 0.56F, 3, 6, 0.4F, 2, false);
         stack.addRandomVeinsBranch("hauntedGold", 0.16F, 3, 6, 0.4F, 2, false);
@@ -212,8 +211,6 @@ public class HauntedBiome extends Biome
         stack.addRandomVeinsBranch("hauntedDeepTungsten", 0.32F, 3, 6, 0.4F, 2, false);
         stack.addRandomVeinsBranch("hauntedDeepLifeQuartz", 0.08F, 3, 6, 0.4F, 2, false);
         stack.addRandomVeinsBranch("hauntedDeepObsidian", 0.4F, 5, 10, 0.4F, 2, false);
-
-        stack.addRandomVeinsBranch("hauntedPigs", 0.02F, 4, 8, 0.1F, 0, false);
     }
 
     @Override
@@ -227,11 +224,16 @@ public class HauntedBiome extends Biome
         stack.startPlace(this, region, random).onlyOnTile(GrassTile).chance(0.7).placeObject("haunted_grass");
         stack.startPlace(this, region, random).chance(0.004).placeObject("void_rock_small");
         stack.startPlace(this, region, random).chance(0.002).placeObject("void_rock_large");
-        stack.startPlaceOnVein(this, region, random, "hauntedBloodberries").onlyOnTile(GrassTile).placeObjectFruitGrower("bloodberry_bush");
-
-        TicketSystemList<String> MobSpawns = (new TicketSystemList()).addObject(100, "pig").addObject(25, "boar");
-        stack.startPlaceOnVein(this, region, random, "hauntedPigs").onlyOnTile(GrassTile).placeMob(MobSpawns);
-
+        stack.startPlaceOnVein(this, region, random, "hauntedBloodberries").onlyOnTile(GrassTile).placeObjectEntity
+        (
+            "bloodberry_bush", 
+            FruitGrowerObjectEntity.class, 
+            (r, entity) -> 
+            {
+                entity.setRandomStage(r);
+            }
+        );
+        stack.startPlaceOnVein(this, region, random, "hauntedFlowers").onlyOnTile(GrassTile).placeObject("purpleflowerpatch");
         region.updateLiquidManager();
     }
 
@@ -239,7 +241,6 @@ public class HauntedBiome extends Biome
     public void generateRegionCaveTerrain(Region region, BiomeGeneratorStack stack, GameRandom random) {
         super.generateRegionCaveTerrain(region, stack, random);
         int RockID = ObjectRegistry.getObjectID("void_rock");
-        stack.startPlaceOnVein(this, region, random, "hauntedClay").onlyOnObject(RockID).placeObjectForced("clayrock");
         stack.startPlaceOnVein(this, region, random, "hauntedCopper").onlyOnObject(RockID)
                 .placeObjectForced("copper_ore_void_rock");
         stack.startPlaceOnVein(this, region, random, "hauntedIron").onlyOnObject(RockID)
@@ -248,9 +249,10 @@ public class HauntedBiome extends Biome
                 .placeObjectForced("gold_ore_void_rock");
         stack.startPlaceOnVein(this, region, random, "hauntedDemonic").onlyOnObject(RockID)
                 .placeObjectForced("demonic_ore_void_rock");
-        stack.startPlace(this, region, random).chance(0.004).placeObject("void_rock_small");
-        stack.startPlace(this, region, random).chance(0.002).placeObject("void_rock_large");
-        stack.startPlace(this, region, random).chance(0.001).placeObject("void_fragment_cluster");
+        stack.startPlace(this, region, random).chance(0.007).placeObject("void_rock_small");
+        stack.startPlace(this, region, random).chance(0.005).placeObject("void_rock_large");
+        stack.startPlace(this, region, random).chance(0.002).placeObject("void_fragment_cluster_small");
+        stack.startPlace(this, region, random).chance(0.003).placeObject("void_fragment_cluster_large");
         stack.startPlace(this, region, random).chance(0.024999999329447746D).placeCrates(new String[] { "crate" });
         region.updateLiquidManager();
     }
@@ -276,9 +278,10 @@ public class HauntedBiome extends Biome
                 .placeObjectForced("life_quartz_deep_void_rock");
         stack.startPlaceOnVein(this, region, random, "hauntedDemonic").onlyOnObject(RockID)
                 .placeObjectForced("demonic_ore_deep_void_rock");
-        stack.startPlace(this, region, random).chance(0.004).placeObject("void_rock_small");
-        stack.startPlace(this, region, random).chance(0.003).placeObject("void_rock_large");
-        stack.startPlace(this, region, random).chance(0.002).placeObject("void_fragment_cluster");
+        stack.startPlace(this, region, random).chance(0.008).placeObject("void_rock_small");
+        stack.startPlace(this, region, random).chance(0.006).placeObject("void_rock_large");
+        stack.startPlace(this, region, random).chance(0.005).placeObject("void_fragment_cluster_small");
+        stack.startPlace(this, region, random).chance(0.003).placeObject("void_fragment_cluster_large");
         stack.startPlace(this, region, random).chance(0.024999999329447746D).placeCrates(new String[] { "crate" });
         region.updateLiquidManager();
     }

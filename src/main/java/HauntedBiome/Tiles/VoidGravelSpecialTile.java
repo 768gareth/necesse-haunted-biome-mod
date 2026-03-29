@@ -11,7 +11,7 @@ import necesse.level.maps.biomes.MobSpawnTable;
 
 public class VoidGravelSpecialTile extends TerrainSplatterTile 
 {
-    public static MobSpawnTable VoidGravelSpawns = new MobSpawnTable().add(20, "void_construct").add(10, "void_caveling").add(70, "zombie_villager");
+    public static MobSpawnTable VoidGravelSpawns = new MobSpawnTable().add(20, "void_construct").add(10, "void_caveling");
   public VoidGravelSpecialTile() 
   {
     super(false, "void_gravel_tile", "splattingmaskwide");

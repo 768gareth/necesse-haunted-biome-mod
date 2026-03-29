@@ -3,7 +3,8 @@ void_rock=Void Rock
 deep_void_rock=Deep Void Rock
 void_rock_small=Small Void Rock
 void_rock_large=Large Void Rock
-void_fragment_cluster=Void Fragment Cluster
+void_fragment_cluster_small=Void Fragment Cluster
+void_fragment_cluster_large=Large Void Fragment Cluster
 demonic_ore=Demonic Ore
 void_wall=Void Wall
 void_walltrap=Void Wall Flame Trap
@@ -13,11 +14,17 @@ haunted_log_bench=Haunted Log Bench
 haunted_grass=Haunted Grass
 haunted_tree=Haunted Tree
 haunted_sapling=Haunted Sapling
-haunted_caveglow=Caveglow
+haunted_caveglow=Caveglow (Haunted Biome Mod)
 bloodberry_bush=Bloodberry Bush
 bloodberry_sapling=Bloodberry Sapling
-painting_eye_of_the_void=Painting (Eye of the Void)
+painting_eye_of_the_void=Eye of the Void Painting
 void_column=Void Column
+haunted_hedge=Haunted Hedge
+haunted_hedge_gate=Haunted Hedge Gate
+void_stone_fence=Void Stone Fence
+void_stone_fence_gate=Void Stone Fence Gate
+void_sculpture=Void Sculpture
+void_fragment_sample=Void Fragment Sample
 
 [tile]
 haunted_grass_tile=Haunted Grass
@@ -33,7 +40,6 @@ void_fragment=Void Fragment
 void_stone=Void Stone
 demonfish=Demonfish
 demonic_ore=Demonic Ore
-bloodberry=Bloodberry
 
 // Tiles
 haunted_grass_tile=Haunted Grass
@@ -55,12 +61,18 @@ haunted_log_bench=Haunted Log Bench
 haunted_grass=Haunted Grass
 haunted_tree=Haunted Tree
 haunted_sapling=Haunted Sapling
-haunted_caveglow=Caveglow
+haunted_caveglow=Caveglow (Haunted Biome Mod)
 bloodberry_bush=Bloodberry Bush
 bloodberry_sapling=Bloodberry Sapling
+void_sculpture=Void Sculpture
+void_fragment_sample=Void Fragment Sample
 
 // Weapons
 cursed_fire=Cursed Fire
+
+// Consumables
+bloodberry=Bloodberry
+bloodberry_pudding=Bloodberry Pudding
 
 // Trinkets
 cursed_amulet=Cursed Amulet

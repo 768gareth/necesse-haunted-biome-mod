@@ -9,8 +9,8 @@ project.ext.modID = "eryr.hauntedbiome" // The unique id of your mod. Must be al
 project.ext.modName = "Haunted Biome Mod" // The display name of your mod.
 project.ext.modVersion = "1.0" // Your current builds version. Must follow the xx.xx... format.
 project.ext.gameVersion = "1.1.1" // The target game version.
-project.ext.modDescription = "Adds a spooky new biome that offers an alternative path for accessing Demonic Bars." // Short description of what your mod is.
-project.ext.author = "Fair" // Your name
+project.ext.modDescription = "Adds a spooky new biome that offers an alternative path for accessing Demonic-tier equipment, as well as new items, enemies, and more!" // Short description of what your mod is.
+project.ext.author = "Eryr" // Your name
 
 /**
  * When setting clientside to true, it means servers do not need this mod for clients to connect and vice versa.
