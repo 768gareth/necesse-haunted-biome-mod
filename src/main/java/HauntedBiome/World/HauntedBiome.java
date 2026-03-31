@@ -251,8 +251,8 @@ public class HauntedBiome extends Biome
                 .placeObjectForced("demonic_ore_void_rock");
         stack.startPlace(this, region, random).chance(0.007).placeObject("void_rock_small");
         stack.startPlace(this, region, random).chance(0.005).placeObject("void_rock_large");
-        stack.startPlace(this, region, random).chance(0.002).placeObject("void_fragment_cluster_small");
-        stack.startPlace(this, region, random).chance(0.003).placeObject("void_fragment_cluster_large");
+        stack.startPlace(this, region, random).chance(0.001).placeObject("void_fragment_cluster_small");
+        stack.startPlace(this, region, random).chance(0.0005).placeObject("void_fragment_cluster_large");
         stack.startPlace(this, region, random).chance(0.024999999329447746D).placeCrates(new String[] { "crate" });
         region.updateLiquidManager();
     }
@@ -280,8 +280,8 @@ public class HauntedBiome extends Biome
                 .placeObjectForced("demonic_ore_deep_void_rock");
         stack.startPlace(this, region, random).chance(0.008).placeObject("void_rock_small");
         stack.startPlace(this, region, random).chance(0.006).placeObject("void_rock_large");
-        stack.startPlace(this, region, random).chance(0.005).placeObject("void_fragment_cluster_small");
-        stack.startPlace(this, region, random).chance(0.003).placeObject("void_fragment_cluster_large");
+        stack.startPlace(this, region, random).chance(0.0015).placeObject("void_fragment_cluster_small");
+        stack.startPlace(this, region, random).chance(0.001).placeObject("void_fragment_cluster_large");
         stack.startPlace(this, region, random).chance(0.024999999329447746D).placeCrates(new String[] { "crate" });
         region.updateLiquidManager();
     }
@@ -304,6 +304,7 @@ public class HauntedBiome extends Biome
         return chestRoom;
     }
 
+    // TODO: Need a custom loot table for the ruins chests.
     @Override
     public CaveRuins getNewCaveRuinsPreset(GameRandom random, AtomicInteger lootRotation) 
     {

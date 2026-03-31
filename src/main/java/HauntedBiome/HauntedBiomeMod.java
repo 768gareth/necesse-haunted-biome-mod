@@ -6,6 +6,7 @@ import HauntedBiome.Registry.RegisterItems;
 import HauntedBiome.Registry.RegisterMobs;
 import HauntedBiome.Registry.RegisterObjects;
 import HauntedBiome.Registry.RegisterTiles;
+import HauntedBiome.Registry.RegisterWorldPresets;
 import HauntedBiome.World.HauntedBiome;
 import necesse.engine.modLoader.annotations.ModEntry;
 import necesse.engine.registries.BiomeRegistry;
@@ -24,6 +25,7 @@ public class HauntedBiomeMod
         RegisterTiles.Register();
         RegisterMobs.Register();
         RegisterBuffs.Register();
+        RegisterWorldPresets.Register();
         System.out.println("[Haunted Biome Mod] Mod initialisation complete.");
     }
 

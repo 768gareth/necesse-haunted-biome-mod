@@ -14,7 +14,7 @@ public class RegisterRecipes
         Recipes.registerModRecipe(new Recipe("voidshard", 1, RecipeTechRegistry.FORGE, new Ingredient[] { new Ingredient("void_fragment", 4)}));
 
         // Consumables
-        Recipes.registerModRecipe(new Recipe("bloodberry_pudding", 1, RecipeTechRegistry.COOKING_POT, new Ingredient[] { new Ingredient("bloodberry", 4), new Ingredient("sugar", 3), new Ingredient("milk", 2)}));
+        Recipes.registerModRecipe(new Recipe("bloodberry_pudding", 1, RecipeTechRegistry.COOKING_POT, new Ingredient[] { new Ingredient("bloodberry", 4), new Ingredient("sugar", 3), new Ingredient("milk", 2), new Ingredient("lemon", 1)}));
         
         // Trinkets
         Recipes.registerModRecipe(new Recipe("ruinstone", 1, RecipeTechRegistry.DEMONIC_WORKSTATION, new Ingredient[] { new Ingredient("demonicbar", 4), new Ingredient("void_fragment", 8)}));

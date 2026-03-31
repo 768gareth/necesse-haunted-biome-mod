@@ -96,3 +96,6 @@ void_caveling=Void Caveling
 [deaths]
 undead1=<victim> was devoured by <attacker>.
 undead2=<victim> was torn apart by <attacker>.
+
+[biome]
+haunted_biome=Haunted

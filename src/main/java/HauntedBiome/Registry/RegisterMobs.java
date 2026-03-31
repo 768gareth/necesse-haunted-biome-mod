@@ -7,6 +7,7 @@ import necesse.engine.registries.MobRegistry;
 
 public class RegisterMobs 
 {
+    // TODO: Could have *actual* demons/void entities in the Deep Caves? e.g Void Devourer is a big worm thing.
     public static void Register()
     {
         MobRegistry.registerMob("void_caveling", VoidCavelingMob.class, true);

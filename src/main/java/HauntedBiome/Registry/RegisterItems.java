@@ -15,6 +15,7 @@ import necesse.level.maps.levelData.settlementData.settler.Settler;
 
 public class RegisterItems 
 {
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     public static void Register()
     {
         // Trinkets
