@@ -3,8 +3,10 @@ package HauntedBiome;
 import HauntedBiome.Mobs.VoidCavelingMob;
 import HauntedBiome.Registry.RegisterBuffs;
 import HauntedBiome.Registry.RegisterItems;
+import HauntedBiome.Registry.RegisterJournal;
 import HauntedBiome.Registry.RegisterMobs;
 import HauntedBiome.Registry.RegisterObjects;
+import HauntedBiome.Registry.RegisterRecipes;
 import HauntedBiome.Registry.RegisterTiles;
 import HauntedBiome.Registry.RegisterWorldPresets;
 import HauntedBiome.World.HauntedBiome;
@@ -26,6 +28,8 @@ public class HauntedBiomeMod
         RegisterMobs.Register();
         RegisterBuffs.Register();
         RegisterWorldPresets.Register();
+        RegisterRecipes.Register();
+        RegisterJournal.Register();
         System.out.println("[Haunted Biome Mod] Mod initialisation complete.");
     }
 

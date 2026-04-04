@@ -25,6 +25,12 @@ void_stone_fence=Void Stone Fence
 void_stone_fence_gate=Void Stone Fence Gate
 void_sculpture=Void Sculpture
 void_fragment_sample=Void Fragment Sample
+haunted_candelabra=Haunted Candelabra
+
+[journal]
+haunted_surface=Haunted Surface
+haunted_caves=Haunted Caves
+haunted_deep_caves=Haunted Deep Caves
 
 [tile]
 haunted_grass_tile=Haunted Grass
@@ -40,32 +46,6 @@ void_fragment=Void Fragment
 void_stone=Void Stone
 demonfish=Demonfish
 demonic_ore=Demonic Ore
-
-// Tiles
-haunted_grass_tile=Haunted Grass
-void_rock_tile=Void Rock
-void_stone_floor=Void Stone Floor
-void_stone_path=Void Stone Path
-void_gravel_tile=Void Gravel Tile
-
-// Objects
-haunted_rock=Void Rock
-deep_void_rock=Deep Void Rock
-void_rock_small=Small Void Rock
-void_rock_large=Large Void Rock
-void_fragment_cluster=Void Fragment Cluster
-void_wall=Void Wall
-void_walltrap=Void Wall Flame Trap
-void_door=Void Door
-haunted_log_bench=Haunted Log Bench
-haunted_grass=Haunted Grass
-haunted_tree=Haunted Tree
-haunted_sapling=Haunted Sapling
-haunted_caveglow=Caveglow (Haunted Biome Mod)
-bloodberry_bush=Bloodberry Bush
-bloodberry_sapling=Bloodberry Sapling
-void_sculpture=Void Sculpture
-void_fragment_sample=Void Fragment Sample
 
 // Weapons
 cursed_fire=Cursed Fire

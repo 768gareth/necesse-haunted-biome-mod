@@ -198,10 +198,10 @@ public class HauntedBiome extends Biome
         stack.addRandomSimplexVeinsBranch("hauntedMudPatches", 2.0F, 0.7F, 0.9F, 2);
         stack.addRandomVeinsBranch("hauntedBloodberries", 0.065F, 8, 10, 0.1F, 0, false);
         stack.addRandomVeinsBranch("hauntedFlowers", 0.2F, 5, 8, 0.4F, 0, false);
-        stack.addRandomVeinsBranch("hauntedCopper", 0.72F, 3, 6, 0.4F, 2, false);
-        stack.addRandomVeinsBranch("hauntedIron", 0.56F, 3, 6, 0.4F, 2, false);
-        stack.addRandomVeinsBranch("hauntedGold", 0.16F, 3, 6, 0.4F, 2, false);
-        stack.addRandomVeinsBranch("hauntedDemonic", 0.12F, 3, 6, 0.4F, 2, false);
+        stack.addRandomVeinsBranch("hauntedCopper", 0.78F, 3, 6, 0.4F, 2, false);
+        stack.addRandomVeinsBranch("hauntedIron", 0.64F, 3, 6, 0.4F, 2, false);
+        stack.addRandomVeinsBranch("hauntedGold", 0.32F, 3, 6, 0.4F, 2, false);
+        stack.addRandomVeinsBranch("hauntedDemonic", 0.24F, 3, 6, 0.4F, 2, false);
 
         stack.addRandomVeinsBranch("hauntedGrass", 2F, 16, 32, 0.8F, 2, false);
         stack.addRandomVeinsBranch("hauntedWildCaveGlow", 0.32F, 4, 8, 0.4F, 2, false);
