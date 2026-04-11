@@ -3,6 +3,7 @@ package HauntedBiome.Registry;
 import java.awt.Color;
 
 import HauntedBiome.Objects.HauntedGrassObject;
+import HauntedBiome.Objects.VoidBrazierObject;
 import HauntedBiome.Objects.VoidFragmentSampleObject;
 import necesse.engine.registries.ObjectRegistry;
 import static necesse.engine.registries.ObjectRegistry.getObject;
@@ -38,10 +39,10 @@ public class RegisterObjects
 
         ObjectRegistry.registerObject("haunted_grass", (GameObject)new HauntedGrassObject(), 2.0F, false, false, true, new String[0]);
         ObjectRegistry.registerObject("haunted_tree", new TreeObject("haunted_tree", "haunted_log", "haunted_sapling", new Color(75, 65, 36), 32, 60, 120, "pineleaves"), 2.0F, false, false, true, new String[0]);
-        ObjectRegistry.registerObject("haunted_sapling", (GameObject)new TreeSaplingObject("haunted_log", "haunted_tree", 1800, 2700, true), 5.0F, true);
+        ObjectRegistry.registerObject("haunted_sapling", (GameObject)new TreeSaplingObject("haunted_log", new Color(128, 128, 128), "haunted_tree", 1800, 2700, true), 5.0F, true);
         ObjectRegistry.registerObject("bloodberry_bush", (new FruitBushObject("bloodberry_bush", "bloodberry_sapling", 900.0F, 1800.0F, "bloodberry", 1.0F, 2, new Color(135, 1, 1))).setDebrisColor(new Color(46, 99, 39)), 2.0F, false, false, true);
         LogBenchObject.registerLogBench("haunted_log_bench", "haunted_log_bench", "haunted_log", ToolType.AXE, new Color(99, 52, 50), 8.0F);
-        CustomWildFlowerObject CustomCaveglow = new CustomWildFlowerObject("wildcaveglow", 0, "caveglowsprout", "caveglow", 4, new Color(85, 182, 91), new String[]{"void_rock_tile"});
+        CustomWildFlowerObject CustomCaveglow = new CustomWildFlowerObject("wildcaveglow", 0, "caveglowsprout", 2, "caveglow", 4, new Color(85, 182, 91), new String[]{"void_rock_tile"});
         CustomCaveglow.lightLevel = 50;
         ObjectRegistry.registerObject("haunted_caveglow", CustomCaveglow, 2.0F, true);
         int HauntedHedgeFenceID = ObjectRegistry.registerObject("haunted_hedge", (GameObject)new FenceObject("haunted_hedge", new Color(74, 97, 69), 12, 10, -26), 2.0F, true);
@@ -57,7 +58,9 @@ public class RegisterObjects
         CandelabraObject HauntedCandelabra = new CandelabraObject("haunted_candelabra", new Color(128, 128, 128), 270.0F, 0.4F, FurnitureCategory);
         HauntedCandelabra.flameHue = 255f;
         HauntedCandelabra.smokeHue = 245f;
-        // ObjectRegistry.registerObject("haunted_candelabra", (GameObject)HauntedCandelabra, 0.4F, true);
+        ObjectRegistry.registerObject("haunted_candelabra", (GameObject)HauntedCandelabra, 0.4F, true);
+        ObjectRegistry.registerObject("void_brazier", new VoidBrazierObject(), 5f, true);
+
         
         ObjectRegistry.registerObject("void_fragment_cluster_small", new CrystalClusterSmallObject("void_fragment_cluster_small", new Color(97, 31, 127), 240.0F, "void_fragment", 0, 1, 1, CrystalClusterCategory), 5f, true);
         CrystalClusterObject.registerCrystalCluster("void_fragment_cluster_large", new Color(97, 31, 127), 247.0F, "void_fragment", 10.0F, true, CrystalClusterCategory);
