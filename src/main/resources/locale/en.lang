@@ -9,7 +9,6 @@ demonic_ore=Demonic Ore
 void_wall=Void Wall
 void_walltrap=Void Wall Flame Trap
 void_door=Void Door
-void_chalice=Void Chalice
 haunted_log_bench=Haunted Log Bench
 haunted_grass=Haunted Grass
 haunted_tree=Haunted Tree
@@ -17,15 +16,21 @@ haunted_sapling=Haunted Sapling
 haunted_caveglow=Caveglow (Haunted Biome Mod)
 bloodberry_bush=Bloodberry Bush
 bloodberry_sapling=Bloodberry Sapling
-painting_eye_of_the_void=Eye of the Void Painting
 void_column=Void Column
 haunted_hedge=Haunted Hedge
 haunted_hedge_gate=Haunted Hedge Gate
 void_stone_fence=Void Stone Fence
 void_stone_fence_gate=Void Stone Fence Gate
-void_sculpture=Void Sculpture
 void_fragment_sample=Void Fragment Sample
 haunted_candelabra=Haunted Candelabra
+haunted_chair=Haunted Chair
+haunted_bench=Haunted Bench
+void_brazier=Void Brazier
+haunted_modular_table=Haunted Modular Table
+void_candle=Void Candle
+haunted_bed=Haunted Bed
+haunted_double_bed=Haunted Double Bed
+haunted_bookshelf=Haunted Bookshelf
 
 [journal]
 haunted_surface=Haunted Surface
@@ -55,18 +60,19 @@ bloodberry=Bloodberry
 bloodberry_pudding=Bloodberry Pudding
 
 // Trinkets
-cursed_amulet=Cursed Amulet
 ruinstone=Ruinstone
+lensmakers_glasses=Lensmaker's Glasses
 
 // Miscellaneous
 haunted_grass_seed=Haunted Grass Seed
 
 [itemtooltip]
-ruinstone_tooltip=Melee critical hits inflict upon your target a stack of Ruin for eight seconds.\nEach stack of Ruin causes the target to take +5% damage, up to a maximum of +25% damage at 5 stacks.
-cursed_amulet_tooltip=Upon killing an enemy with summon damage, gain a stack of Void Blessing for ten seconds,\nincreasing your summons' damage, critical chance, and speed by +10% per stack.\nMaximum of five stacks.
+ruinstone_tooltip=Melee critical hits inflict one stack of Ruin for five seconds.\nEach stack of Ruin causes the target to take +5% damage, up to a maximum of +25% damage at 5 stacks.
+lensmaker_tooltip=Critical hits grant the attacker a stack of 
 
 [buff]
-ruin_debuff=Ruinstone Debuff
+ruin_stack_debuff=+5% damage taken per stack.
+lensmaker_stack_buff=+5% critical hit chance per stack.
 
 [mob]
 zombie_warrior=Zombie Warrior

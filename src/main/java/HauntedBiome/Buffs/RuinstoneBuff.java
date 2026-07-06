@@ -21,7 +21,7 @@ public class RuinstoneBuff extends TrinketBuff
     {
         if (event.damageType == DamageTypeRegistry.MELEE && event.isCrit)
         {
-            event.target.buffManager.addBuff(new ActiveBuff("ruin_debuff", buff.owner, 8f, buff.owner), true);
+            event.target.buffManager.addBuff(new ActiveBuff("ruinstone_stack_debuff", buff.owner, 5f, buff.owner), true);
         }
     }
 

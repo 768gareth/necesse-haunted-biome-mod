@@ -1,5 +1,6 @@
 package HauntedBiome.Registry;
 
+import HauntedBiome.Items.LensmakerGlassesItem;
 import HauntedBiome.Items.RuinstoneItem;
 import necesse.engine.modifiers.ModifierValue;
 import necesse.engine.registries.ItemRegistry;
@@ -19,7 +20,8 @@ public class RegisterItems
     public static void Register()
     {
         // Trinkets
-        ItemRegistry.registerItem("ruinstone", new RuinstoneItem(), 200f, true);
+        ItemRegistry.registerItem("ruinstone", new RuinstoneItem(), 250f, true);
+        ItemRegistry.registerItem("lensmaker_glasses", new LensmakerGlassesItem(), 250f, true);
 
         // Crafting Materials
         ItemRegistry.registerItem("demonic_ore", (new MatItem(500, Item.Rarity.COMMON, new String[0])).setItemCategory(new String[] { "materials", "ore" }), 4.0F, true);
