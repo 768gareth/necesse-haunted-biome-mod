@@ -20,12 +20,13 @@ import necesse.entity.mobs.HumanTexture;
     2. Special preset that uses Void stuff, spawns in a constant supply of enemies via the Void Gateway mob.
     3. Presets representing void cult shrines, temples, etc.
     4. Void Cultist as the basic melee enemy, Void Scholar as the ranged mage enemy. Based off of Runebound enemies so they can open doors.
-    5. Add more furniture types.
+    5. Add more furniture types, more table decorations, perhaps some wall decorations?
     6. A specific flower type as well? 'Death Blossom' perhaps? A nice ominous glowing flower.
     7. Need journal challenges with related reward items as well. A cosmetic set for surface, some utility items for caves/deep caves.
     8. Surface challenges: Find a special rare item that spawns in a specific preset, kill X lost souls,
     9. Cave challenges: Kill a Void Scholar, find a special rare item, defeat a Void Gateway
-    10. Deep cave challenges: Defeat a Void Revenant, find a special rare item, defeat a Deep Void Gateway
+    10. Deep cave challenges: Defeat a Void Revenant, find a special rare item, defeat a Deep Void Gateway.
+    11. 
 
 */
 

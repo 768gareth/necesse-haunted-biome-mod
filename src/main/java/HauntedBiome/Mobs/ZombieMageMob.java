@@ -125,5 +125,4 @@ public class ZombieMageMob extends HostileItemAttackerMob
     {
         return true;
     }
-    
 }

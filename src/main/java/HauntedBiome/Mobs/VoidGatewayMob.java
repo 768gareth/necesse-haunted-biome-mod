@@ -2,7 +2,6 @@ package HauntedBiome.Mobs;
 
 import java.awt.Color;
 import java.awt.Rectangle;
-import java.util.ArrayList;
 import java.util.List;
 
 import necesse.engine.gameLoop.tickManager.TickManager;
@@ -33,6 +32,7 @@ public class VoidGatewayMob extends BossMob
 {
     public static MaxHealthGetter MAX_HEALTH_CAVES = new MaxHealthGetter(1500, 1750, 2000, 2250, 2500);
     public static MaxHealthGetter MAX_HEALTH_DEEP_CAVES = new MaxHealthGetter(4000, 4250, 4500, 4750, 5000);
+    public int spawnedMobCount = 0;
 
     public VoidGatewayMob() 
     {
@@ -88,27 +88,23 @@ public class VoidGatewayMob extends BossMob
     addShadowDrawables(tileList, level, x, y, light, camera);
   }
 
-  public class GatewayBossAINode<T extends Mob> extends AINode<T> {
-    private final ArrayList<Mob> spawnedMobs = new ArrayList<>();
-    
-    protected void onRootSet(AINode<T> root, T mob, Blackboard<T> blackboard) {
-      blackboard.onRemoved(e -> this.spawnedMobs.forEach(Mob::remove));
-    }
-    
+  public class GatewayBossAINode<T extends Mob> extends AINode<T> 
+  { 
     public void init(T mob, Blackboard<T> blackboard) {}
     
     public AINodeResult tick(T mob, Blackboard<T> blackboard) 
     {
-        // TODO: What to add as spawn options for portals?
-        // TODO: Portal mobs must have a link back to their home portal to ensure that spawnedMobs count goes down.
-        // TODO: Portal Demon (melee enemy) with constructor that connects it back to this mob. When it dies, decrement the mobs counter.
-        Mob portalMob = MobRegistry.getMob("portalminion", VoidGatewayMob.this.getLevel());
-        if (spawnedMobs.size() < 5 && GameRandom.globalRandom.getChance(0.05f))
+        VoidGatewayMinionMob portalMob = (VoidGatewayMinionMob)MobRegistry.getMob("void_gateway_minion", VoidGatewayMob.this.getLevel());
+        if (spawnedMobCount < 5 && GameRandom.globalRandom.getChance(0.1f))
         {
+            portalMob.master = VoidGatewayMob.this;
             (VoidGatewayMob.this.getLevel()).entityManager.addMob(portalMob, (VoidGatewayMob.this.getX() + (int)(GameRandom.globalRandom.nextGaussian() * 3.0D)), (VoidGatewayMob.this.getY() + (int)(GameRandom.globalRandom.nextGaussian() * 3.0D)));
-            this.spawnedMobs.add(portalMob);
+            VoidGatewayMob.this.spawnedMobCount = VoidGatewayMob.this.spawnedMobCount + 1;
         }
         return AINodeResult.SUCCESS;
     }
+
+    @Override
+    protected void onRootSet(AINode<T> arg0, T arg1, Blackboard<T> arg2) {}
   }
 }

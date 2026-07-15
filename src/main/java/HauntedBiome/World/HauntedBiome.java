@@ -175,7 +175,7 @@ public class HauntedBiome extends Biome
     @Override
     public int getGenerationBeachTileID() 
     {
-        return TileRegistry.sandID;
+        return TileRegistry.getTileID("mud_sand");
     }
 
     @Override
@@ -195,7 +195,7 @@ public class HauntedBiome extends Biome
     {
         super.initializeGeneratorStack(stack);
         stack.addRandomSimplexVeinsBranch("hauntedTrees", 2.0F, 0.2F, 0.4F, 0);
-        stack.addRandomSimplexVeinsBranch("hauntedMudPatches", 2.0F, 0.7F, 0.9F, 2);
+        stack.addRandomSimplexVeinsBranch("hauntedMudPatches", 2.0F, 0.9F, 0.9F, 1);
         stack.addRandomVeinsBranch("hauntedBloodberries", 0.065F, 8, 10, 0.1F, 0, false);
         stack.addRandomVeinsBranch("hauntedFlowers", 0.2F, 5, 8, 0.4F, 0, false);
         stack.addRandomVeinsBranch("hauntedCopper", 0.78F, 3, 6, 0.4F, 2, false);

@@ -1,6 +1,7 @@
 package HauntedBiome.Registry;
 
 import HauntedBiome.Mobs.VoidCavelingMob;
+import HauntedBiome.Mobs.VoidGatewayMinionMob;
 import HauntedBiome.Mobs.VoidGatewayMob;
 import HauntedBiome.Mobs.ZombieMageMob;
 import HauntedBiome.Mobs.ZombieWarriorMob;
@@ -31,5 +32,6 @@ public class RegisterMobs
 
         // Boss/misc
         MobRegistry.registerMob("void_gateway_boss", VoidGatewayMob.class, true);
+        MobRegistry.registerMob("void_gateway_minion", VoidGatewayMinionMob.class, true);
     }
 }
