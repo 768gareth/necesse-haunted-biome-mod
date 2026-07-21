@@ -32,6 +32,7 @@ public class VoidBrazierObject extends GameObject {
       this.displayMapTooltip = true;
       this.lightLevel = 125;
       this.lightHue = 255f;
+      this.lightSat = 1.0F;
       this.objectHealth = 1;
       this.stackSize = 500;
       this.toolType = ToolType.ALL;

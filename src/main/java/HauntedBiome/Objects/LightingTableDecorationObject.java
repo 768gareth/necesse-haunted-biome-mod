@@ -12,6 +12,7 @@ public class LightingTableDecorationObject extends TableDecorationObject
         super(textureName, mapColor, decorationWidth, decorationHeight);
         this.lightLevel = lightLevel;
         this.lightHue = lightHue;
+        this.lightSat = 1.0F;
     }
     
 }

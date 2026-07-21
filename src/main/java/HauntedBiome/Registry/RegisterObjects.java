@@ -6,6 +6,7 @@ import HauntedBiome.Objects.HauntedGrassObject;
 import HauntedBiome.Objects.LightingTableDecorationObject;
 import HauntedBiome.Objects.VoidBrazierObject;
 import HauntedBiome.Objects.VoidFragmentSampleObject;
+import HauntedBiome.Objects.VoidGrassObject;
 import necesse.engine.registries.ObjectRegistry;
 import static necesse.engine.registries.ObjectRegistry.getObject;
 import static necesse.engine.registries.ObjectRegistry.registerObject;
@@ -61,6 +62,8 @@ public class RegisterObjects
         ObjectRegistry.registerObject("bloodberry_bush", (new FruitBushObject("bloodberry_bush", "bloodberry_sapling", 900.0F, 1800.0F, "bloodberry", 1.0F, 2, new Color(135, 1, 1))).setDebrisColor(new Color(46, 99, 39)), 2.0F, false, false, true);
         LogBenchObject.registerLogBench("haunted_log_bench", "haunted_log_bench", "haunted_log", ToolType.AXE, new Color(99, 52, 50), 8.0F);
         
+        ObjectRegistry.registerObject("void_grass", new VoidGrassObject(), 1f, true);
+
         CustomWildFlowerObject CustomCaveglow = new CustomWildFlowerObject("wildcaveglow", 0, "caveglowsprout", 2, "caveglow", 4, new Color(85, 182, 91), new String[]{"void_rock_tile"});
         CustomCaveglow.lightLevel = 50;
         ObjectRegistry.registerObject("haunted_caveglow", CustomCaveglow, 2.0F, true);
@@ -126,6 +129,9 @@ public class RegisterObjects
         
         ObjectRegistry.registerObject("void_rock_small", new SingleRockSmall(VoidRock, "void_rock_small", new Color(70, 70, 152), RocksCategory), 2.0F, true);
         SingleRockObject.registerSurfaceRock(VoidRock, "void_rock_large", new Color(49, 142, 184), 2.0F, true, RocksCategory);
+
+        ObjectRegistry.registerObject("deep_void_rock_small", new SingleRockSmall(DeepVoidRock, "deep_void_rock_small", new Color(70, 70, 152), RocksCategory), 2.0F, true);
+        SingleRockObject.registerSurfaceRock(DeepVoidRock, "deep_void_rock_large", new Color(49, 142, 184), 2.0F, true, RocksCategory);
         
         ObjectRegistry.registerObject("iron_ore_void_rock", new RockOreObject(VoidRock, "oremask", "ironore", new Color(169, 128, 106), "ironore", RocksCategory), 2.0F, true);
         ObjectRegistry.registerObject("copper_ore_void_rock", new RockOreObject(VoidRock, "oremask", "copperore", new Color(161, 83, 42), "copperore", RocksCategory), 2.0F, true);

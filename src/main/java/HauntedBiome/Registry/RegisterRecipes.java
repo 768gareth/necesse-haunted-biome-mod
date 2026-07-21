@@ -11,10 +11,12 @@ public class RegisterRecipes
     {
         // Crafting Materials
         Recipes.registerModRecipe(new Recipe("demonic_ore", 3, RecipeTechRegistry.FORGE, new Ingredient[] { new Ingredient("demonicbar", 1)}));
-        Recipes.registerModRecipe(new Recipe("voidshard", 1, RecipeTechRegistry.FORGE, new Ingredient[] { new Ingredient("void_fragment", 6)}));
+        Recipes.registerModRecipe(new Recipe("voidshard", 1, RecipeTechRegistry.FORGE, new Ingredient[] { new Ingredient("void_fragment", 4)}));
 
         // Consumables
-        Recipes.registerModRecipe(new Recipe("bloodberry_pudding", 1, RecipeTechRegistry.COOKING_POT, new Ingredient[] { new Ingredient("bloodberry", 4), new Ingredient("sugar", 3), new Ingredient("milk", 2), new Ingredient("lemon", 1)}));
+        Recipes.registerModRecipe(new Recipe("bloodberry_jam", 1, RecipeTechRegistry.COOKING_POT, new Ingredient[] { new Ingredient("bloodberry", 2), new Ingredient("sugar", 1)}));
+        Recipes.registerModRecipe(new Recipe("bloodberry_cake", 1, RecipeTechRegistry.COOKING_POT, new Ingredient[] { new Ingredient("bloodberry", 2), new Ingredient("sugar", 2), new Ingredient("milk", 2), new Ingredient("egg", 1)}));
+        Recipes.registerModRecipe(new Recipe("bloodberry_sundae", 1, RecipeTechRegistry.COOKING_POT, new Ingredient[] { new Ingredient("bloodberry", 3), new Ingredient("milk", 2), new Ingredient("sugar", 2), new Ingredient("bloodberry_jam", 1)}));
         
         // Trinkets
         Recipes.registerModRecipe(new Recipe("ruinstone", 1, RecipeTechRegistry.DEMONIC_WORKSTATION, new Ingredient[] { new Ingredient("demonicbar", 4), new Ingredient("void_fragment", 8)}));
@@ -37,8 +39,8 @@ public class RegisterRecipes
         Recipes.registerModRecipe(new Recipe("void_fragment_cluster_small", 1, RecipeTechRegistry.LANDSCAPING, new Ingredient[] { new Ingredient("void_fragment", 4)}));
         Recipes.registerModRecipe(new Recipe("void_fragment_cluster_large", 1, RecipeTechRegistry.LANDSCAPING, new Ingredient[] { new Ingredient("void_fragment", 8)}));
 
-        Recipes.registerModRecipe(new Recipe("haunted_hedge", 1, RecipeTechRegistry.LANDSCAPING, new Ingredient[] { new Ingredient("haunted_sapling", 1)}));
-        Recipes.registerModRecipe(new Recipe("haunted_hedge_gate", 1, RecipeTechRegistry.LANDSCAPING, new Ingredient[] { new Ingredient("haunted_sapling", 1), new Ingredient("haunted_log", 2)}));
+        Recipes.registerModRecipe(new Recipe("haunted_hedge", 3, RecipeTechRegistry.LANDSCAPING, new Ingredient[] { new Ingredient("haunted_log", 1)}));
+        Recipes.registerModRecipe(new Recipe("haunted_hedge_gate", 1, RecipeTechRegistry.LANDSCAPING, new Ingredient[] { new Ingredient("haunted_log", 1)}));
 
         Recipes.registerModRecipe(new Recipe("void_rock", 1, RecipeTechRegistry.LANDSCAPING, new Ingredient[] { new Ingredient("void_stone", 1)}));
         Recipes.registerModRecipe(new Recipe("iron_ore_void_rock", 1, RecipeTechRegistry.LANDSCAPING, new Ingredient[] { new Ingredient("void_stone", 1), new Ingredient("ironore", 1)}));

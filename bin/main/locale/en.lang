@@ -57,19 +57,22 @@ haunted_floor=Haunted Wood Floor
 mud_sand=Mud Sand
 
 [item]
-// Crafting materials
-haunted_log=Haunted Log
-void_fragment=Void Fragment
-void_stone=Void Stone
-demonfish=Demonfish
-demonic_ore=Demonic Ore
-
 // Weapons
+soul_eater=Soul Eater
+slayer_crossbow=Slayer's Crossbow
 cursed_fire=Cursed Fire
+necromancer_staff=Necromancer Staff
+
+// Armour
+void_sentinel_helmet=Void Sentinel Helmet
+void_sentinel_chestplate=Void Sentinel Chestplate
+void_sentinel_boots=Void Sentinel Boots
 
 // Consumables
 bloodberry=Bloodberry
-bloodberry_pudding=Bloodberry Pudding
+bloodberry_jam=Bloodberry Jam
+bloodberry_cake=Bloodberry Cake
+bloodberry_sundae=Bloodberry Sundae
 
 // Trinkets
 ruinstone=Ruinstone
@@ -79,11 +82,29 @@ void_crystal=Void Crystal
 void_vessel=Void Vessel
 occult_manuscript=Occult Manuscript
 
+// Crafting materials
+haunted_log=Haunted Log
+void_fragment=Void Fragment
+void_stone=Void Stone
+demonfish=Demonfish
+demonic_ore=Demonic Ore
+nightmare_ore=Nightmare Ore
+secret_key_fragment_1=Secret Key Fragment #1
+secret_key_fragment_2=Secret Key Fragment #2
+secret_key_fragment_3=Secret Key Fragment #3
 
 // Miscellaneous
 haunted_grass_seed=Haunted Grass Seed
 
 [itemtooltip]
+// Items
+demonic_ore_tooltip=Can be smelted into Demonic Bars.
+void_fragment_tooltip=Can be combined into Void Shards, or used in other crafting recipes.
+nightmare_ore_tooltip=Can be smelted into Nightmare Bars.\nThe material produces faint, unsettling whispers when held close to the ear.
+
+secret_key_fragment_tooltip=The Secret Key has been separated into three pieces.\nComplete the challenges set for each layer of the Haunted Biome to collect a key piece.\nWhen you have all three pieces, use them to craft the Secret Key!
+secret_key_tooltip=Congratulations on assembling the Secret Key!\nFind the Secret Portal preset, which spawns in the Deep Haunted Caves, and activate the\nportal with this key in your inventory to enter the Secret Level.
+
 // Caves Loot
 ruinstone_tooltip=Melee critical hits inflict one stack of Ruin for five seconds.\nEach stack of Ruin causes the target to take +5% damage, up to a maximum of +25% damage at 5 stacks.
 lensmaker_tooltip=Critical hits grant the attacker a stack of Focus.\nEach stack of Focus increases critical hit chance by +2%, up to a maximum to +20% at 10 stacks.
@@ -104,8 +125,9 @@ void_gateway_boss=Void Gateway
 void_gateway_minion=Void Gateway Minion
 
 [deaths]
-undead1=<victim> was devoured by <attacker>.
-undead2=<victim> was torn apart by <attacker>.
+void_sentinel_1=<victim> was crushed underfoot by <attacker>.
+void_sentinel_2=<victim> was smashed to bits by <attacker>.
+void_revenant_1=<victim> was obliterated by the energies of the Void.
 
 [biome]
 haunted_biome=Haunted

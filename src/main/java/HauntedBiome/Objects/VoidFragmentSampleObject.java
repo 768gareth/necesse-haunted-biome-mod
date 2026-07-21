@@ -25,8 +25,9 @@ public class VoidFragmentSampleObject extends TableDecorationObject
     {
         super("void_fragment_sample", new Color(221, 221, 221), 11, 14, 0, 4);
         this.drawRandom = new GameRandom();
-        this.lightLevel = 70;
+        this.lightLevel = 50;
         this.lightHue = 255;
+        this.lightSat = 1.0F;
         this.holderDrawYOffset = -6;
     }
 

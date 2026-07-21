@@ -19,7 +19,7 @@ public class RuinstoneStackDebuff extends Buff
    @Override
    public void serverTick(ActiveBuff buff) 
    {
-      buff.setModifier(BuffModifiers.INCOMING_DAMAGE_MOD, ((Float) 0.05f * buff.owner.buffManager.getStacks(this)) + 1);
+      buff.setModifier(BuffModifiers.INCOMING_DAMAGE_MOD, ((Float) 0.05f * buff.owner.buffManager.getStacks(this)));
    }
 
     @Override

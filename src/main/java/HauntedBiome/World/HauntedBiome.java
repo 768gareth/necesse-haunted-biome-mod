@@ -139,7 +139,7 @@ public class HauntedBiome extends Biome
     @Override
     public int getGenerationDeepCaveLavaTileID() 
     {
-        return TileRegistry.lavaID;
+        return TileRegistry.ascendedCorruptionID;
     }
 
     @Override
@@ -163,7 +163,7 @@ public class HauntedBiome extends Biome
     @Override
     public int getGenerationDeepCaveTileID() 
     {
-        return TileRegistry.getTileID("void_rock_tile");
+        return TileRegistry.ascendedCorruptionID;
     }
 
     @Override
@@ -203,7 +203,6 @@ public class HauntedBiome extends Biome
         stack.addRandomVeinsBranch("hauntedGold", 0.32F, 3, 6, 0.4F, 2, false);
         stack.addRandomVeinsBranch("hauntedDemonic", 0.24F, 3, 6, 0.4F, 2, false);
 
-        stack.addRandomVeinsBranch("hauntedGrass", 2F, 16, 32, 0.8F, 2, false);
         stack.addRandomVeinsBranch("hauntedWildCaveGlow", 0.32F, 4, 8, 0.4F, 2, false);
         stack.addRandomVeinsBranch("hauntedDeepCopper", 0.08F, 3, 6, 0.4F, 2, false);
         stack.addRandomVeinsBranch("hauntedDeepIron", 0.4F, 3, 6, 0.4F, 2, false);
@@ -278,11 +277,11 @@ public class HauntedBiome extends Biome
                 .placeObjectForced("life_quartz_deep_void_rock");
         stack.startPlaceOnVein(this, region, random, "hauntedDemonic").onlyOnObject(RockID)
                 .placeObjectForced("demonic_ore_deep_void_rock");
-        stack.startPlace(this, region, random).chance(0.008).placeObject("void_rock_small");
-        stack.startPlace(this, region, random).chance(0.006).placeObject("void_rock_large");
+        stack.startPlace(this, region, random).onlyOnTile(TileRegistry.ascendedCorruptionID).chance(0.4).placeObject("void_grass");
+        stack.startPlace(this, region, random).chance(0.008).placeObject("deep_void_rock_small");
+        stack.startPlace(this, region, random).chance(0.006).placeObject("deep_void_rock_large");
         stack.startPlace(this, region, random).chance(0.0015).placeObject("void_fragment_cluster_small");
         stack.startPlace(this, region, random).chance(0.001).placeObject("void_fragment_cluster_large");
-        stack.startPlace(this, region, random).chance(0.024999999329447746D).placeCrates(new String[] { "crate" });
         region.updateLiquidManager();
     }
 
@@ -298,10 +297,7 @@ public class HauntedBiome extends Biome
     @Override
     public RandomCaveChestRoom getNewDeepCaveChestRoomPreset(GameRandom random, AtomicInteger lootRotation) 
     {
-        RandomCaveChestRoom chestRoom = new RandomCaveChestRoom(random, HauntedLootTables.DeepHauntedCavesChest,
-                lootRotation, RegisterChestRoomSets.HauntedBiomeSet);
-        chestRoom.replaceTile("stonefloor", "void_stone_floor");
-        return chestRoom;
+        return null;
     }
 
     // TODO: Need a custom loot table for the ruins chests.
@@ -318,11 +314,7 @@ public class HauntedBiome extends Biome
     @Override
     public CaveRuins getNewDeepCaveRuinsPreset(GameRandom random, AtomicInteger lootRotation) 
     {
-        FurnitureSet furnitureSet = FurnitureSet.dungeon;
-        String floorStringID = "void_stone_floor";
-        return ((CaveRuins.CaveRuinGetter) random.getOneOf(CaveRuins.caveRuinGetters))
-                .get(random, RegisterWallSets.VoidWall, furnitureSet, floorStringID,
-                        LootTablePresets.plainsDeepCaveRuinsChest, lootRotation);
+        return null;
     }
 
     @Override

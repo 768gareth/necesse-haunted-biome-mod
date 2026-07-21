@@ -1,5 +1,8 @@
 package HauntedBiome.Registry;
 
+import HauntedBiome.Items.Armour.VoidSentinelBootsItem;
+import HauntedBiome.Items.Armour.VoidSentinelChestplateItem;
+import HauntedBiome.Items.Armour.VoidSentinelHelmetItem;
 import HauntedBiome.Items.LensmakerGlassesItem;
 import HauntedBiome.Items.RuinstoneItem;
 import necesse.engine.modifiers.ModifierValue;
@@ -19,18 +22,28 @@ public class RegisterItems
     @SuppressWarnings({ "rawtypes", "unchecked" })
     public static void Register()
     {
+        // Weapons
+
+        // Armour
+        ItemRegistry.registerItem("void_sentinel_helmet", new VoidSentinelHelmetItem(), 100, true);
+        ItemRegistry.registerItem("void_sentinel_chestplate", new VoidSentinelChestplateItem(), 150, true);
+        ItemRegistry.registerItem("void_sentinel_boots", new VoidSentinelBootsItem(), 100, true);
+
         // Trinkets
         ItemRegistry.registerItem("ruinstone", new RuinstoneItem(), 250f, true);
         ItemRegistry.registerItem("lensmaker_glasses", new LensmakerGlassesItem(), 250f, true);
 
         // Crafting Materials
-        ItemRegistry.registerItem("demonic_ore", (new MatItem(500, Item.Rarity.COMMON, new String[0])).setItemCategory(new String[] { "materials", "ore" }), 4.0F, true);
-        ItemRegistry.registerItem("void_fragment", (new MatItem(500, Rarity.UNCOMMON, new String[0])).setItemCategory(new String[]{"materials", "mobdrops"}), 10.0F, true);
+        ItemRegistry.registerItem("demonic_ore", (new MatItem(500, Item.Rarity.COMMON, "demonic_ore_tooltip")).setItemCategory(new String[] { "materials", "ore" }), 4.0F, true);
+        ItemRegistry.registerItem("void_fragment", (new MatItem(500, Rarity.UNCOMMON, "void_fragment_tooltip")).setItemCategory(new String[]{"materials", "mobdrops"}), 10.0F, true);
+        ItemRegistry.registerItem("nightmare_ore", (new MatItem(500, Item.Rarity.RARE, "nightmare_ore_tooltip")).setItemCategory(new String[] { "materials", "ore" }), 8.0F, true);
         ItemRegistry.registerItem("void_stone", new StonePlaceableItem(999), 0.1F, true);
         ItemRegistry.registerItem("haunted_log", (new MatItem(500, new String[] { "anylog" })).setItemCategory(new String[] { "materials", "logs" }), 2.0F, true);
         ItemRegistry.registerItem("demonfish", (new FishItem(250, Rarity.UNCOMMON, new String[0])).setItemCategory(new String[]{"materials", "specialfish"}), 18.0F, true);
         ItemRegistry.registerItem("bloodberry", (new FoodConsumableItem(250, Rarity.NORMAL, Settler.FOOD_SIMPLE, 10, 240, new ModifierValue[]{new ModifierValue(BuffModifiers.MANA_USAGE, -0.05f)})).spoilDuration(480).addGlobalIngredient(new String[]{"anycompostable", "anyfruit"}).setItemCategory(new String[]{"consumable", "rawfood"}), 4.0F, true);
-        ItemRegistry.registerItem("bloodberry_pudding", (new FoodConsumableItem(250, Rarity.RARE, Settler.FOOD_GOURMET, 25, 480, new ModifierValue[]{new ModifierValue(BuffModifiers.MAGIC_CRIT_DAMAGE, 0.20f), new ModifierValue(BuffModifiers.MAGIC_CRIT_CHANCE, 0.10f)})).spoilDuration(240).addGlobalIngredient(new String[]{"anycompostable"}).setItemCategory(new String[]{"consumable"}), 10.0F, true);
+        ItemRegistry.registerItem("bloodberry_jam", (new FoodConsumableItem(250, Rarity.UNCOMMON, Settler.FOOD_FINE, 15, 240, new ModifierValue[]{new ModifierValue(BuffModifiers.MANA_USAGE, -0.10f)})).spoilDuration(360).addGlobalIngredient(new String[]{"anycompostable"}).setItemCategory(new String[]{"consumable"}), 8.0F, true);
+        ItemRegistry.registerItem("bloodberry_sundae", (new FoodConsumableItem(250, Rarity.RARE, Settler.FOOD_GOURMET, 25, 600, new ModifierValue[]{new ModifierValue(BuffModifiers.MANA_USAGE, -0.25f)})).spoilDuration(240).addGlobalIngredient(new String[]{"anycompostable"}).setItemCategory(new String[]{"consumable"}), 10.0F, true);
+        ItemRegistry.registerItem("bloodberry_cake", (new FoodConsumableItem(250, Rarity.RARE, Settler.FOOD_GOURMET, 25, 480, new ModifierValue[]{new ModifierValue(BuffModifiers.MAX_MANA_FLAT, 50), new ModifierValue(BuffModifiers.MAGIC_CRIT_CHANCE, 0.10f)})).spoilDuration(240).addGlobalIngredient(new String[]{"anycompostable"}).setItemCategory(new String[]{"consumable"}), 10.0F, true);
         
         // Miscellaneous
         ItemRegistry.registerItem("haunted_grass_seed", new GrassSeedItem("haunted_grass_tile"), 2.0F, true);
