@@ -27,7 +27,7 @@ public class RegisterJournalChallenges
         // Deep Caves Challenges
         int DEFEAT_DEEP_VOID_GATEWAY_ID;
         int ACQUIRE_DEEP_HAUNTED_CAVES_TRINKET_ID;
-        int TOUCH_VOID_RIFT_WHILE_IMMUNE_ID;
+        int COLLECT_NIGHTMARE_ORE;
 
         
     }

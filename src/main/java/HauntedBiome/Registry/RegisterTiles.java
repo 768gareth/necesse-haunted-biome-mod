@@ -5,6 +5,7 @@ import java.awt.Color;
 import HauntedBiome.Tiles.HauntedGrassTile;
 import HauntedBiome.Tiles.MudSandTile;
 import HauntedBiome.Tiles.VoidGravelSpecialTile;
+import HauntedBiome.Tiles.VoidRiftTile;
 import HauntedBiome.Tiles.VoidRockTile;
 import necesse.engine.registries.TileRegistry;
 import necesse.level.gameTile.GameTile;
@@ -23,6 +24,7 @@ public class RegisterTiles
         TileRegistry.registerTile("void_gravel_tile", (GameTile) new VoidGravelSpecialTile(), 0.0F, true);
         TileRegistry.registerTile("haunted_floor", (GameTile)new SimpleTiledFloorTile("haunted_floor", new Color(50, 53, 43)), -1.0F, true);
         TileRegistry.registerTile("mud_sand", (GameTile)new MudSandTile(), 0.0F, true);
+        TileRegistry.registerTile("void_rift", (GameTile)new VoidRiftTile(), 1f, true);
         // TODO: TileRegistry.registerTile("pale_water", (GameTile)new WaterTile(), 20.0F, true);
     }
 }

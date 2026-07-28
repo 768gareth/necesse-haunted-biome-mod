@@ -7,6 +7,7 @@ import HauntedBiome.Objects.LightingTableDecorationObject;
 import HauntedBiome.Objects.VoidBrazierObject;
 import HauntedBiome.Objects.VoidFragmentSampleObject;
 import HauntedBiome.Objects.VoidGrassObject;
+import HauntedBiome.Objects.VoidMonolithObject;
 import necesse.engine.registries.ObjectRegistry;
 import static necesse.engine.registries.ObjectRegistry.getObject;
 import static necesse.engine.registries.ObjectRegistry.registerObject;
@@ -14,11 +15,11 @@ import necesse.inventory.item.toolItem.ToolType;
 import necesse.level.gameObject.ColumnObject;
 import necesse.level.gameObject.CrystalClusterObject;
 import necesse.level.gameObject.CrystalClusterSmallObject;
-import necesse.level.gameObject.CustomWildFlowerObject;
 import necesse.level.gameObject.FenceGateObject;
 import necesse.level.gameObject.FenceObject;
 import necesse.level.gameObject.FruitBushObject;
 import necesse.level.gameObject.GameObject;
+import necesse.level.gameObject.RandomVaseObject;
 import necesse.level.gameObject.RockObject;
 import necesse.level.gameObject.RockOreObject;
 import necesse.level.gameObject.SingleRockObject;
@@ -60,13 +61,9 @@ public class RegisterObjects
         ObjectRegistry.registerObject("haunted_tree", new TreeObject("haunted_tree", "haunted_log", "haunted_sapling", new Color(75, 65, 36), 32, 60, 120, "pineleaves"), 2.0F, false, false, true, new String[0]);
         ObjectRegistry.registerObject("haunted_sapling", (GameObject)new TreeSaplingObject("haunted_log", new Color(128, 128, 128), "haunted_tree", 1800, 2700, true), 5.0F, true);
         ObjectRegistry.registerObject("bloodberry_bush", (new FruitBushObject("bloodberry_bush", "bloodberry_sapling", 900.0F, 1800.0F, "bloodberry", 1.0F, 2, new Color(135, 1, 1))).setDebrisColor(new Color(46, 99, 39)), 2.0F, false, false, true);
-        LogBenchObject.registerLogBench("haunted_log_bench", "haunted_log_bench", "haunted_log", ToolType.AXE, new Color(99, 52, 50), 8.0F);
+        LogBenchObject.registerLogBench("haunted_log_bench", "haunted_log_bench", "haunted_log", ToolType.ALL, new Color(99, 52, 50), 8.0F);
         
         ObjectRegistry.registerObject("void_grass", new VoidGrassObject(), 1f, true);
-
-        CustomWildFlowerObject CustomCaveglow = new CustomWildFlowerObject("wildcaveglow", 0, "caveglowsprout", 2, "caveglow", 4, new Color(85, 182, 91), new String[]{"void_rock_tile"});
-        CustomCaveglow.lightLevel = 50;
-        ObjectRegistry.registerObject("haunted_caveglow", CustomCaveglow, 2.0F, true);
 
         ObjectRegistry.registerObject("void_candle", (new TorchObject("void_candle", ToolType.ALL, new Color(255, 255, 152), 275.0F, 0.2F, true, 4)).setWallPlaceObjectStringID("void_wall_candle"), 5.0F, true);
         ObjectRegistry.registerObject("void_wall_candle", (new WallCandleObject()).setItemDroppedStringID("void_candle"), 5.0F, false);
@@ -84,6 +81,7 @@ public class RegisterObjects
         ObjectRegistry.registerObject("haunted_desk", new DeskObject("haunted_desk", HauntedColour, FurnitureCategory), 10f, true);
         ObjectRegistry.registerObject("haunted_clock", new ClockObject("haunted_clock", HauntedColour, FurnitureCategory), 10f, true);
         ObjectRegistry.registerObject("haunted_dresser", new DresserObject("haunted_dresser", HauntedColour, FurnitureCategory), 10f, true);
+        ObjectRegistry.registerObject("void_vase", new RandomVaseObject("void_vase"), 5f, true);
 
         ObjectRegistry.registerObject("occult_books_1", (GameObject)new TableDecorationObject("occult_books_1", new Color(50, 50, 50), 14, 14, 0, 2), 5.0F, true);
         ObjectRegistry.registerObject("occult_books_2", (GameObject)new TableDecorationObject("occult_books_2", new Color(50, 50, 50), 14, 14, 0, 2), 5.0F, true);
@@ -93,6 +91,8 @@ public class RegisterObjects
         VoidCandles.flameHue = 275f;
         VoidCandles.smokeHue = 250f;
         registerObject("void_candle_set", (GameObject)VoidCandles, 10.0F, true);
+
+        VoidMonolithObject.registerAncientPillar("void_monolith", true);
 
         int HauntedHedgeFenceID = ObjectRegistry.registerObject("haunted_hedge", (GameObject)new FenceObject("haunted_hedge", new Color(74, 97, 69), 12, 10, -26), 2.0F, true);
         FenceGateObject.registerGatePair(HauntedHedgeFenceID, "haunted_hedge_gate", "haunted_hedge_gate", new Color(74, 97, 69), 12, 10, 4.0F);
@@ -144,5 +144,6 @@ public class RegisterObjects
         ObjectRegistry.registerObject("tungsten_ore_deep_void_rock", new RockOreObject(DeepVoidRock, "oremask", "tungstenore", new Color(40, 49, 57), "tungstenore", RocksCategory), 2.0F, true);
         ObjectRegistry.registerObject("life_quartz_deep_void_rock", new RockOreObject(DeepVoidRock, "oremask", "lifequartzore", new Color(180, 50, 61), "lifequartz", 1, 1, 1, RocksCategory), 2.0F, true);
         ObjectRegistry.registerObject("demonic_ore_deep_void_rock", new RockOreObject(DeepVoidRock, "oremask", "demonic_ore", new Color(88, 0, 108), "demonic_ore", RocksCategory), 2.0F, true);
+        ObjectRegistry.registerObject("nightmare_ore_deep_void_rock", new RockOreObject(DeepVoidRock, "oremask", "nightmare_ore", new Color(88, 0, 108), "nightmare_ore", RocksCategory), 2.0F, true);
     }
 }

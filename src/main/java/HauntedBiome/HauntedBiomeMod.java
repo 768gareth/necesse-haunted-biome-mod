@@ -1,5 +1,7 @@
 package HauntedBiome;
 
+import HauntedBiome.Mobs.DeepCaves.VoidArcanistMob;
+import HauntedBiome.Mobs.DeepCaves.VoidSentinelMob;
 import HauntedBiome.Mobs.VoidCavelingMob;
 import HauntedBiome.Registry.RegisterBuffs;
 import HauntedBiome.Registry.RegisterItems;
@@ -12,6 +14,7 @@ import HauntedBiome.Registry.RegisterWorldPresets;
 import HauntedBiome.World.HauntedBiome;
 import necesse.engine.modLoader.annotations.ModEntry;
 import necesse.engine.registries.BiomeRegistry;
+import necesse.engine.registries.MobRegistry;
 import static necesse.engine.registries.MobRegistry.Textures.fromFile;
 import necesse.entity.mobs.HumanTexture;
 
@@ -43,8 +46,15 @@ import necesse.entity.mobs.HumanTexture;
     19. STEAL A BUNCH OF IDEAS FROM THE VOID THING FROM ROR2, THAT'S BIG!
     20. Glowing void grass!
     21. 3 Void Key Fragments make 1 Abyssal Key, which opens the Abyss Portal that leads to the 'deepest, darkest part of the Void'
+    22.
 
 */
+
+/* TODO:
+    - Growth sections are not viable. What to replace them with? Tall grasses?
+    - Implement demonic street lamp/double street lamp.
+    - 
+ */
 
 @ModEntry
 public class HauntedBiomeMod 
@@ -67,6 +77,8 @@ public class HauntedBiomeMod
     public void initResources() 
     {
         VoidCavelingMob.TextureTemp = new HumanTexture(fromFile("void_caveling"), fromFile("void_caveling_arms_back"), fromFile("void_caveling_arms_front"));
+        VoidSentinelMob.texture = MobRegistry.Textures.humanTexture("void_sentinel", "void_sentinel_arms");
+        VoidArcanistMob.texture = MobRegistry.Textures.humanTexture("void_arcanist", "void_sentinel_arms");
     }
 
     public void postInit() 

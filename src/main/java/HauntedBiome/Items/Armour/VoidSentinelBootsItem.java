@@ -4,6 +4,7 @@ import necesse.engine.modifiers.ModifierValue;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.inventory.InventoryItem;
+import necesse.inventory.item.Item;
 import necesse.inventory.item.armorItem.ArmorModifiers;
 import necesse.inventory.item.armorItem.BootsArmorItem;
 import necesse.inventory.item.upgradeUtils.FloatUpgradeValue;
@@ -18,6 +19,7 @@ public class VoidSentinelBootsItem extends BootsArmorItem
     public VoidSentinelBootsItem() 
     {
         super(18, 350, "void_sentinel_boots", LootTablePresets.feetArmor);
+        this.rarity = Item.Rarity.EPIC;
     }
 
     public ArmorModifiers getArmorModifiers(InventoryItem item, Mob mob) 

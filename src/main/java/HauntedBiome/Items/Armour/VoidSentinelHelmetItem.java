@@ -6,6 +6,7 @@ import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.Item;
+import necesse.inventory.item.armorItem.ArmorItem;
 import necesse.inventory.item.armorItem.ArmorModifiers;
 import necesse.inventory.item.armorItem.SetHelmetArmorItem;
 import necesse.inventory.lootTable.presets.ArmorSetsLootTable;
@@ -13,7 +14,6 @@ import necesse.inventory.lootTable.presets.HeadArmorLootTable;
 
 public class VoidSentinelHelmetItem extends SetHelmetArmorItem
 {
-
     public VoidSentinelHelmetItem() 
     {
         super
@@ -28,6 +28,7 @@ public class VoidSentinelHelmetItem extends SetHelmetArmorItem
             "void_sentinel_boots", 
             "void_sentinel_set_bonus"
         );
+        this.hairDrawOptions = ArmorItem.HairDrawMode.NO_HEAD;
     }
 
     public ArmorModifiers getArmorModifiers(InventoryItem item, Mob mob) 

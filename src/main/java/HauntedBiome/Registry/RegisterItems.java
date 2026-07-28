@@ -1,5 +1,8 @@
 package HauntedBiome.Registry;
 
+import HauntedBiome.Items.Armour.AncientVoidCultBootsItem;
+import HauntedBiome.Items.Armour.AncientVoidCultHoodItem;
+import HauntedBiome.Items.Armour.AncientVoidCultRobeItem;
 import HauntedBiome.Items.Armour.VoidSentinelBootsItem;
 import HauntedBiome.Items.Armour.VoidSentinelChestplateItem;
 import HauntedBiome.Items.Armour.VoidSentinelHelmetItem;
@@ -25,9 +28,13 @@ public class RegisterItems
         // Weapons
 
         // Armour
-        ItemRegistry.registerItem("void_sentinel_helmet", new VoidSentinelHelmetItem(), 100, true);
-        ItemRegistry.registerItem("void_sentinel_chestplate", new VoidSentinelChestplateItem(), 150, true);
-        ItemRegistry.registerItem("void_sentinel_boots", new VoidSentinelBootsItem(), 100, true);
+        ItemRegistry.registerItem("void_sentinel_helmet", new VoidSentinelHelmetItem(), 100f, true);
+        ItemRegistry.registerItem("void_sentinel_chestplate", new VoidSentinelChestplateItem(), 150f, true);
+        ItemRegistry.registerItem("void_sentinel_boots", new VoidSentinelBootsItem(), 100f, true);
+
+        ItemRegistry.registerItem("ancient_void_cult_hood", new AncientVoidCultHoodItem(), 100f, true);
+        ItemRegistry.registerItem("ancient_void_cult_robe", new AncientVoidCultRobeItem(), 125f, true);
+        ItemRegistry.registerItem("ancient_void_cult_boots", new AncientVoidCultBootsItem(), 100f, true);
 
         // Trinkets
         ItemRegistry.registerItem("ruinstone", new RuinstoneItem(), 250f, true);

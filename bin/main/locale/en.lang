@@ -41,6 +41,17 @@ void_display=Void Crystal Display
 occult_flask=Occult Flask
 void_candle=Void Candle
 haunted_flower_1=Haunted Flower #1
+void_vase=Void Vase
+void_thorns=Void Thorns
+haunted_dresser=Haunted Dresser
+haunted_clock=Haunted Clock
+void_candle_set=Void Candle Set
+haunted_walltrap=Haunted Wall Trap
+nightmare_ore=Nightmare Ore
+haunted_wall=Haunted Wall
+haunted_door=Haunted Door
+void_grass=Void Grass
+void_monolith=Void Monolith
 
 [journal]
 haunted_surface=Haunted Surface
@@ -55,6 +66,7 @@ void_stone_path=Void Stone Path
 void_gravel_tile=Void Gravel Tile
 haunted_floor=Haunted Wood Floor
 mud_sand=Mud Sand
+void_rift=Void Rift
 
 [item]
 // Weapons
@@ -67,6 +79,9 @@ necromancer_staff=Necromancer Staff
 void_sentinel_helmet=Void Sentinel Helmet
 void_sentinel_chestplate=Void Sentinel Chestplate
 void_sentinel_boots=Void Sentinel Boots
+ancient_void_cult_hood=Ancient Void Cult Hood
+ancient_void_cult_robe=Ancient Void Cult Robe
+ancient_void_cult_boots=Ancient Void Cult Boots
 
 // Consumables
 bloodberry=Bloodberry
@@ -100,7 +115,7 @@ haunted_grass_seed=Haunted Grass Seed
 // Items
 demonic_ore_tooltip=Can be smelted into Demonic Bars.
 void_fragment_tooltip=Can be combined into Void Shards, or used in other crafting recipes.
-nightmare_ore_tooltip=Can be smelted into Nightmare Bars.\nThe material produces faint, unsettling whispers when held close to the ear.
+nightmare_ore_tooltip=Can be smelted into Nightmare Bars.\nThe material produces faint, unsettling\nwhispers when held close to the ear.
 
 secret_key_fragment_tooltip=The Secret Key has been separated into three pieces.\nComplete the challenges set for each layer of the Haunted Biome to collect a key piece.\nWhen you have all three pieces, use them to craft the Secret Key!
 secret_key_tooltip=Congratulations on assembling the Secret Key!\nFind the Secret Portal preset, which spawns in the Deep Haunted Caves, and activate the\nportal with this key in your inventory to enter the Secret Level.
@@ -114,13 +129,28 @@ void_crystal_tooltip=
 void_vessel_tooltip=A fragile container for the unstable energies of the Void.\nUpon landing a hit on an enemy, grants a stack of Corruption, increasing damage dealt\nby +10% per stack, at the cost of +5% damage taken per stack, at a maximum\nof 10 stacks.
 occult_manuscript_tooltip=The most terrible secrets of the Void Cult can be found in this ancient book.\nKilling an enemy with this trinket equipped causes them to explode in a burst of void energy.\nEnemies caught within this blast take damage, and suffer +10% damage taken for 10 seconds.
 
+// Miscellaneous
+void_rift_tip=A tear in the fabric of reality itself, exposing this world to the Void.\nContact with this tile deals massive damage to anything in contact with it, unless it is otherwise immune.\nOnly available in creative mode.
 
 [buff]
 ruin_stack_debuff=+5% damage taken per stack.
 lensmaker_stack_buff=+5% critical hit chance per stack.
 
 [mob]
+// Critters
 void_caveling=Void Caveling
+
+// Surface
+haunted_skeleton=Skeleton
+
+// Caves
+void_cultist=Void Cultist
+
+// Deep Caves
+void_sentinel=Void Sentinel
+void_arcanist=Void Arcanist
+
+// Boss/Miscellaneous
 void_gateway_boss=Void Gateway
 void_gateway_minion=Void Gateway Minion
 
@@ -128,6 +158,7 @@ void_gateway_minion=Void Gateway Minion
 void_sentinel_1=<victim> was crushed underfoot by <attacker>.
 void_sentinel_2=<victim> was smashed to bits by <attacker>.
 void_revenant_1=<victim> was obliterated by the energies of the Void.
+void_thorns_1=<victim> was shredded to pieces by the Void.
 
 [biome]
 haunted_biome=Haunted

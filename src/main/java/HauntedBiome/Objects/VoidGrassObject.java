@@ -14,7 +14,7 @@ public class VoidGrassObject extends GrassObject
     {
       super("void_grass", 2);
       this.mapColor = new Color(75, 0, 99);
-      this.lightLevel = 60;
+      this.lightLevel = 75;
       this.lightSat = 1.0F;
       this.lightHue = 310f;
     }

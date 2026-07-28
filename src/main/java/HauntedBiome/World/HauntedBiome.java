@@ -35,9 +35,9 @@ public class HauntedBiome extends Biome
     public static FishingLootTable SurfaceFish = new FishingLootTable().addAll(Biome.defaultSurfaceFish);
     public static FishingLootTable CaveFish = new FishingLootTable().addAll(Biome.defaultCaveFish).addWater(20, "demonfish");
     public static FishingLootTable DeepCaveFish = new FishingLootTable().addAll(Biome.defaultCaveFish).addWater(20, "demonfish");
-    public static MobSpawnTable SurfaceMobs = new MobSpawnTable().add(60, "zombie_warrior").add(40, "zombie_mage");
-    public static MobSpawnTable CaveMobs = new MobSpawnTable().add(60, "zombie_warrior").add(40, "zombie_mage");
-    public static MobSpawnTable DeepCaveMobs = new MobSpawnTable().add(60, "zombie_warrior").add(40, "zombie_mage");;
+    public static MobSpawnTable SurfaceMobs = new MobSpawnTable().add(100, "haunted_skeleton");
+    public static MobSpawnTable CaveMobs = new MobSpawnTable().add(75, "void_cultist");
+    public static MobSpawnTable DeepCaveMobs = new MobSpawnTable().add(75, "void_sentinel").add(25, "void_arcanist");
     public static MobSpawnTable SurfaceCritters = new MobSpawnTable().include(Biome.defaultSurfaceCritters).add(100, "spider").add(100, "mouse");
     public static MobSpawnTable CaveCritters = new MobSpawnTable().include(Biome.defaultCaveCritters).add(50, "void_caveling");
     public static MobSpawnTable DeepCaveCritters = new MobSpawnTable().include(Biome.defaultCaveCritters).add(10, "croppleronion").add(50, "void_caveling");
@@ -210,6 +210,7 @@ public class HauntedBiome extends Biome
         stack.addRandomVeinsBranch("hauntedDeepTungsten", 0.32F, 3, 6, 0.4F, 2, false);
         stack.addRandomVeinsBranch("hauntedDeepLifeQuartz", 0.08F, 3, 6, 0.4F, 2, false);
         stack.addRandomVeinsBranch("hauntedDeepObsidian", 0.4F, 5, 10, 0.4F, 2, false);
+        stack.addRandomVeinsBranch("hauntedDeepNightmare", 0.24F, 3, 6, 0.4F, 2, false);
     }
 
     @Override
@@ -260,9 +261,6 @@ public class HauntedBiome extends Biome
     public void generateRegionDeepCaveTerrain(Region region, BiomeGeneratorStack stack, GameRandom random) {
         super.generateRegionDeepCaveTerrain(region, stack, random);
         int RockID = ObjectRegistry.getObjectID("deep_void_rock");
-        stack.startPlaceOnVein(this, region, random, "hauntedWildCaveGlow")
-                .onlyOnTile(TileRegistry.getTileID("void_rock_tile")).chance(0.20000000298023224D)
-                .placeObject("haunted_caveglow");
         stack.startPlaceOnVein(this, region, random, "hauntedDeepCopper").onlyOnObject(RockID)
                 .placeObjectForced("copper_ore_deep_void_rock");
         stack.startPlaceOnVein(this, region, random, "hauntedDeepIron").onlyOnObject(RockID)
@@ -277,11 +275,14 @@ public class HauntedBiome extends Biome
                 .placeObjectForced("life_quartz_deep_void_rock");
         stack.startPlaceOnVein(this, region, random, "hauntedDemonic").onlyOnObject(RockID)
                 .placeObjectForced("demonic_ore_deep_void_rock");
-        stack.startPlace(this, region, random).onlyOnTile(TileRegistry.ascendedCorruptionID).chance(0.4).placeObject("void_grass");
+        stack.startPlaceOnVein(this, region, random, "hauntedDeepNightmare").onlyOnObject(RockID)
+                .placeObjectForced("nightmare_ore_deep_void_rock");
+        stack.startPlace(this, region, random).onlyOnTile(TileRegistry.ascendedCorruptionID).chance(0.3).placeObject("void_grass");
         stack.startPlace(this, region, random).chance(0.008).placeObject("deep_void_rock_small");
         stack.startPlace(this, region, random).chance(0.006).placeObject("deep_void_rock_large");
         stack.startPlace(this, region, random).chance(0.0015).placeObject("void_fragment_cluster_small");
         stack.startPlace(this, region, random).chance(0.001).placeObject("void_fragment_cluster_large");
+        stack.startPlace(this, region, random).chance(0.024999999329447746D).placeCrates(new String[] { "void_vase" });
         region.updateLiquidManager();
     }
 
