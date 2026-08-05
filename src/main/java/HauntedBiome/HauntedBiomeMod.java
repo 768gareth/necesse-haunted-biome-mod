@@ -51,9 +51,8 @@ import necesse.entity.mobs.HumanTexture;
 */
 
 /* TODO:
-    - Growth sections are not viable. What to replace them with? Tall grasses?
     - Implement demonic street lamp/double street lamp.
-    - 
+    - Add the weapons
  */
 
 @ModEntry

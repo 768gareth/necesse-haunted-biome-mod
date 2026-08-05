@@ -75,6 +75,11 @@ slayer_crossbow=Slayer's Crossbow
 cursed_fire=Cursed Fire
 necromancer_staff=Necromancer Staff
 
+// Tools
+nightmare_pickaxe=Nightmare Pickaxe
+nightmare_axe=Nightmare Axe
+nightmare_shovel=Nightmare Shovel
+
 // Armour
 void_sentinel_helmet=Void Sentinel Helmet
 void_sentinel_chestplate=Void Sentinel Chestplate
@@ -104,21 +109,21 @@ void_stone=Void Stone
 demonfish=Demonfish
 demonic_ore=Demonic Ore
 nightmare_ore=Nightmare Ore
-secret_key_fragment_1=Secret Key Fragment #1
-secret_key_fragment_2=Secret Key Fragment #2
-secret_key_fragment_3=Secret Key Fragment #3
 
 // Miscellaneous
 haunted_grass_seed=Haunted Grass Seed
 
 [itemtooltip]
-// Items
+// Crafting Materials
 demonic_ore_tooltip=Can be smelted into Demonic Bars.
 void_fragment_tooltip=Can be combined into Void Shards, or used in other crafting recipes.
 nightmare_ore_tooltip=Can be smelted into Nightmare Bars.\nThe material produces faint, unsettling\nwhispers when held close to the ear.
+nightmare_bar_tooltip=These bars feel freezing cold to the touch...
 
-secret_key_fragment_tooltip=The Secret Key has been separated into three pieces.\nComplete the challenges set for each layer of the Haunted Biome to collect a key piece.\nWhen you have all three pieces, use them to craft the Secret Key!
-secret_key_tooltip=Congratulations on assembling the Secret Key!\nFind the Secret Portal preset, which spawns in the Deep Haunted Caves, and activate the\nportal with this key in your inventory to enter the Secret Level.
+// Weapons
+
+// Tools
+nightmare_pickaxe_tooltip=Can mine Amber in the Deep Plains Caves.
 
 // Caves Loot
 ruinstone_tooltip=Melee critical hits inflict one stack of Ruin for five seconds.\nEach stack of Ruin causes the target to take +5% damage, up to a maximum of +25% damage at 5 stacks.

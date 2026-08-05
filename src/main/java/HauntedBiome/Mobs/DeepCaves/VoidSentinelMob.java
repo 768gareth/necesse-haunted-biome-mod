@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.function.Supplier;
 
 import necesse.engine.gameLoop.tickManager.TickManager;
-import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.HumanTexture;
 import necesse.entity.mobs.MaskShaderOptions;
 import necesse.entity.mobs.Mob;
@@ -49,7 +48,7 @@ public class VoidSentinelMob extends HostileItemAttackerMob
         this.swimMaskMove = 16;
         this.swimMaskOffset = -2;
         this.swimSinkOffset = -4;
-        this.weapon = GameRandom.globalRandom.getOneOf(new InventoryItem("sparkler"), new InventoryItem("sprinkler"));
+        this.weapon = new InventoryItem("soul_eater");
         this.helmet = null;
         this.chest = new InventoryItem("void_sentinel_chestplate");
         this.boots = new InventoryItem("void_sentinel_boots");

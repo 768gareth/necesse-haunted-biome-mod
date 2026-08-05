@@ -6,11 +6,17 @@ import HauntedBiome.Items.Armour.AncientVoidCultRobeItem;
 import HauntedBiome.Items.Armour.VoidSentinelBootsItem;
 import HauntedBiome.Items.Armour.VoidSentinelChestplateItem;
 import HauntedBiome.Items.Armour.VoidSentinelHelmetItem;
-import HauntedBiome.Items.LensmakerGlassesItem;
-import HauntedBiome.Items.RuinstoneItem;
+import HauntedBiome.Items.Trinkets.LensmakerGlassesItem;
+import HauntedBiome.Items.Trinkets.RuinstoneItem;
+import HauntedBiome.Items.Weapons.SoulEaterSwordItem;
+import necesse.engine.localization.Localization;
 import necesse.engine.modifiers.ModifierValue;
 import necesse.engine.registries.ItemRegistry;
+import necesse.engine.util.GameBlackboard;
+import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.BuffModifiers;
+import necesse.gfx.gameTooltips.ListGameTooltips;
+import necesse.inventory.InventoryItem;
 import necesse.inventory.item.Item;
 import necesse.inventory.item.Item.Rarity;
 import necesse.inventory.item.matItem.FishItem;
@@ -18,6 +24,10 @@ import necesse.inventory.item.matItem.MatItem;
 import necesse.inventory.item.placeableItem.StonePlaceableItem;
 import necesse.inventory.item.placeableItem.consumableItem.food.FoodConsumableItem;
 import necesse.inventory.item.placeableItem.tileItem.GrassSeedItem;
+import necesse.inventory.item.toolItem.axeToolItem.CustomAxeToolItem;
+import necesse.inventory.item.toolItem.pickaxeToolItem.CustomPickaxeToolItem;
+import necesse.inventory.item.toolItem.shovelToolItem.CustomShovelToolItem;
+import necesse.inventory.lootTable.presets.ToolsLootTable;
 import necesse.level.maps.levelData.settlementData.settler.Settler;
 
 public class RegisterItems 
@@ -26,6 +36,19 @@ public class RegisterItems
     public static void Register()
     {
         // Weapons
+        ItemRegistry.registerItem("soul_eater", new SoulEaterSwordItem(), 150f, true);
+
+        // Tools
+        ItemRegistry.registerItem("nightmare_pickaxe", new CustomPickaxeToolItem(400, 200, 7.0F, 30, 50, 50, 900, ToolsLootTable.tools, Item.Rarity.UNCOMMON) 
+        {
+          public ListGameTooltips getPreEnchantmentTooltips(InventoryItem item, PlayerMob perspective, GameBlackboard blackboard) {
+            ListGameTooltips tooltips = super.getPreEnchantmentTooltips(item, perspective, blackboard);
+            tooltips.add(Localization.translate("itemtooltip", "nightmare_pickaxe_tooltip"), 350);
+            return tooltips;
+          }
+        }, 160f, true);
+        ItemRegistry.registerItem("nightmare_axe", (Item)new CustomAxeToolItem(400, 200, 7.0F, 24, 50, 50, 1100, ToolsLootTable.tools, Item.Rarity.UNCOMMON), 160.0F, true);
+        ItemRegistry.registerItem("nightmare_shovel", (Item)new CustomShovelToolItem(400, 200, 7.0F, 24, 50, 50, 1100, Item.Rarity.UNCOMMON), 160.0F, true);
 
         // Armour
         ItemRegistry.registerItem("void_sentinel_helmet", new VoidSentinelHelmetItem(), 100f, true);
