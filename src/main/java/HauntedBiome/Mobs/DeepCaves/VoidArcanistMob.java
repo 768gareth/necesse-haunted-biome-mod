@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.function.Supplier;
 
 import necesse.engine.gameLoop.tickManager.TickManager;
-import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.HumanTexture;
 import necesse.entity.mobs.MaskShaderOptions;
 import necesse.entity.mobs.Mob;
@@ -42,14 +41,14 @@ public class VoidArcanistMob extends HostileItemAttackerMob
     {
         super(300);
         this.setArmor(20);
-        this.setSpeed(20F);
+        this.setSpeed(15F);
         this.collision = new Rectangle(-10, -7, 20, 14);
         this.hitBox = new Rectangle(-14, -12, 28, 24);
         this.selectBox = new Rectangle(-14, -41, 28, 48);
         this.swimMaskMove = 16;
         this.swimMaskOffset = -2;
         this.swimSinkOffset = -4;
-        this.weapon = GameRandom.globalRandom.getOneOf(new InventoryItem("sparkler"), new InventoryItem("sprinkler"));
+        this.weapon = new InventoryItem("cursed_fire");
         this.helmet = new InventoryItem("ancient_void_cult_hood");
         this.chest = new InventoryItem("ancient_void_cult_robe");
         this.boots = new InventoryItem("ancient_void_cult_boots");

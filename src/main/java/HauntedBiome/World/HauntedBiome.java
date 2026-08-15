@@ -57,7 +57,7 @@ public class HauntedBiome extends Biome
         {
             return DeepCaveFish;
         } 
-        else if (Spot.tile.level.isCave) 
+        else if (Spot.tile.level.getIdentifier() == LevelIdentifier.CAVE_IDENTIFIER) 
         {
             return CaveFish;
         } 
@@ -70,11 +70,11 @@ public class HauntedBiome extends Biome
     @Override
     public MobSpawnTable getCritterSpawnTable(Level Level) 
     {
-        if (Level.getIdentifier() == LevelIdentifier.DEEP_CAVE_IDENTIFIER) 
+        if (Level.getIdentifier().equals(LevelIdentifier.DEEP_CAVE_IDENTIFIER)) 
         {
             return DeepCaveCritters;
         } 
-        else if (Level.isCave) 
+        else if (Level.getIdentifier().equals(LevelIdentifier.CAVE_IDENTIFIER)) 
         {
             return CaveCritters;
         } 
@@ -87,11 +87,11 @@ public class HauntedBiome extends Biome
     @Override
     public MobSpawnTable getMobSpawnTable(Level Level) 
     {
-        if (Level.getIdentifier() == LevelIdentifier.DEEP_CAVE_IDENTIFIER) 
+        if (Level.getIdentifier().equals(LevelIdentifier.DEEP_CAVE_IDENTIFIER)) 
         {
             return DeepCaveMobs;
         } 
-        else if (Level.isCave) 
+        else if (Level.getIdentifier().equals(LevelIdentifier.CAVE_IDENTIFIER)) 
         {
             return CaveMobs;
         } 
@@ -104,11 +104,11 @@ public class HauntedBiome extends Biome
     @Override
     public AbstractMusicList getLevelMusic(Level Level, PlayerMob perspective) 
     {
-        if (Level.getIdentifier() == LevelIdentifier.DEEP_CAVE_IDENTIFIER) 
+        if (Level.getIdentifier().equals(LevelIdentifier.DEEP_CAVE_IDENTIFIER)) 
         {
             return new MusicList(MusicRegistry.GrindTheAlarms);
         } 
-        else if (Level.isCave) 
+        else if (Level.getIdentifier().equals(LevelIdentifier.CAVE_IDENTIFIER)) 
         {
             return new MusicList(MusicRegistry.CaravanTusks);
         } 
@@ -139,7 +139,7 @@ public class HauntedBiome extends Biome
     @Override
     public int getGenerationDeepCaveLavaTileID() 
     {
-        return TileRegistry.ascendedCorruptionID;
+        return TileRegistry.getTileID("deep_void_rock");
     }
 
     @Override
@@ -163,7 +163,7 @@ public class HauntedBiome extends Biome
     @Override
     public int getGenerationDeepCaveTileID() 
     {
-        return TileRegistry.ascendedCorruptionID;
+        return TileRegistry.getTileID("deep_void_rock");
     }
 
     @Override
@@ -176,6 +176,11 @@ public class HauntedBiome extends Biome
     public int getGenerationBeachTileID() 
     {
         return TileRegistry.getTileID("mud_sand");
+    }
+
+    public int getGenerationDeepCaveRiverWaterTileID() 
+    {
+        return TileRegistry.getTileID("void_rift");
     }
 
     @Override
@@ -277,7 +282,7 @@ public class HauntedBiome extends Biome
                 .placeObjectForced("demonic_ore_deep_void_rock");
         stack.startPlaceOnVein(this, region, random, "hauntedDeepNightmare").onlyOnObject(RockID)
                 .placeObjectForced("nightmare_ore_deep_void_rock");
-        stack.startPlace(this, region, random).onlyOnTile(TileRegistry.ascendedCorruptionID).chance(0.3).placeObject("void_grass");
+        stack.startPlace(this, region, random).onlyOnTile(TileRegistry.getTileID("deep_void_rock")).chance(0.6).placeObject("void_grass");
         stack.startPlace(this, region, random).chance(0.008).placeObject("deep_void_rock_small");
         stack.startPlace(this, region, random).chance(0.006).placeObject("deep_void_rock_large");
         stack.startPlace(this, region, random).chance(0.0015).placeObject("void_fragment_cluster_small");
@@ -298,7 +303,10 @@ public class HauntedBiome extends Biome
     @Override
     public RandomCaveChestRoom getNewDeepCaveChestRoomPreset(GameRandom random, AtomicInteger lootRotation) 
     {
-        return null;
+        RandomCaveChestRoom chestRoom = new RandomCaveChestRoom(random, HauntedLootTables.HauntedCavesChest,
+                lootRotation, RegisterChestRoomSets.HauntedBiomeSet);
+        chestRoom.replaceTile("stonefloor", "void_stone_floor");
+        return chestRoom;
     }
 
     // TODO: Need a custom loot table for the ruins chests.
@@ -321,12 +329,12 @@ public class HauntedBiome extends Biome
     @Override
     public float getGenerationCaveRockObjectChance() 
     {
-        return 0.30F;
+        return 0.32F;
     }
 
     @Override
     public float getGenerationDeepCaveRockObjectChance() 
     {
-        return 0.32F;
+        return 0.34F;
     }
 }

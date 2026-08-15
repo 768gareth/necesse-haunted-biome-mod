@@ -43,6 +43,7 @@ public class VoidGatewayMob extends BossMob
         this.hitBox = new Rectangle(-15, -17, 30, 30);
         this.selectBox = new Rectangle(-18, -58, 36, 58);
         this.setSpeed(0f);
+        this.setFriction(999f);
         setKnockbackModifier(0.0F);
     }
 

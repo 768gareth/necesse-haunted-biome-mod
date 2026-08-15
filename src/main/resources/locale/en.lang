@@ -52,6 +52,8 @@ haunted_wall=Haunted Wall
 haunted_door=Haunted Door
 void_grass=Void Grass
 void_monolith=Void Monolith
+demonic_street_lamp=Demonic Street Lamp
+demonic_double_street_lamp=Demonic Double Street Lamp
 
 [journal]
 haunted_surface=Haunted Surface
@@ -63,10 +65,11 @@ haunted_grass_tile=Haunted Grass
 void_rock_tile=Void Rock
 void_stone_floor=Void Stone Floor
 void_stone_path=Void Stone Path
-void_gravel_tile=Void Gravel Tile
+void_gravel_tile=Void Gravel
 haunted_floor=Haunted Wood Floor
 mud_sand=Mud Sand
 void_rift=Void Rift
+deep_void_rock=Deep Void Rock
 
 [item]
 // Weapons
@@ -101,6 +104,7 @@ void_crystal=Void Crystal
 
 void_vessel=Void Vessel
 occult_manuscript=Occult Manuscript
+amulet_of_corruption=Amulet of Corruption
 
 // Crafting materials
 haunted_log=Haunted Log
@@ -109,6 +113,7 @@ void_stone=Void Stone
 demonfish=Demonfish
 demonic_ore=Demonic Ore
 nightmare_ore=Nightmare Ore
+nightmare_bar=Nightmare Bar
 
 // Miscellaneous
 haunted_grass_seed=Haunted Grass Seed
@@ -121,16 +126,20 @@ nightmare_ore_tooltip=Can be smelted into Nightmare Bars.\nThe material produces
 nightmare_bar_tooltip=These bars feel freezing cold to the touch...
 
 // Weapons
+soul_eater_tooltip=Killing an enemy grants a stack of Soul Power. Use [input=mouse2] to consume all stacks, gaining +10% damage per stack for 20 seconds.
+cursed_fire_tooltip=On hit, inflicts a 3 second stacking debuff that causes the target to take +5% damage per stack, up to a maximum of +25% damage taken.
+
+// Set bonuses
+void_sentinel_buff_tooltip=Melee critical hits add a stacking buff that provides +2 armour per stack. Maximum of +10 armour at 5 stacks.
 
 // Tools
 nightmare_pickaxe_tooltip=Can mine Amber in the Deep Plains Caves.
 
-// Caves Loot
+// Trinkets
+amulet_of_corruption_tooltip=Doubles the amount of damage you deal, at the cost of receiving double damage from other sources.
 ruinstone_tooltip=Melee critical hits inflict one stack of Ruin for five seconds.\nEach stack of Ruin causes the target to take +5% damage, up to a maximum of +25% damage at 5 stacks.
 lensmaker_tooltip=Critical hits grant the attacker a stack of Focus.\nEach stack of Focus increases critical hit chance by +2%, up to a maximum to +20% at 10 stacks.
 void_crystal_tooltip=
-
-// Deep Caves Loot
 void_vessel_tooltip=A fragile container for the unstable energies of the Void.\nUpon landing a hit on an enemy, grants a stack of Corruption, increasing damage dealt\nby +10% per stack, at the cost of +5% damage taken per stack, at a maximum\nof 10 stacks.
 occult_manuscript_tooltip=The most terrible secrets of the Void Cult can be found in this ancient book.\nKilling an enemy with this trinket equipped causes them to explode in a burst of void energy.\nEnemies caught within this blast take damage, and suffer +10% damage taken for 10 seconds.
 
@@ -140,6 +149,9 @@ void_rift_tip=A tear in the fabric of reality itself, exposing this world to the
 [buff]
 ruin_stack_debuff=+5% damage taken per stack.
 lensmaker_stack_buff=+5% critical hit chance per stack.
+
+void_sentinel_set_bonus=Void Sentinel set bonus.
+void_sentinel_stack_buff=+2 armour per stack.
 
 [mob]
 // Critters
@@ -162,8 +174,7 @@ void_gateway_minion=Void Gateway Minion
 [deaths]
 void_sentinel_1=<victim> was crushed underfoot by <attacker>.
 void_sentinel_2=<victim> was smashed to bits by <attacker>.
-void_revenant_1=<victim> was obliterated by the energies of the Void.
-void_thorns_1=<victim> was shredded to pieces by the Void.
+void_rift1=<victim> was obliterated by <attacker>.
 
 [biome]
 haunted_biome=Haunted

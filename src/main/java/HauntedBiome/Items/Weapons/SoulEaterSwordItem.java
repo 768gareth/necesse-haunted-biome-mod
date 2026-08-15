@@ -1,5 +1,10 @@
 package HauntedBiome.Items.Weapons;
 
+import necesse.engine.localization.Localization;
+import necesse.engine.util.GameBlackboard;
+import necesse.entity.mobs.PlayerMob;
+import necesse.gfx.gameTooltips.ListGameTooltips;
+import necesse.inventory.InventoryItem;
 import necesse.inventory.item.Item;
 import necesse.inventory.item.toolItem.swordToolItem.SwordToolItem;
 import necesse.inventory.lootTable.presets.CloseRangeWeaponsLootTable;
@@ -20,5 +25,13 @@ public class SoulEaterSwordItem extends SwordToolItem
         this.attackYOffset = 8;
         this.canBeUsedForRaids = true;
         this.maxRaidTier = IncursionData.ITEM_TIER_UPGRADE_CAP;
+    }
+
+    @Override
+    public ListGameTooltips getPreEnchantmentTooltips(InventoryItem item, PlayerMob perspective, GameBlackboard blackboard) 
+    {
+        ListGameTooltips tooltips = super.getPreEnchantmentTooltips(item, perspective, blackboard);
+        tooltips.add(Localization.translate("itemtooltip", "soul_eater_tooltip"));
+        return tooltips;
     }
 }

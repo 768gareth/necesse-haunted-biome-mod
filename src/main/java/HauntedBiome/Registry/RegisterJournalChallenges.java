@@ -19,12 +19,12 @@ public class RegisterJournalChallenges
         int ACQUIRE_HAUNTED_SURFACE_TRINKET;
         int CRAFT_BLOODBERRY_JAM;
 
-        // Caves Challenges
+        // Caves Challenges - Reward: Amulet of Corruption
         int DESTROY_VOID_CRYSTALS;
         int DEFEAT_VOID_GATEWAY_ID;
         int ACQUIRE_HAUNTED_CAVES_TRINKET_ID;
 
-        // Deep Caves Challenges
+        // Deep Caves Challenges - Reward:
         int DEFEAT_DEEP_VOID_GATEWAY_ID;
         int ACQUIRE_DEEP_HAUNTED_CAVES_TRINKET_ID;
         int COLLECT_NIGHTMARE_ORE;

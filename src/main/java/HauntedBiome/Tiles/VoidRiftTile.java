@@ -18,9 +18,8 @@ import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
-import necesse.entity.mobs.buffs.BuffModifiers;
+import necesse.entity.particle.AscendedVoidStarParticle;
 import necesse.entity.particle.Particle;
-import necesse.entity.particle.SmokePuffParticle;
 import necesse.gfx.GameResources;
 import necesse.gfx.camera.GameCamera;
 import necesse.gfx.drawOptions.texture.ShaderSprite;
@@ -34,12 +33,16 @@ import necesse.gfx.gameTexture.GameTexture;
 import necesse.gfx.gameTexture.GameTextureSection;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
-import necesse.inventory.item.Item;
 import necesse.level.gameTile.TerrainSplatterTile;
 import necesse.level.maps.Level;
 import necesse.level.maps.splattingManager.SplattingOptions;
 
-public class VoidRiftTile extends TerrainSplatterTile {
+public class VoidRiftTile extends TerrainSplatterTile 
+{
+  private final GameRandom drawRandom;
+  private GameTextureSection swirls;
+  private GameTextureSection grime;
+  private GameTextureSection fog;
 
   public static Attacker VOID_RIFT_ATTACKER = new Attacker() {
       public GameMessage getAttackerName() {
@@ -54,59 +57,35 @@ public class VoidRiftTile extends TerrainSplatterTile {
         return null;
       }
     };
-
-  private final GameRandom drawRandom;
   
-  private GameTextureSection swirls;
-  
-  private GameTextureSection fog;
-
-  private GameTextureSection grime;
   
   public VoidRiftTile() {
     super(false, "ascendedvoid");
     this.mapColor = new Color(0, 20, 70);
     this.canBeMined = false;
     this.drawRandom = new GameRandom();
-    this.rarity = Item.Rarity.EPIC;
-    this.lightHue = 260f;
     this.lightLevel = 100;
-    this.lightSat = 0.5f;
-    this.canBeMined = false;
-  }
-
-  public void tick(Mob mob, Level level, int x, int y) {
-    if (mob.canLevelInteract() && !mob.isFlying() && !mob.isWaterWalking() && level.inLiquid(mob.getX(), mob.getY()) && 
-      level.isServer() && mob.canTakeDamage() && !mob.isLavaImmune() && !mob.isOnGenericCooldown("lavadamage")) {
-      int maxHealth = mob.getMaxHealth();
-      float damage = Math.max((float)Math.pow(maxHealth, 0.5D) + maxHealth / 20.0F, 20.0F);
-      damage *= ((Float)mob.buffManager.getModifier(BuffModifiers.FIRE_DAMAGE)).floatValue();
-      if (damage != 0.0F) {
-        mob.isServerHit(new GameDamage(DamageTypeRegistry.TRUE, damage), 0.0F, 0.0F, 0.0F, VOID_RIFT_ATTACKER);
-      } else if (mob.isPlayer) {
-        PlayerMob player = (PlayerMob)mob;
-        if (player.isServerClient()) {
-          ServerClient client = player.getServerClient();
-          if (client.achievementsLoaded())
-            (client.achievements()).HOT_TUB.markCompleted(client); 
-        } 
-      } 
-      mob.startGenericCooldown("lavadamage", 500L);
-      mob.addBuff(new ActiveBuff(BuffRegistry.Debuffs.ON_FIRE, mob, 10.0F, null), true);
-    } 
+    this.lightHue = 200F;
+    this.lightSat = 0.6F;
   }
   
   protected void loadTextures() {
     super.loadTextures();
     this.swirls = loadTexture("tiles/ascendedvoid_swirls");
-    this.fog = loadTexture("tiles/ascendedvoid_fog");
     this.grime = loadTexture("tiles/ascendedvoid_grime");
+    this.fog = loadTexture("tiles/ascendedvoid_fog");
   }
   
   public ListGameTooltips getItemTooltips(InventoryItem item, PlayerMob perspective) {
     ListGameTooltips itemTooltips = super.getItemTooltips(item, perspective);
-    itemTooltips.add(Localization.translate("itemtooltip", "void_rift_tip"), 400);
+    itemTooltips.add(Localization.translate("tile", "ascendedvoidtip"), 400);
     return itemTooltips;
+  }
+  
+  public boolean onDamaged(Level level, int x, int y, int damage, Attacker attacker, ServerClient client, boolean showEffect, int mouseX, int mouseY) {
+    if (!level.tileLayer.isPlayerPlaced(x, y))
+      return false; 
+    return super.onDamaged(level, x, y, damage, attacker, client, showEffect, mouseX, mouseY);
   }
   
   protected GameTextureSection loadTexture(String path) {
@@ -121,18 +100,15 @@ public class VoidRiftTile extends TerrainSplatterTile {
     texture.makeFinal();
     return tileTextures.addTexture(paddingTexture);
   }
-
-  public double getPathCost(Level level, int tileX, int tileY, Mob mob) {
-    return 1000D;
-  }
   
   public void tickEffect(Level level, int x, int y) {
     super.tickEffect(level, x, y);
     GameRandom random = GameRandom.globalRandom;
-    if (random.getChance(0.005F)) {
+    if (random.getChance(0.0005F)) 
+    {
       int posX = x * 32 + random.nextInt(32);
       int posY = y * 32 + random.nextInt(32);
-      level.entityManager.addParticle(new SmokePuffParticle(level, posX, posY, new Color(0, 0, 0)), Particle.GType.COSMETIC);
+      level.entityManager.addParticle((Particle)new AscendedVoidStarParticle(level, posX, posY, 1000L), Particle.GType.COSMETIC);
     } 
   }
   
@@ -171,7 +147,7 @@ public class VoidRiftTile extends TerrainSplatterTile {
   public void addParallaxDrawOptions(LevelTileTerrainDrawOptions list, GameTextureSection terrainSection, GameCamera camera, int tileX, int tileY, int drawX, int drawY) {
     addParallaxDrawOptions(list, "swirls", 0, terrainSection, this.swirls, camera, tileX, tileY, 3000.0F, 3000.0F, drawX, drawY);
     addParallaxDrawOptions(list, "grime", 1, terrainSection, this.grime, camera, tileX, tileY, 2000.0F, 2000.0F, drawX, drawY);
-    addParallaxDrawOptions(list, "fog", 2, terrainSection, this.fog, camera, tileX, tileY, 1000.0F, 1000.0F, drawX, drawY);
+    addParallaxDrawOptions(list, "fog", 3, terrainSection, this.fog, camera, tileX, tileY, 1000.0F, 1000.0F, drawX, drawY);
   }
   
   public void addParallaxDrawOptions(LevelTileTerrainDrawOptions list, String stringID, int priority, GameTextureSection terrainSection, GameTextureSection parallaxTexture, GameCamera camera, int tileX, int tileY, float xDivisor, float yDivisor, int drawX, int drawY) {
@@ -210,5 +186,28 @@ public class VoidRiftTile extends TerrainSplatterTile {
     super.addSplatDrawables(underLiquidList, liquidList, overLiquidList, objectTileList, sortedList, level, tileX, tileY, camera, tickManager, spriteX, spriteY, drawX, drawY);
     GameTextureSection sprite = getSplattingTexture(level, tileX, tileY).sprite(spriteX, spriteY, 32);
     addParallaxDrawOptions(underLiquidList, sprite, camera, tileX, tileY, drawX, drawY);
+  }
+
+  public void tick(Mob mob, Level level, int x, int y) 
+  {
+    if (mob.canLevelInteract() && !mob.isFlying() && !mob.isWaterWalking() && level.isServer() && mob.canTakeDamage() && !mob.isOnGenericCooldown("void_rift_damage")) 
+    {
+      int maxHealth = mob.getMaxHealth();
+      if (true) 
+      {
+        float damage = Math.max((float)Math.pow(maxHealth, 0.5D) + maxHealth / 20.0F, 20.0F);
+        mob.isServerHit(new GameDamage(DamageTypeRegistry.TRUE, damage), 0.0F, 0.0F, 0.0F, VOID_RIFT_ATTACKER);
+      }
+      mob.startGenericCooldown("void_rift_damage", 500L);
+      mob.addBuff(new ActiveBuff(BuffRegistry.Debuffs.ON_FIRE, mob, 10.0F, null), true);
+    }
+  } 
+
+  public String canPlace(Level level, int x, int y, boolean byPlayer) 
+  {
+    String canPlace = super.canPlace(level, x, y, byPlayer);
+    if (canPlace != null)
+        return canPlace;
+    return "voidrift";
   }
 }

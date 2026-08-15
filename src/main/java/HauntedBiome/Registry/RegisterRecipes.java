@@ -9,8 +9,18 @@ public class RegisterRecipes
 {
     public static void Register()
     {
+        // Weapons
+        Recipes.registerModRecipe(new Recipe("soul_eater", 1, RecipeTechRegistry.TUNGSTEN_ANVIL, new Ingredient[] {new Ingredient("nightmare_bar", 14), new Ingredient("ectoplasm", 4)}));
+        Recipes.registerModRecipe(new Recipe("cursed_fire", 1, RecipeTechRegistry.TUNGSTEN_ANVIL, new Ingredient[] {new Ingredient("nightmare_bar", 12), new Ingredient("book", 1)}));
+
+        // Tools
+        Recipes.registerModRecipe(new Recipe("nightmare_pickaxe", 1, RecipeTechRegistry.TUNGSTEN_ANVIL, new Ingredient[] {new Ingredient("nightmare_bar", 16)}));
+        Recipes.registerModRecipe(new Recipe("nightmare_axe", 1, RecipeTechRegistry.TUNGSTEN_ANVIL, new Ingredient[] {new Ingredient("nightmare_bar", 16)}));
+        Recipes.registerModRecipe(new Recipe("nightmare_shovel", 1, RecipeTechRegistry.TUNGSTEN_ANVIL, new Ingredient[] {new Ingredient("nightmare_bar", 16)}));
+
         // Crafting Materials
         Recipes.registerModRecipe(new Recipe("demonic_ore", 3, RecipeTechRegistry.FORGE, new Ingredient[] { new Ingredient("demonicbar", 1)}));
+        Recipes.registerModRecipe(new Recipe("nightmare_ore", 4, RecipeTechRegistry.FORGE, new Ingredient[] { new Ingredient("nightmare_bar", 1)}));
         Recipes.registerModRecipe(new Recipe("voidshard", 1, RecipeTechRegistry.FORGE, new Ingredient[] { new Ingredient("void_fragment", 4)}));
 
         // Consumables
@@ -19,13 +29,13 @@ public class RegisterRecipes
         Recipes.registerModRecipe(new Recipe("bloodberry_sundae", 1, RecipeTechRegistry.COOKING_POT, new Ingredient[] { new Ingredient("bloodberry", 3), new Ingredient("milk", 2), new Ingredient("sugar", 2), new Ingredient("bloodberry_jam", 1)}));
         
         // Trinkets
-        Recipes.registerModRecipe(new Recipe("ruinstone", 1, RecipeTechRegistry.DEMONIC_WORKSTATION, new Ingredient[] { new Ingredient("demonicbar", 4), new Ingredient("void_fragment", 8)}));
+        Recipes.registerModRecipe(new Recipe("ruinstone", 1, RecipeTechRegistry.DEMONIC_WORKSTATION, new Ingredient[] { new Ingredient("void_fragment", 12), new Ingredient("demonicbar", 4)}));
 
         // Tiles
-        Recipes.registerModRecipe(new Recipe("void_rock_tile", 1, RecipeTechRegistry.LANDSCAPING, new Ingredient[] { new Ingredient("void_stone", 2)}));
-        Recipes.registerModRecipe(new Recipe("void_stone_floor", 1, RecipeTechRegistry.DEMONIC_WORKSTATION, new Ingredient[] { new Ingredient("void_stone", 2)}));
-        Recipes.registerModRecipe(new Recipe("void_stone_path", 1, RecipeTechRegistry.DEMONIC_WORKSTATION, new Ingredient[] { new Ingredient("void_stone", 2)}));
-        Recipes.registerModRecipe(new Recipe("void_gravel_tile", 1, RecipeTechRegistry.LANDSCAPING, new Ingredient[] { new Ingredient("void_stone", 3)}));
+        Recipes.registerModRecipe(new Recipe("void_rock_tile", 1, RecipeTechRegistry.LANDSCAPING, new Ingredient[] { new Ingredient("void_stone", 1)}));
+        Recipes.registerModRecipe(new Recipe("void_stone_floor", 1, RecipeTechRegistry.DEMONIC_WORKSTATION, new Ingredient[] { new Ingredient("void_stone", 1)}));
+        Recipes.registerModRecipe(new Recipe("void_stone_path", 1, RecipeTechRegistry.DEMONIC_WORKSTATION, new Ingredient[] { new Ingredient("void_stone", 1)}));
+        Recipes.registerModRecipe(new Recipe("void_gravel_tile", 1, RecipeTechRegistry.LANDSCAPING, new Ingredient[] { new Ingredient("void_stone", 1)}));
     
         // Objects
         Recipes.registerModRecipe(new Recipe("void_wall", 1, RecipeTechRegistry.DEMONIC_WORKSTATION, new Ingredient[] { new Ingredient("void_stone", 2)}));

@@ -25,7 +25,7 @@ public class RegisterJournal
         (
             new String[] 
             { 
-                "spider", "mouse"
+                "haunted_skeleton", "spider", "mouse"
             }
         );
         HauntedSurface.addTreasureEntry(new LootTable[] { LootTablePresets.surfaceRuinsChest });
@@ -35,14 +35,14 @@ public class RegisterJournal
         (      
             new String[] 
             { 
-                "demonic_ore", "demonicbar", "void_fragment", "voidshard"
+                "copperore", "ironore", "goldore", "demonic_ore", "demonicbar", "void_fragment", "voidshard"
             }
         );
         HauntedCaves.addMobEntries
         (
             new String[] 
             { 
-                "spider", "mouse"
+                "void_cultist", "spider", "mouse"
             }
         );
         HauntedCaves.addTreasureEntry(new LootTable[] { HauntedLootTables.HauntedCavesChest });
@@ -52,14 +52,14 @@ public class RegisterJournal
         (      
             new String[] 
             { 
-                "demonic_ore", "demonicbar", "void_fragment", "voidshard"
+                "copperore", "ironore", "goldore", "demonic_ore", "nightmare_ore", "void_fragment", "voidshard"
             }
         );
         HauntedDeepCaves.addMobEntries
         (
             new String[] 
             { 
-                "spider", "mouse"
+                "void_sentinel", "void_arcanist", "spider", "mouse"
             }
         );
         HauntedDeepCaves.addTreasureEntry(new LootTable[] { HauntedLootTables.DeepHauntedCavesChest });

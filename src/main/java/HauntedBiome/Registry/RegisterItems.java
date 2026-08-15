@@ -8,6 +8,7 @@ import HauntedBiome.Items.Armour.VoidSentinelChestplateItem;
 import HauntedBiome.Items.Armour.VoidSentinelHelmetItem;
 import HauntedBiome.Items.Trinkets.LensmakerGlassesItem;
 import HauntedBiome.Items.Trinkets.RuinstoneItem;
+import HauntedBiome.Items.Weapons.CursedFireMagicItem;
 import HauntedBiome.Items.Weapons.SoulEaterSwordItem;
 import necesse.engine.localization.Localization;
 import necesse.engine.modifiers.ModifierValue;
@@ -27,6 +28,8 @@ import necesse.inventory.item.placeableItem.tileItem.GrassSeedItem;
 import necesse.inventory.item.toolItem.axeToolItem.CustomAxeToolItem;
 import necesse.inventory.item.toolItem.pickaxeToolItem.CustomPickaxeToolItem;
 import necesse.inventory.item.toolItem.shovelToolItem.CustomShovelToolItem;
+import necesse.inventory.item.trinketItem.SimpleTrinketItem;
+import necesse.inventory.lootTable.LootTablePresets;
 import necesse.inventory.lootTable.presets.ToolsLootTable;
 import necesse.level.maps.levelData.settlementData.settler.Settler;
 
@@ -37,6 +40,7 @@ public class RegisterItems
     {
         // Weapons
         ItemRegistry.registerItem("soul_eater", new SoulEaterSwordItem(), 150f, true);
+        ItemRegistry.registerItem("cursed_fire", new CursedFireMagicItem(), 150f, true);
 
         // Tools
         ItemRegistry.registerItem("nightmare_pickaxe", new CustomPickaxeToolItem(400, 200, 7.0F, 30, 50, 50, 900, ToolsLootTable.tools, Item.Rarity.UNCOMMON) 
@@ -62,11 +66,14 @@ public class RegisterItems
         // Trinkets
         ItemRegistry.registerItem("ruinstone", new RuinstoneItem(), 250f, true);
         ItemRegistry.registerItem("lensmaker_glasses", new LensmakerGlassesItem(), 250f, true);
+        
+        ItemRegistry.registerItem("amulet_of_corruption", new SimpleTrinketItem(Item.Rarity.RARE, "amulet_of_corruption_buff", 300, LootTablePresets.trinkets), 100f, true);
 
         // Crafting Materials
         ItemRegistry.registerItem("demonic_ore", (new MatItem(500, Item.Rarity.COMMON, "demonic_ore_tooltip")).setItemCategory(new String[] { "materials", "ore" }), 4.0F, true);
         ItemRegistry.registerItem("void_fragment", (new MatItem(500, Rarity.UNCOMMON, "void_fragment_tooltip")).setItemCategory(new String[]{"materials", "mobdrops"}), 10.0F, true);
-        ItemRegistry.registerItem("nightmare_ore", (new MatItem(500, Item.Rarity.RARE, "nightmare_ore_tooltip")).setItemCategory(new String[] { "materials", "ore" }), 8.0F, true);
+        ItemRegistry.registerItem("nightmare_ore", (new MatItem(500, Item.Rarity.UNCOMMON, "nightmare_ore_tooltip")).setItemCategory(new String[] { "materials", "ore" }), 6.0F, true);
+        ItemRegistry.registerItem("nightmare_bar", (new MatItem(500, Item.Rarity.UNCOMMON, "nightmare_bar_tooltip")).setItemCategory(new String[] { "materials" }), 12.0F, true);
         ItemRegistry.registerItem("void_stone", new StonePlaceableItem(999), 0.1F, true);
         ItemRegistry.registerItem("haunted_log", (new MatItem(500, new String[] { "anylog" })).setItemCategory(new String[] { "materials", "logs" }), 2.0F, true);
         ItemRegistry.registerItem("demonfish", (new FishItem(250, Rarity.UNCOMMON, new String[0])).setItemCategory(new String[]{"materials", "specialfish"}), 18.0F, true);

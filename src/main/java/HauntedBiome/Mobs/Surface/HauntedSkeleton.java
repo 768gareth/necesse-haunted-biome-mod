@@ -60,7 +60,7 @@ public class HauntedSkeleton extends HostileMob
         drawY += getBobbing(x, y);
         drawY += getLevel().getTile(x / 32, y / 32).getMobSinkingAmount((Mob)this);
         MaskShaderOptions swimMask = getSwimMaskShaderOptions(inLiquidFloat(x, y));
-        HumanDrawOptions humanDrawOptions = (new HumanDrawOptions(level, MobRegistry.Textures.skeleton)).sprite(sprite).dir(dir).mask(swimMask).light(light);
+        HumanDrawOptions humanDrawOptions = (new HumanDrawOptions(level, MobRegistry.Textures.ancientSkeleton)).sprite(sprite).dir(dir).mask(swimMask).light(light);
         final DrawOptions drawOptions = humanDrawOptions.pos(drawX, drawY);
         list.add
         (   new MobDrawable() 
@@ -99,6 +99,6 @@ public class HauntedSkeleton extends HostileMob
     public void spawnDeathParticles(float knockbackX, float knockbackY) 
     {
       for (int i = 0; i < 4; i++)
-        (getLevel()).entityManager.addParticle((Particle)new FleshParticle(getLevel(), MobRegistry.Textures.skeleton.body, GameRandom.globalRandom.nextInt(5), 8, 32, this.x, this.y, 20.0F, knockbackX, knockbackY), Particle.GType.IMPORTANT_COSMETIC); 
+        (getLevel()).entityManager.addParticle((Particle)new FleshParticle(getLevel(), MobRegistry.Textures.ancientSkeleton.body, GameRandom.globalRandom.nextInt(5), 8, 32, this.x, this.y, 20.0F, knockbackX, knockbackY), Particle.GType.IMPORTANT_COSMETIC); 
     }
 }

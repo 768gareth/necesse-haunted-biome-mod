@@ -41,7 +41,7 @@ public class VoidSentinelMob extends HostileItemAttackerMob
     {
         super(400);
         this.setArmor(20);
-        this.setSpeed(20F);
+        this.setSpeed(15F);
         this.collision = new Rectangle(-10, -7, 20, 14);
         this.hitBox = new Rectangle(-14, -12, 28, 24);
         this.selectBox = new Rectangle(-14, -41, 28, 48);

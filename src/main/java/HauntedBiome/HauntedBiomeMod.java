@@ -8,6 +8,7 @@ import HauntedBiome.Registry.RegisterItems;
 import HauntedBiome.Registry.RegisterJournal;
 import HauntedBiome.Registry.RegisterMobs;
 import HauntedBiome.Registry.RegisterObjects;
+import HauntedBiome.Registry.RegisterProjectiles;
 import HauntedBiome.Registry.RegisterRecipes;
 import HauntedBiome.Registry.RegisterTiles;
 import HauntedBiome.Registry.RegisterWorldPresets;
@@ -37,22 +38,12 @@ import necesse.entity.mobs.HumanTexture;
     13. Reaper's Crossbow, a Deep Caves Ranged weapon that fires very slowly, but each bolt deals very high damage.
     14. Cursed Fire, a Deep Caves Magic weapon that launches a spray of void-cursed flames at enemies. Enemies are afflicted with a debuff
     that lasts only for a few seconds, but causes them to take more damage.
-    15. Demonic street lamps, carpet, paintings.
     16. Use 'Cosmic Noise' track for surface, 'Dark Streets' for underground?
-    17. BIG FUCKING IDEA - cover the whole screen in Ascended Void tile, make a special object that blocks player movement onto it 
-    while being invisible and gently lighting the area around it. Could do anything with this approach. An ominous bit of Void landscape,
-    a boss arena, or even just a cool mini set-piece without major substance.
-    18. The secret void area? Of course we need a SUPER PORTAL BOSS!
-    19. STEAL A BUNCH OF IDEAS FROM THE VOID THING FROM ROR2, THAT'S BIG!
-    20. Glowing void grass!
-    21. 3 Void Key Fragments make 1 Abyssal Key, which opens the Abyss Portal that leads to the 'deepest, darkest part of the Void'
-    22.
-
+    17. 
 */
 
 /* TODO:
-    - Implement demonic street lamp/double street lamp.
-    - Add the weapons
+    - Add the weapons.
  */
 
 @ModEntry
@@ -70,6 +61,7 @@ public class HauntedBiomeMod
         RegisterWorldPresets.Register();
         RegisterRecipes.Register();
         RegisterJournal.Register();
+        RegisterProjectiles.Register();
         System.out.println("[Haunted Biome Mod] Mod initialisation complete.");
     }
 
