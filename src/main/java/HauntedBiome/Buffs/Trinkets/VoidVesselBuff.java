@@ -1,4 +1,4 @@
-package HauntedBiome.Buffs;
+package HauntedBiome.Buffs.Trinkets;
 
 import necesse.engine.localization.Localization;
 import necesse.entity.mobs.MobWasHitEvent;

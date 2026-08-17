@@ -1,4 +1,4 @@
-package HauntedBiome.Buffs;
+package HauntedBiome.Buffs.Trinkets;
 
 import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.mobs.buffs.BuffEventSubscriber;
@@ -7,34 +7,33 @@ import necesse.entity.mobs.buffs.staticBuffs.Buff;
 
 public class VoidVesselStackDebuff extends Buff
 {
-    public VoidVesselStackDebuff() {
+   public VoidVesselStackDebuff() 
+   {
       this.isImportant = true;
       this.canCancel = false;
    }
 
-    @Override
-   public void init(ActiveBuff buff, BuffEventSubscriber eventSubscriber) {
+   @Override
+   public void init(ActiveBuff buff, BuffEventSubscriber eventSubscriber) 
+   {
+      buff.setModifier(BuffModifiers.INCOMING_DAMAGE_MOD, 1.01f);
    }
 
    @Override
-   public void serverTick(ActiveBuff buff) 
-   {
-      buff.setModifier(BuffModifiers.INCOMING_DAMAGE_MOD, ((Float) 0.1f * buff.owner.buffManager.getStacks(this)));
-   }
-
-    @Override
    public int getStackSize(ActiveBuff buff) 
    {
-      return 5;
+      return 10;
    }
 
    @Override
-   public boolean overridesStackDuration() {
+   public boolean overridesStackDuration() 
+   {
       return true;
    }
 
    @Override
-   public boolean showsFirstStackDurationText() {
+   public boolean showsFirstStackDurationText() 
+   {
       return super.showsFirstStackDurationText();
    }
 }

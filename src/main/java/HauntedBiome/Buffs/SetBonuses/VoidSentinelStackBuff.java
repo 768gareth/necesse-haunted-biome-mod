@@ -1,4 +1,4 @@
-package HauntedBiome.Buffs;
+package HauntedBiome.Buffs.SetBonuses;
 
 import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.mobs.buffs.BuffEventSubscriber;
@@ -7,18 +7,16 @@ import necesse.entity.mobs.buffs.staticBuffs.Buff;
 
 public class VoidSentinelStackBuff extends Buff
 {
-    public VoidSentinelStackBuff() {
+   public VoidSentinelStackBuff() 
+   {
       this.isImportant = true;
       this.canCancel = false;
    }
 
     @Override
-   public void init(ActiveBuff buff, BuffEventSubscriber eventSubscriber) {}
-
-   @Override
-   public void serverTick(ActiveBuff buff) 
-   {
-      buff.setModifier(BuffModifiers.ARMOR_FLAT, 2 * buff.owner.buffManager.getStacks(this));
+   public void init(ActiveBuff buff, BuffEventSubscriber eventSubscriber) 
+   { 
+      buff.setModifier(BuffModifiers.ARMOR_FLAT, 2); 
    }
 
     @Override

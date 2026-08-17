@@ -24,7 +24,7 @@ public class NightmareBowItem extends BowProjectileToolItem {
     super(1400, BowWeaponsLootTable.bowWeapons);
     this.attackAnimTime.setBaseValue(500);
     this.rarity = Item.Rarity.RARE;
-    this.attackDamage.setBaseValue(60.0F).setUpgradedValue(1.0F, 99.166695F);
+    this.attackDamage.setBaseValue(50.0F).setUpgradedValue(1.0F, 99.166695F);
     this.velocity.setBaseValue(200);
     this.attackRange.setBaseValue(800);
     this.attackXOffset = 12;

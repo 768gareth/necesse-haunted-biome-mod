@@ -1,4 +1,4 @@
-package HauntedBiome.Buffs;
+package HauntedBiome.Buffs.SetBonuses;
 
 import necesse.engine.localization.Localization;
 import necesse.engine.registries.DamageTypeRegistry;
@@ -18,13 +18,13 @@ public class VoidSentinelArmourSetBuff extends SetBonusBuff
     super.onHasAttacked(buff, event);
     if (event.isCrit && event.damageType == DamageTypeRegistry.MELEE)
     {
-        event.target.buffManager.addBuff(new ActiveBuff("void_sentinel_stack_buff", buff.owner, 10f, buff.owner), true);
+        event.attacker.getAttackOwner().buffManager.addBuff(new ActiveBuff("void_sentinel_stack_buff", buff.owner, 10f, buff.owner), true);
     }
   }
   
   public ListGameTooltips getTooltip(ActiveBuff ab, GameBlackboard blackboard) {
     ListGameTooltips tooltips = super.getTooltip(ab, blackboard);
-    tooltips.add(Localization.translate("itemtooltip", "void_sentinel_buff_tooltip"));
+    tooltips.add(Localization.translate("itemtooltip", "void_sentinel_melee_buff_tooltip"));
     return tooltips;
   }
 }

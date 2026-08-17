@@ -1,25 +1,21 @@
-package HauntedBiome.Buffs;
+package HauntedBiome.Buffs.Trinkets;
 
 import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.mobs.buffs.BuffEventSubscriber;
 import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.mobs.buffs.staticBuffs.Buff;
 
-public class RuinstoneStackDebuff extends Buff
+public class VoidVesselStackUserDebuff extends Buff
 {
-    public RuinstoneStackDebuff() {
+    public VoidVesselStackUserDebuff() {
       this.isImportant = true;
       this.canCancel = false;
    }
 
-    @Override
-   public void init(ActiveBuff buff, BuffEventSubscriber eventSubscriber) {
-   }
-
    @Override
-   public void serverTick(ActiveBuff buff) 
+   public void init(ActiveBuff buff, BuffEventSubscriber eventSubscriber) 
    {
-      buff.setModifier(BuffModifiers.INCOMING_DAMAGE_MOD, ((Float) 0.05f * buff.owner.buffManager.getStacks(this)));
+      buff.setModifier(BuffModifiers.INCOMING_DAMAGE_MOD, 1.01f);
    }
 
     @Override

@@ -1,4 +1,4 @@
-package HauntedBiome.Buffs;
+package HauntedBiome.Buffs.Weapon;
 
 public class SoulEaterSoulPowerStackBuff {
     

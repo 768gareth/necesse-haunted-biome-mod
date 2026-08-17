@@ -48,11 +48,11 @@ public class NightmareBowProjectile extends Projectile implements RicochetablePr
   }
   
   public Color getParticleColor() {
-    return new Color(115, 146, 42);
+    return new Color(57, 7, 82);
   }
   
   protected void modifySpinningParticle(ParticleOption particle) {
-    particle.givesLight(75.0F, 0.5F).lifeTime(1000);
+    particle.givesLight(240.0F, 0.5F).lifeTime(1000);
   }
   
   public Trail getTrail() {
@@ -63,8 +63,9 @@ public class NightmareBowProjectile extends Projectile implements RicochetablePr
     super.doHitLogic(mob, object, x, y);
     if (!isServer())
       return; 
-    if (mob != null) {
-      ActiveBuff ab = new ActiveBuff(BuffRegistry.getBuff("ruinstone_stack_debuff"), mob, (int) 5.0F, (Attacker)getOwner());
+    if (mob != null) 
+      {
+      ActiveBuff ab = new ActiveBuff(BuffRegistry.getBuff("ruinstone_stack_debuff"), mob, (int) 5000.0F, (Attacker)getOwner());
       mob.addBuff(ab, true);
       if (this.modifier != null)
         this.modifier.doHitLogic(mob, object, x, y); 

@@ -1,12 +1,12 @@
 package HauntedBiome.Registry;
 
-import HauntedBiome.Buffs.RuinstoneBuff;
-import HauntedBiome.Buffs.RuinstoneStackDebuff;
-import HauntedBiome.Buffs.VoidSentinelArmourSetBuff;
-import HauntedBiome.Buffs.VoidSentinelStackBuff;
-import HauntedBiome.Buffs.VoidVesselBuff;
-import HauntedBiome.Buffs.VoidVesselStackDebuff;
-import HauntedBiome.Buffs.VoidVesselStackUserDebuff;
+import HauntedBiome.Buffs.SetBonuses.VoidSentinelArmourSetBuff;
+import HauntedBiome.Buffs.SetBonuses.VoidSentinelStackBuff;
+import HauntedBiome.Buffs.Trinkets.RuinstoneBuff;
+import HauntedBiome.Buffs.Trinkets.RuinstoneStackDebuff;
+import HauntedBiome.Buffs.Trinkets.VoidVesselBuff;
+import HauntedBiome.Buffs.Trinkets.VoidVesselStackDebuff;
+import HauntedBiome.Buffs.Trinkets.VoidVesselStackUserDebuff;
 import necesse.engine.modifiers.ModifierValue;
 import necesse.engine.registries.BuffRegistry;
 import necesse.entity.mobs.buffs.BuffModifiers;
