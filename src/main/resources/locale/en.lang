@@ -7,7 +7,7 @@ void_fragment_cluster_small=Void Fragment Cluster
 void_fragment_cluster_large=Large Void Fragment Cluster
 demonic_ore=Demonic Ore
 void_wall=Void Wall
-void_walltrap=Void Wall Flame Trap
+void_walltrap=Void Wall <trap>
 void_door=Void Door
 haunted_log_bench=Haunted Log Bench
 haunted_grass=Haunted Grass
@@ -46,7 +46,7 @@ void_thorns=Void Thorns
 haunted_dresser=Haunted Dresser
 haunted_clock=Haunted Clock
 void_candle_set=Void Candle Set
-haunted_walltrap=Haunted Wall Trap
+haunted_walltrap=Haunted Wall <trap>
 nightmare_ore=Nightmare Ore
 haunted_wall=Haunted Wall
 haunted_door=Haunted Door
@@ -54,6 +54,8 @@ void_grass=Void Grass
 void_monolith=Void Monolith
 demonic_street_lamp=Demonic Street Lamp
 demonic_double_street_lamp=Demonic Double Street Lamp
+deep_void_wall=Deep Void Wall
+deep_void_door=Deep Void Door
 
 [journal]
 haunted_surface=Haunted Surface
@@ -69,14 +71,20 @@ void_gravel_tile=Void Gravel
 haunted_floor=Haunted Wood Floor
 mud_sand=Mud Sand
 void_rift=Void Rift
-deep_void_rock=Deep Void Rock
+deep_void_rock_tile=Deep Void Rock
+deep_void_stone_floor=Deep Void Stone Floor
+void_essence_path=Void Essence Path
+
+[itemcategory]
+hauntedrocksandores=Haunted
+hauntedfurniture=Haunted
 
 [item]
 // Weapons
 soul_eater=Soul Eater
-slayer_crossbow=Slayer's Crossbow
 cursed_fire=Cursed Fire
 necromancer_staff=Necromancer Staff
+nightmare_bow=Nightmare Bow
 
 // Tools
 nightmare_pickaxe=Nightmare Pickaxe
@@ -91,17 +99,21 @@ ancient_void_cult_hood=Ancient Void Cult Hood
 ancient_void_cult_robe=Ancient Void Cult Robe
 ancient_void_cult_boots=Ancient Void Cult Boots
 
+// Cosmetics
+void_cult_hood=Void Cult Hood
+void_cult_robe=Void Cult Robe
+void_cult_boots=Void Cult Boots
+
 // Consumables
 bloodberry=Bloodberry
 bloodberry_jam=Bloodberry Jam
 bloodberry_cake=Bloodberry Cake
 bloodberry_sundae=Bloodberry Sundae
+corruption_potion=Corruption Potion
 
 // Trinkets
 ruinstone=Ruinstone
-lensmaker_glasses=Lensmaker's Glasses
 void_crystal=Void Crystal
-
 void_vessel=Void Vessel
 occult_manuscript=Occult Manuscript
 amulet_of_corruption=Amulet of Corruption
@@ -110,6 +122,7 @@ amulet_of_corruption=Amulet of Corruption
 haunted_log=Haunted Log
 void_fragment=Void Fragment
 void_stone=Void Stone
+deep_void_stone=Deep Void Stone
 demonfish=Demonfish
 demonic_ore=Demonic Ore
 nightmare_ore=Nightmare Ore
@@ -117,17 +130,19 @@ nightmare_bar=Nightmare Bar
 
 // Miscellaneous
 haunted_grass_seed=Haunted Grass Seed
+corruption_potion_buff=+50% damage dealt, +50% damage received.
 
 [itemtooltip]
 // Crafting Materials
 demonic_ore_tooltip=Can be smelted into Demonic Bars.
 void_fragment_tooltip=Can be combined into Void Shards, or used in other crafting recipes.
-nightmare_ore_tooltip=Can be smelted into Nightmare Bars.\nThe material produces faint, unsettling\nwhispers when held close to the ear.
-nightmare_bar_tooltip=These bars feel freezing cold to the touch...
+nightmare_ore_tooltip=Can be smelted into Nightmare Bars.\nThe material produces faint, unsettling whispers when held close to the ear.
+nightmare_bar_tooltip=These bars feel freezing cold to the touch.
 
 // Weapons
-soul_eater_tooltip=Killing an enemy grants a stack of Soul Power. Use [input=mouse2] to consume all stacks, gaining +10% damage per stack for 20 seconds.
+soul_eater_tooltip=On kill, grants a stack of Soul Power.\nUse [input=mouse2] to consume all stacks, gaining +10% melee damage per stack for 20 seconds.\nMaximum of ten stacks.
 cursed_fire_tooltip=On hit, inflicts a 3 second stacking debuff that causes the target to take +5% damage per stack, up to a maximum of +25% damage taken.
+nightmare_bow_tooltip=Projectiles inflict a stack of Ruin for five seconds.\nEach stack of Ruin causes the target to take +5% damage, up to a maximum of +25% damage at 5 stacks.
 
 // Set bonuses
 void_sentinel_buff_tooltip=Melee critical hits add a stacking buff that provides +2 armour per stack. Maximum of +10 armour at 5 stacks.
@@ -135,13 +150,15 @@ void_sentinel_buff_tooltip=Melee critical hits add a stacking buff that provides
 // Tools
 nightmare_pickaxe_tooltip=Can mine Amber in the Deep Plains Caves.
 
+// Consumables
+corruption_potion_tooltip=+50% damage dealt, +50% damage received.
+
 // Trinkets
-amulet_of_corruption_tooltip=Doubles the amount of damage you deal, at the cost of receiving double damage from other sources.
-ruinstone_tooltip=Melee critical hits inflict one stack of Ruin for five seconds.\nEach stack of Ruin causes the target to take +5% damage, up to a maximum of +25% damage at 5 stacks.
-lensmaker_tooltip=Critical hits grant the attacker a stack of Focus.\nEach stack of Focus increases critical hit chance by +2%, up to a maximum to +20% at 10 stacks.
+amulet_of_corruption_tooltip=A common artifact of the Void Cult, used for channeling the Void.\nDoubles the amount of damage you deal, at the cost of receiving double damage from other sources.
+ruinstone_tooltip=This stone pulses with void energy, and feels cold in your hands.\nCritical hits inflict one stack of Ruin for five seconds.\nEach stack of Ruin causes the target to take +5% damage, up to a maximum of +25% damage at 5 stacks.
 void_crystal_tooltip=
-void_vessel_tooltip=A fragile container for the unstable energies of the Void.\nUpon landing a hit on an enemy, grants a stack of Corruption, increasing damage dealt\nby +10% per stack, at the cost of +5% damage taken per stack, at a maximum\nof 10 stacks.
-occult_manuscript_tooltip=The most terrible secrets of the Void Cult can be found in this ancient book.\nKilling an enemy with this trinket equipped causes them to explode in a burst of void energy.\nEnemies caught within this blast take damage, and suffer +10% damage taken for 10 seconds.
+void_vessel_tooltip=A fragile container for the unstable energies of the Void.\nUpon landing a hit on a mob, grants a stack of Corruption.\nCorruption increases damage dealt by +10% per stack, at the cost of +5% damage taken per stack.\nMaximum of 10 stacks.
+eldritch_manuscript_tooltip=A book containing eldritch knowledge of the Void itself.\nKilling an enemy with this trinket equipped causes them to explode in a burst of void energy.\nEnemies caught within this blast take damage, and suffer +10% damage taken for 10 seconds.
 
 // Miscellaneous
 void_rift_tip=A tear in the fabric of reality itself, exposing this world to the Void.\nContact with this tile deals massive damage to anything in contact with it, unless it is otherwise immune.\nOnly available in creative mode.
@@ -156,12 +173,14 @@ void_sentinel_stack_buff=+2 armour per stack.
 [mob]
 // Critters
 void_caveling=Void Caveling
+crow=Crow
 
 // Surface
-haunted_skeleton=Skeleton
+undead_cultist=Undead Cultist
 
 // Caves
 void_cultist=Void Cultist
+void_scholar=Void Scholar
 
 // Deep Caves
 void_sentinel=Void Sentinel
@@ -172,8 +191,8 @@ void_gateway_boss=Void Gateway
 void_gateway_minion=Void Gateway Minion
 
 [deaths]
-void_sentinel_1=<victim> was crushed underfoot by <attacker>.
-void_sentinel_2=<victim> was smashed to bits by <attacker>.
+void_sentinel1=<victim> was crushed underfoot by <attacker>.
+void_sentinel2=<victim> was smashed to bits by <attacker>.
 void_rift1=<victim> was obliterated by <attacker>.
 
 [biome]

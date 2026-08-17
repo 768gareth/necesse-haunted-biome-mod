@@ -5,9 +5,9 @@ import necesse.entity.mobs.buffs.BuffEventSubscriber;
 import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.mobs.buffs.staticBuffs.Buff;
 
-public class LensmakerStackBuff extends Buff
+public class VoidVesselStackUserDebuff extends Buff
 {
-    public LensmakerStackBuff() {
+    public VoidVesselStackUserDebuff() {
       this.isImportant = true;
       this.canCancel = false;
    }
@@ -19,7 +19,7 @@ public class LensmakerStackBuff extends Buff
    @Override
    public void serverTick(ActiveBuff buff) 
    {
-      buff.setModifier(BuffModifiers.CRIT_CHANCE, ((Float) 0.05f * buff.owner.buffManager.getStacks(this)));
+      buff.setModifier(BuffModifiers.INCOMING_DAMAGE_MOD, ((Float) 0.05f * buff.owner.buffManager.getStacks(this)));
    }
 
     @Override

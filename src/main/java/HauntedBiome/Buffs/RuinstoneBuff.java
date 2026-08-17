@@ -1,7 +1,6 @@
 package HauntedBiome.Buffs;
 
 import necesse.engine.localization.Localization;
-import necesse.engine.registries.DamageTypeRegistry;
 import necesse.entity.mobs.MobWasHitEvent;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
@@ -19,7 +18,7 @@ public class RuinstoneBuff extends TrinketBuff
     @Override
     public void onHasAttacked(ActiveBuff buff, MobWasHitEvent event) 
     {
-        if (event.damageType == DamageTypeRegistry.MELEE && event.isCrit)
+        if (event.isCrit)
         {
             event.target.buffManager.addBuff(new ActiveBuff("ruinstone_stack_debuff", buff.owner, 5f, buff.owner), true);
         }

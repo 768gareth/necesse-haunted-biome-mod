@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.function.Supplier;
 
 import necesse.engine.gameLoop.tickManager.TickManager;
+import necesse.entity.mobs.DeathMessageTable;
 import necesse.entity.mobs.HumanTexture;
 import necesse.entity.mobs.MaskShaderOptions;
 import necesse.entity.mobs.Mob;
@@ -116,5 +117,10 @@ public class VoidArcanistMob extends HostileItemAttackerMob
     public boolean hasValidSummonItem(Item item, CheckSlotType slotType) 
     {
         return true;
+    }
+
+    public DeathMessageTable getDeathMessages() 
+    {
+      return getDeathMessages("ascendedwizard", 5);
     }
 }

@@ -68,15 +68,14 @@ public class VoidScholarMob extends HostileItemAttackerMob {
         updateLook();
         this.ai = new BehaviourTreeAI((Mob) this,
                 (AINode) new ConfusedItemAttackerPlayerChaserWandererAI(null, 512, getWeapon(), 40000));
-        this.helmet = null;
-        this.chest = new InventoryItem("demonicchestplate");
-        this.boots = new InventoryItem("demonicboots");
+        this.helmet = new InventoryItem("void_cult_hood");
+        this.chest = new InventoryItem("void_cult_robe");
+        this.boots = new InventoryItem("void_cult_boots");
     }
     
     public static InventoryItem getWeapon() {
-    InventoryItem inventoryItem = new InventoryItem("demonicsword");
-    inventoryItem.getGndData().setFloat("damage", 25.0F);
-    inventoryItem.getGndData().setFloat("knockback", 25.0F);
+    InventoryItem inventoryItem = new InventoryItem("voidmissile");
+    inventoryItem.getGndData().setFloat("damage", 30.0F);
     return inventoryItem;
   }
 
@@ -176,7 +175,7 @@ public class VoidScholarMob extends HostileItemAttackerMob {
     }
 
     public DeathMessageTable getDeathMessages() {
-        return getDeathMessages("void_cultist", 2);
+        return getDeathMessages("voidtrap", 3);
     }
 
     public float getAttackingMovementModifier() {

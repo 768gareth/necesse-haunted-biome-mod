@@ -11,6 +11,7 @@ import necesse.engine.registries.MobRegistry;
 import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.DeathMessageTable;
 import necesse.entity.mobs.GameDamage;
+import necesse.entity.mobs.HumanTexture;
 import necesse.entity.mobs.MaskShaderOptions;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.MobDrawable;
@@ -25,13 +26,21 @@ import necesse.entity.particle.Particle;
 import necesse.gfx.camera.GameCamera;
 import necesse.gfx.drawOptions.DrawOptions;
 import necesse.gfx.drawOptions.human.HumanDrawOptions;
+import necesse.gfx.drawOptions.human.HumanDrawOptions.HumanDrawOptionsGetter;
 import necesse.gfx.drawables.OrderableDrawables;
+import necesse.inventory.InventoryItem;
+import necesse.inventory.item.armorItem.ArmorItem;
 import necesse.level.maps.Level;
 import necesse.level.maps.light.GameLight;
 
-public class HauntedSkeleton extends HostileMob
+public class UndeadCultist extends HostileMob
 {
-    public HauntedSkeleton()
+    public static HumanTexture texture;
+    public InventoryItem helmet;
+    public InventoryItem chest;
+    public InventoryItem boots;
+
+    public UndeadCultist()
     {
         super(150);
         this.setArmor(10);
@@ -42,6 +51,9 @@ public class HauntedSkeleton extends HostileMob
         this.swimMaskMove = 16;
         this.swimMaskOffset = -2;
         this.swimSinkOffset = -4;
+        this.helmet = new InventoryItem("void_cult_hood");
+        this.chest = new InventoryItem("void_cult_robe");
+        this.boots = new InventoryItem("void_cult_boots");
     }
 
     public void init() {
@@ -60,7 +72,20 @@ public class HauntedSkeleton extends HostileMob
         drawY += getBobbing(x, y);
         drawY += getLevel().getTile(x / 32, y / 32).getMobSinkingAmount((Mob)this);
         MaskShaderOptions swimMask = getSwimMaskShaderOptions(inLiquidFloat(x, y));
-        HumanDrawOptions humanDrawOptions = (new HumanDrawOptions(level, MobRegistry.Textures.ancientSkeleton)).sprite(sprite).dir(dir).mask(swimMask).light(light);
+        HumanDrawOptions humanDrawOptions = (new HumanDrawOptions(level, this.texture)).sprite(sprite).dir(dir).mask(swimMask).light(light);
+        if (this.helmet != null)
+        {
+            humanDrawOptions.helmet(this.helmet); 
+            humanDrawOptions.hatTexture((HumanDrawOptionsGetter)null, ArmorItem.HairDrawMode.NO_HAIR);
+        }
+        if (this.chest != null) 
+        {
+            humanDrawOptions.chestplate(this.chest);
+        } 
+        if (this.boots != null) 
+        {
+            humanDrawOptions.boots(this.boots);
+        } 
         final DrawOptions drawOptions = humanDrawOptions.pos(drawX, drawY);
         list.add
         (   new MobDrawable() 

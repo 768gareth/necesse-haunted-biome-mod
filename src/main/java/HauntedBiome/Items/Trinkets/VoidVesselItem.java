@@ -7,16 +7,16 @@ import necesse.inventory.item.Item;
 import necesse.inventory.item.trinketItem.TrinketItem;
 import necesse.inventory.lootTable.presets.TrinketsLootTable;
 
-public class LensmakerGlassesItem extends TrinketItem
+public class VoidVesselItem extends TrinketItem
 {
-    public LensmakerGlassesItem() 
+    public VoidVesselItem() 
     {
-        super(Item.Rarity.RARE, 200, TrinketsLootTable.trinkets);
+        super(Item.Rarity.UNCOMMON, 200, TrinketsLootTable.trinkets);
     }
 
     @Override
     public TrinketBuff[] getBuffs(InventoryItem item) 
     {
-        return new TrinketBuff[] { (TrinketBuff)BuffRegistry.getBuff("lensmaker_buff") };
+        return new TrinketBuff[] { (TrinketBuff)BuffRegistry.getBuff("void_vessel_buff") };
     }
-}
+  }

@@ -67,7 +67,7 @@ public class RegisterObjects
         
         ObjectRegistry.registerObject("void_grass", new VoidGrassObject(), 1f, true);
 
-        ObjectRegistry.registerObject("void_candle", (new TorchObject("void_candle", ToolType.ALL, new Color(255, 255, 152), 200.0F, 0.6F, true, 4)).setWallPlaceObjectStringID("void_wall_candle"), 5.0F, true);
+        ObjectRegistry.registerObject("void_candle", (new TorchObject("void_candle", ToolType.ALL, new Color(255, 255, 152), 245f, 0.6F, true, 4)).setWallPlaceObjectStringID("void_wall_candle"), 5.0F, true);
         ObjectRegistry.registerObject("void_wall_candle", (new WallCandleObject()).setItemDroppedStringID("void_candle"), 5.0F, false);
 
         BedObject.registerBed("haunted_bed", "haunted_bed", HauntedColour, 50.0F, FurnitureCategory);
@@ -94,7 +94,7 @@ public class RegisterObjects
         CandlesObject VoidCandles = new CandlesObject("void_candle_set", HauntedColour, 20.0F, 0.4F);
         VoidCandles.flameHue = 275f;
         VoidCandles.smokeHue = 250f;
-        VoidCandles.lightHue = 200f;
+        VoidCandles.lightHue = 250f;
         VoidCandles.lightSat = 0.7f;
         registerObject("void_candle_set", (GameObject)VoidCandles, 10.0F, true);
 
@@ -115,6 +115,11 @@ public class RegisterObjects
         WallObject HauntedWall = (WallObject)getObject(HauntedWallIDs[0]);
         ObjectRegistry.registerObject("haunted_wall_arrow_trap", new WallArrowTrapObject(HauntedWall), 50.0F, true);
 
+        int[] DeepVoidWallIDs = WallObject.registerWallObjects("deep_void_", "deep_void_wall", 0.0F, new Color(36, 12, 44), -1.0F, -1.0F);
+        WallObject DeepVoidWall = (WallObject)getObject(DeepVoidWallIDs[0]);
+        ObjectRegistry.registerObject("deep_void_wall_flame_trap", new WallFlameTrapObject(DeepVoidWall), 50.0F, true);
+        ObjectRegistry.registerObject("deep_void_wall_arrow_trap", new WallArrowTrapObject(DeepVoidWall), 50.0F, true);
+
         ObjectRegistry.registerObject("void_column", (GameObject)new ColumnObject("void_column", new Color(111, 28, 128), ToolType.PICKAXE), 2.0F, true);
 
         ObjectRegistry.registerObject("void_fragment_sample", new VoidFragmentSampleObject(), 2.0F, true);
@@ -131,7 +136,7 @@ public class RegisterObjects
         RockObject VoidRock;
         RockObject DeepVoidRock;
         ObjectRegistry.registerObject("void_rock", VoidRock = new RockObject("void_rock", new Color(50, 50, 150), "void_stone", RocksCategory), 2.0F, true);
-        ObjectRegistry.registerObject("deep_void_rock", DeepVoidRock = new RockObject("deep_void_rock", new Color(50, 50, 150), "void_stone", RocksCategory), 2.0F, true);
+        ObjectRegistry.registerObject("deep_void_rock", DeepVoidRock = new RockObject("deep_void_rock", new Color(50, 50, 150), "deep_void_stone", RocksCategory), 2.0F, true);
         
         ObjectRegistry.registerObject("void_rock_small", new SingleRockSmall(VoidRock, "void_rock_small", new Color(70, 70, 152), RocksCategory), 2.0F, true);
         SingleRockObject.registerSurfaceRock(VoidRock, "void_rock_large", new Color(49, 142, 184), 2.0F, true, RocksCategory);
@@ -151,32 +156,5 @@ public class RegisterObjects
         ObjectRegistry.registerObject("life_quartz_deep_void_rock", new RockOreObject(DeepVoidRock, "oremask", "lifequartzore", new Color(180, 50, 61), "lifequartz", 1, 1, 1, RocksCategory), 2.0F, true);
         ObjectRegistry.registerObject("demonic_ore_deep_void_rock", new RockOreObject(DeepVoidRock, "oremask", "demonic_ore", new Color(88, 0, 108), "demonic_ore", RocksCategory), 2.0F, true);
         ObjectRegistry.registerObject("nightmare_ore_deep_void_rock", new RockOreObject(DeepVoidRock, "oremask", "nightmare_ore", new Color(88, 0, 108), "nightmare_ore", RocksCategory), 2.0F, true);
-
-        debugObject("void_rock");
-        debugObject("deep_void_rock");
-        debugObject("copper_ore_void_rock");
-        debugObject("iron_ore_void_rock");
-        debugObject("gold_ore_void_rock");
-        debugObject("demonic_ore_void_rock");
-        debugObject("iron_ore_deep_void_rock");
-        debugObject("copper_ore_deep_void_rock");
-        debugObject("gold_ore_deep_void_rock");
-        debugObject("tungsten_ore_deep_void_rock");
-        debugObject("void_rock_small");
-        debugObject("void_rock_large");
-        debugObject("deep_void_rock_small");
-        debugObject("deep_void_rock_large");
-        debugObject("void_fragment_cluster_small");
-        debugObject("void_fragment_cluster_large");
-        debugObject("crate");
     }
-
-    private static void debugObject(String id) {
-    int objectID = ObjectRegistry.getObjectID(id);
-    System.out.println("[Haunted Biome] " + id + " = " + objectID);
-
-    if (objectID == -1) {
-        throw new RuntimeException("UNREGISTERED OBJECT: " + id);
-    }
-}
 }

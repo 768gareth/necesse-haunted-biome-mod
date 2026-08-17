@@ -16,12 +16,12 @@ public class VoidGrassObject extends GrassObject
       this.lightLevel = 50;
       this.lightSat = 1.0F;
       this.lightHue = 310f;
-      this.grassValidTileIDs.add(TileRegistry.getTileID("deep_void_rock"));
+      this.grassValidTileIDs.add(TileRegistry.getTileID("deep_void_rock_tile"));
       this.objectTileLayerIgnored = true;
     }
     
     public String canPlace(Level level, int layerID, int x, int y, int rotation, boolean byPlayer, boolean ignoreOtherLayers) {
-      if ((level.getTile(x, y).getStringID() == "deep_void_rock") && (level.getObject(x, y).getID() == 0))
+      if ((level.getTile(x, y).getStringID() == "deep_void_rock_tile") && (level.getObject(x, y).getID() == 0))
       {
         return null;
       }
@@ -33,7 +33,7 @@ public class VoidGrassObject extends GrassObject
   
   public boolean isValid(Level level, int layerID, int x, int y) 
   {
-      return (level.getTile(x, y).getStringID() == "deep_void_rock");
+      return (level.getTile(x, y).getStringID() == "deep_void_rock_tile");
   }
 
 

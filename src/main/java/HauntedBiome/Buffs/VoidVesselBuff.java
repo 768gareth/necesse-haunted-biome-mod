@@ -10,7 +10,7 @@ import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.trinketItem.TrinketItem;
 
-public class LensmakerBuff extends TrinketBuff
+public class VoidVesselBuff extends TrinketBuff
 {
     @Override
     public void init(ActiveBuff buff, BuffEventSubscriber eventSubscriber) {}
@@ -18,9 +18,10 @@ public class LensmakerBuff extends TrinketBuff
     @Override
     public void onHasAttacked(ActiveBuff buff, MobWasHitEvent event) 
     {
-        if (event.isCrit)
+        if (event.wasPrevented == false)
         {
-            event.target.buffManager.addBuff(new ActiveBuff("lensmaker_stack_buff", buff.owner, 5f, buff.owner), true);
+            event.target.buffManager.addBuff(new ActiveBuff("void_vessel_stack_debuff", buff.owner, 5f, buff.owner), true);
+            event.attacker.getAttackOwner().buffManager.addBuff(new ActiveBuff("void_vessel_user_stack_debuff", buff.owner, 5f, buff.owner), true);
         }
     }
 
@@ -28,7 +29,7 @@ public class LensmakerBuff extends TrinketBuff
     public ListGameTooltips getTrinketTooltip(TrinketItem trinketItem, InventoryItem item, PlayerMob perspective) 
     {
         ListGameTooltips tooltips = super.getTrinketTooltip(trinketItem, item, perspective);
-        tooltips.add(Localization.translate("itemtooltip", "lensmaker_tooltip"));
+        tooltips.add(Localization.translate("itemtooltip", "void_vessel_tooltip"));
         return tooltips;
     }
 }

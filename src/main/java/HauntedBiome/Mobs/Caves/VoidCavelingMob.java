@@ -1,4 +1,4 @@
-package HauntedBiome.Mobs;
+package HauntedBiome.Mobs.Caves;
 
 import java.awt.Color;
 

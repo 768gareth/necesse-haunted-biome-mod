@@ -139,7 +139,7 @@ public class HauntedBiome extends Biome
     @Override
     public int getGenerationDeepCaveLavaTileID() 
     {
-        return TileRegistry.getTileID("deep_void_rock");
+        return TileRegistry.getTileID("deep_void_rock_tile");
     }
 
     @Override
@@ -163,7 +163,7 @@ public class HauntedBiome extends Biome
     @Override
     public int getGenerationDeepCaveTileID() 
     {
-        return TileRegistry.getTileID("deep_void_rock");
+        return TileRegistry.getTileID("deep_void_rock_tile");
     }
 
     @Override
@@ -282,7 +282,7 @@ public class HauntedBiome extends Biome
                 .placeObjectForced("demonic_ore_deep_void_rock");
         stack.startPlaceOnVein(this, region, random, "hauntedDeepNightmare").onlyOnObject(RockID)
                 .placeObjectForced("nightmare_ore_deep_void_rock");
-        stack.startPlace(this, region, random).onlyOnTile(TileRegistry.getTileID("deep_void_rock")).chance(0.6).placeObject("void_grass");
+        stack.startPlace(this, region, random).onlyOnTile(TileRegistry.getTileID("deep_void_rock_tile")).chance(0.6).placeObject("void_grass");
         stack.startPlace(this, region, random).chance(0.008).placeObject("deep_void_rock_small");
         stack.startPlace(this, region, random).chance(0.006).placeObject("deep_void_rock_large");
         stack.startPlace(this, region, random).chance(0.0015).placeObject("void_fragment_cluster_small");
