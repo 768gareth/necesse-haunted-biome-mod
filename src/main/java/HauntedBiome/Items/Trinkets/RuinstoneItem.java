@@ -11,7 +11,7 @@ public class RuinstoneItem extends TrinketItem
 {
     public RuinstoneItem() 
     {
-        super(Item.Rarity.RARE, 200, TrinketsLootTable.trinkets);
+        super(Item.Rarity.UNCOMMON, 200, TrinketsLootTable.trinkets);
     }
 
     @Override

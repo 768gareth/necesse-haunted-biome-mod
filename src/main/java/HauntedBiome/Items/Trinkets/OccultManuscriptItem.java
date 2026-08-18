@@ -11,7 +11,7 @@ public class OccultManuscriptItem extends TrinketItem
 {
     public OccultManuscriptItem() 
     {
-        super(Item.Rarity.UNCOMMON, 200, TrinketsLootTable.trinkets);
+        super(Item.Rarity.RARE, 300, TrinketsLootTable.trinkets);
     }
 
     @Override

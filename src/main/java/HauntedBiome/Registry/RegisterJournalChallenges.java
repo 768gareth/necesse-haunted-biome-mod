@@ -43,7 +43,7 @@ public class RegisterJournalChallenges
             ).setReward(CAVES_REWARD)
         );
 
-        // Deep Caves Challenges - Reward: Occult Translation Guide (or amulet of corruption?)
+        // Deep Caves Challenges - Reward: Amulet of Corruption
         int DEFEAT_DEEP_VOID_GATEWAY_ID;
         int ACQUIRE_DEEP_HAUNTED_CAVES_TRINKET_ID;
         int COLLECT_NIGHTMARE_ORE;

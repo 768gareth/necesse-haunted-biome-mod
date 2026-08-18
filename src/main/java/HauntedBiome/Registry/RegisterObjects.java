@@ -4,6 +4,7 @@ import java.awt.Color;
 
 import HauntedBiome.Objects.HauntedGrassObject;
 import HauntedBiome.Objects.LightingTableDecorationObject;
+import HauntedBiome.Objects.VoidAltarObject;
 import HauntedBiome.Objects.VoidBrazierObject;
 import HauntedBiome.Objects.VoidFragmentSampleObject;
 import HauntedBiome.Objects.VoidGrassObject;
@@ -91,6 +92,8 @@ public class RegisterObjects
         ObjectRegistry.registerObject("occult_books_2", (GameObject)new TableDecorationObject("occult_books_2", new Color(50, 50, 50), 14, 14, 0, 2), 5.0F, true);
         ObjectRegistry.registerObject("haunted_flower_1", (new TableDecorationObject("haunted_flower_1", new Color(52, 110, 152), 14, 12)).setItemCategory(potsCategory).setCraftingCategory(potsCategory), 20.0F, true);
 
+        ObjectRegistry.registerObject("void_altar_display", new VoidAltarObject(FurnitureCategory), 100f, true);
+
         CandlesObject VoidCandles = new CandlesObject("void_candle_set", HauntedColour, 20.0F, 0.4F);
         VoidCandles.flameHue = 275f;
         VoidCandles.smokeHue = 250f;
@@ -130,8 +133,10 @@ public class RegisterObjects
 
         ObjectRegistry.registerObject("haunted_candelabra", (GameObject)HauntedCandelabra, 0.4F, true);
         ObjectRegistry.registerObject("void_brazier", new VoidBrazierObject(), 5f, true);
-        ObjectRegistry.registerObject("void_fragment_cluster_small", new CrystalClusterSmallObject("void_fragment_cluster_small", new Color(97, 31, 127), 240.0F, "void_fragment", 0, 1, 1, CrystalClusterCategory), 5f, true);
+        ObjectRegistry.registerObject("void_fragment_cluster_small", new CrystalClusterSmallObject("void_fragment_cluster_small", new Color(97, 31, 127), 240.0F, "void_fragment", 0, 1, 1, CrystalClusterCategory), 10f, true);
         CrystalClusterObject.registerCrystalCluster("void_fragment_cluster_large", new Color(97, 31, 127), 247.0F, "void_fragment", 10.0F, true, CrystalClusterCategory);
+        ObjectRegistry.registerObject("void_crystal_cluster_small", new CrystalClusterSmallObject("void_crystal_cluster_small", new Color(97, 31, 127), 240.0F, "void_crystal", 0, 1, 1, CrystalClusterCategory), 10f, true);
+        CrystalClusterObject.registerCrystalCluster("void_crystal_cluster_large", new Color(97, 31, 127), 247.0F, "void_crystal", 10.0F, true, CrystalClusterCategory);
         
         RockObject VoidRock;
         RockObject DeepVoidRock;

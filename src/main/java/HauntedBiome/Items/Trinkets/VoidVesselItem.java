@@ -11,7 +11,7 @@ public class VoidVesselItem extends TrinketItem
 {
     public VoidVesselItem() 
     {
-        super(Item.Rarity.UNCOMMON, 200, TrinketsLootTable.trinkets);
+        super(Item.Rarity.RARE, 300, TrinketsLootTable.trinkets);
     }
 
     @Override

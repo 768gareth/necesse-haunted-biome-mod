@@ -112,16 +112,20 @@ bloodberry_cake=Bloodberry Cake
 bloodberry_sundae=Bloodberry Sundae
 corruption_potion=Corruption Potion
 
-// Trinkets
+// Trinkets - Caves
 ruinstone=Ruinstone
-void_crystal=Void Crystal
-void_vessel=Void Vessel
-occult_manuscript=Occult Manuscript
+corrupted_ring=Corrupted Ring
+
+// Trinkets - Deep Caves
 amulet_of_corruption=Amulet of Corruption
+void_crystal_ring=Void Crystal Ring
+void_vessel=Void Vessel
+book_of_the_void=Book of the Void
 
 // Crafting materials
 haunted_log=Haunted Log
 void_fragment=Void Fragment
+void_crystal=Void Crystal
 void_stone=Void Stone
 deep_void_stone=Deep Void Stone
 demonfish=Demonfish
@@ -137,6 +141,7 @@ corruption_potion_buff=+50% damage dealt, +50% damage received.
 // Crafting Materials
 demonic_ore_tooltip=Can be smelted into Demonic Bars.
 void_fragment_tooltip=Can be combined into Void Shards, or used in other crafting recipes.
+void_crystal_tooltip=These crystals glow with otherworldly power.
 nightmare_ore_tooltip=Can be smelted into Nightmare Bars.\nThe material produces faint, unsettling whispers when held close to the ear.
 nightmare_bar_tooltip=These bars feel freezing cold to the touch.
 
@@ -149,7 +154,7 @@ nightmare_bow_tooltip=Projectiles inflict a stack of Ruin for five seconds.\nEac
 void_sentinel_melee_buff_tooltip=Melee critical hits add a stacking buff that provides +2 armour per stack. Maximum of 5 stacks.
 void_sentinel_ranged_buff_tooltip=Ranged critical hits add a stacking buff that increases critical hit chance by +5%. Maximum of 5 stacks.
 ancient_void_set_magic_buff_tooltip=Reduces mana usage by 50%, and increases magic attack speed by 100%,\nat the cost of -50% magic damage.
-ancient_void_set_summoner_buff=Gain +3 summon slots, but decreases summon damage by 50%.
+ancient_void_set_summoner_buff=Gain +3 summon slots, but decreases summon damage by 33%.
 
 // Tools
 nightmare_pickaxe_tooltip=Can mine Amber in the Deep Plains Caves.
@@ -157,12 +162,15 @@ nightmare_pickaxe_tooltip=Can mine Amber in the Deep Plains Caves.
 // Consumables
 corruption_potion_tooltip=+50% damage dealt, +50% damage received.
 
-// Trinkets
-amulet_of_corruption_tooltip=A common artifact of the Void Cult, used for channeling the Void.\nDoubles the amount of damage you deal, at the cost of receiving double damage from other sources.
-ruinstone_tooltip=This stone pulses with void energy, and feels cold in your hands.\nCritical hits inflict one stack of Ruin for five seconds.\nEach stack of Ruin causes the target to take +5% damage, up to a maximum of +25% damage at 5 stacks.
-void_crystal_tooltip=
-void_vessel_tooltip=A fragile container for the unstable energies of the Void.\nUpon landing a hit on a mob, grants a stack of Corruption.\nCorruption increases damage dealt by +10% per stack, at the cost of +5% damage taken per stack.\nMaximum of 10 stacks.
-eldritch_manuscript_tooltip=A book containing eldritch knowledge of the Void itself.\nKilling an enemy with this trinket equipped causes them to explode in a burst of void energy.\nEnemies caught within this blast take damage, and suffer +10% damage taken for 10 seconds.
+// Trinkets - Caves
+ruinstone_tooltip=This stone pulses with otherworldly energy, and feels cold in your hands.\nCritical hits inflict one stack of Ruin for five seconds.\nEach stack of Ruin causes the target to take +5% damage, up to a maximum of +25% damage at 5 stacks.
+corrupted_ring=The ring feels painful to the touch. Reduces your maximum health by 10%, 
+
+// Trinkets - Deep Caves
+amulet_of_corruption_tooltip=A powerful artifact of the Void Cult, used in channeling the power of the Void.\n+50% damage dealt, +50% damage received.
+void_crystal_ring_tooltip=When equipped, summons a powerful void entity that launches 
+void_vessel_tooltip=A fragile container for channeling the unstable energies of the Void.\nUpon landing a hit on a mob, grants a stack of Corruption.\nCorruption increases damage dealt by +10% per stack, at the cost of +10% damage taken per stack.\nMaximum of 10 stacks for targets.\nMaximum of 5 stacks for the user.
+book_of_the_void_tooltip=A book containing eldritch knowledge of the Void itself.\nKilling an enemy with this trinket equipped causes them to explode in a burst of void energy.\nEnemies caught within this blast take damage, and suffer +10% damage taken for 10 seconds.
 
 // Miscellaneous
 void_rift_tip=A tear in the fabric of reality itself, exposing this world to the Void.\nContact with this tile deals massive damage to anything in contact with it, unless it is otherwise immune.\nOnly available in creative mode.

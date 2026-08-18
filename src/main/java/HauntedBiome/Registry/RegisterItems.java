@@ -88,9 +88,10 @@ public class RegisterItems
 
         // Crafting Materials
         ItemRegistry.registerItem("demonic_ore", (new MatItem(500, Item.Rarity.COMMON, "demonic_ore_tooltip")).setItemCategory(new String[] { "materials", "ore" }), 4.0F, true);
-        ItemRegistry.registerItem("void_fragment", (new MatItem(500, Rarity.UNCOMMON, "void_fragment_tooltip")).setItemCategory(new String[]{"materials", "mobdrops"}), 10.0F, true);
-        ItemRegistry.registerItem("nightmare_ore", (new MatItem(500, Item.Rarity.UNCOMMON, "nightmare_ore_tooltip")).setItemCategory(new String[] { "materials", "ore" }), 6.0F, true);
-        ItemRegistry.registerItem("nightmare_bar", (new MatItem(500, Item.Rarity.UNCOMMON, "nightmare_bar_tooltip")).setItemCategory(new String[] { "materials" }), 12.0F, true);
+        ItemRegistry.registerItem("void_fragment", (new MatItem(500, Rarity.UNCOMMON, "void_fragment_tooltip")).setItemCategory(new String[]{ "materials" }), 10.0F, true);
+        ItemRegistry.registerItem("void_crystal", (new MatItem(500, Rarity.RARE, "void_crystal_tooltip")).setItemCategory(new String[]{ "materials" }), 10.0F, true);
+        ItemRegistry.registerItem("nightmare_ore", (new MatItem(500, Item.Rarity.RARE, "nightmare_ore_tooltip")).setItemCategory(new String[] { "materials", "ore" }), 6.0F, true);
+        ItemRegistry.registerItem("nightmare_bar", (new MatItem(500, Item.Rarity.RARE, "nightmare_bar_tooltip")).setItemCategory(new String[] { "materials" }), 12.0F, true);
         ItemRegistry.registerItem("void_stone", new StonePlaceableItem(999), 0.1F, true);
         ItemRegistry.registerItem("deep_void_stone", new StonePlaceableItem(999), 0.1F, true);
         ItemRegistry.registerItem("haunted_log", (new MatItem(500, new String[] { "anylog" })).setItemCategory(new String[] { "materials", "logs" }), 2.0F, true);

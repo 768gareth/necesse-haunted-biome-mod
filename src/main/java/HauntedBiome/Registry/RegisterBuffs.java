@@ -20,7 +20,7 @@ public class RegisterBuffs
         // Trinkets
         BuffRegistry.registerBuff("ruinstone_buff", new RuinstoneBuff());
         BuffRegistry.registerBuff("ruinstone_stack_debuff", new RuinstoneStackDebuff());
-        BuffRegistry.registerBuff("amulet_of_corruption_buff", new SimpleTrinketBuff("amulet_of_corruption_tooltip", new ModifierValue[]{new ModifierValue(BuffModifiers.ALL_DAMAGE, 1F), new ModifierValue(BuffModifiers.INCOMING_DAMAGE_MOD, 2F)}));
+        BuffRegistry.registerBuff("amulet_of_corruption_buff", new SimpleTrinketBuff("amulet_of_corruption_tooltip", new ModifierValue[]{new ModifierValue(BuffModifiers.ALL_DAMAGE, 0.5F), new ModifierValue(BuffModifiers.INCOMING_DAMAGE_MOD, 1.5F)}));
         BuffRegistry.registerBuff("void_vessel_buff", new VoidVesselBuff());
         BuffRegistry.registerBuff("void_vessel_stack_debuff", new VoidVesselStackDebuff());
         BuffRegistry.registerBuff("void_vessel_user_stack_debuff", new VoidVesselStackUserDebuff());
