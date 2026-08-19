@@ -38,7 +38,7 @@ import necesse.inventory.item.armorItem.cosmetics.misc.ShoesArmorItem;
 import necesse.level.maps.Level;
 import necesse.level.maps.light.GameLight;
 
-public class VoidCultistMob extends HostileItemAttackerMob {
+public class VoidWarrior extends HostileItemAttackerMob {
     public int lookSeed;
 
     public HumanLook look = new HumanLook();
@@ -49,7 +49,7 @@ public class VoidCultistMob extends HostileItemAttackerMob {
 
     public InventoryItem boots;
 
-    public VoidCultistMob() {
+    public VoidWarrior() {
         super(150);
         setSpeed(25.0F);
         setFriction(3.0F);

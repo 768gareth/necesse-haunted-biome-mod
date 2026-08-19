@@ -35,8 +35,8 @@ public class AncientVoidCultHoodItem extends SetHelmetArmorItem
     {
         return new ArmorModifiers(new ModifierValue[] 
             { 
-                new ModifierValue(BuffModifiers.MAGIC_CRIT_CHANCE, 0.1f),
-                new ModifierValue(BuffModifiers.MAGIC_ATTACK_SPEED, 0.25f),
+                new ModifierValue(BuffModifiers.SUMMON_ATTACK_SPEED, 0.1f),
+                new ModifierValue(BuffModifiers.MAGIC_ATTACK_SPEED, 0.1f),
             });
     }
 }

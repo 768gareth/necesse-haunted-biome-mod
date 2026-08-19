@@ -2,9 +2,9 @@ package HauntedBiome.World;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
+import HauntedBiome.Registry.RegisterChestRoomSets;
+import HauntedBiome.Registry.RegisterWallSets;
 import HauntedBiome.Utils.HauntedLootTables;
-import HauntedBiome.Utils.RegisterChestRoomSets;
-import HauntedBiome.Utils.RegisterWallSets;
 import necesse.engine.AbstractMusicList;
 import necesse.engine.MusicList;
 import necesse.engine.registries.MusicRegistry;
@@ -38,7 +38,7 @@ public class HauntedBiome extends Biome
     public static MobSpawnTable SurfaceMobs = new MobSpawnTable().add(100, "haunted_skeleton");
     public static MobSpawnTable CaveMobs = new MobSpawnTable().add(75, "void_cultist");
     public static MobSpawnTable DeepCaveMobs = new MobSpawnTable().add(75, "void_sentinel").add(25, "void_arcanist");
-    public static MobSpawnTable SurfaceCritters = new MobSpawnTable().include(Biome.defaultSurfaceCritters).add(100, "spider").add(100, "mouse");
+    public static MobSpawnTable SurfaceCritters = new MobSpawnTable().add(25, "spider").add(100, "crow");
     public static MobSpawnTable CaveCritters = new MobSpawnTable().include(Biome.defaultCaveCritters).add(50, "void_caveling");
     public static MobSpawnTable DeepCaveCritters = new MobSpawnTable().include(Biome.defaultCaveCritters).add(10, "croppleronion").add(50, "void_caveling");
 
@@ -256,8 +256,8 @@ public class HauntedBiome extends Biome
                 .placeObjectForced("demonic_ore_void_rock");
         stack.startPlace(this, region, random).chance(0.007).placeObject("void_rock_small");
         stack.startPlace(this, region, random).chance(0.005).placeObject("void_rock_large");
-        stack.startPlace(this, region, random).chance(0.001).placeObject("void_fragment_cluster_small");
-        stack.startPlace(this, region, random).chance(0.0005).placeObject("void_fragment_cluster_large");
+        stack.startPlace(this, region, random).chance(0.0025).placeObject("void_fragment_cluster_small");
+        stack.startPlace(this, region, random).chance(0.0015).placeObject("void_fragment_cluster_large");
         stack.startPlace(this, region, random).chance(0.024999999329447746D).placeCrates(new String[] { "crate" });
         region.updateLiquidManager();
     }
@@ -285,8 +285,8 @@ public class HauntedBiome extends Biome
         stack.startPlace(this, region, random).onlyOnTile(TileRegistry.getTileID("deep_void_rock_tile")).chance(0.6).placeObject("void_grass");
         stack.startPlace(this, region, random).chance(0.008).placeObject("deep_void_rock_small");
         stack.startPlace(this, region, random).chance(0.006).placeObject("deep_void_rock_large");
-        stack.startPlace(this, region, random).chance(0.0015).placeObject("void_fragment_cluster_small");
-        stack.startPlace(this, region, random).chance(0.001).placeObject("void_fragment_cluster_large");
+        stack.startPlace(this, region, random).chance(0.0025).placeObject("void_crystal_cluster_small");
+        stack.startPlace(this, region, random).chance(0.0015).placeObject("void_crystal_cluster_large");
         stack.startPlace(this, region, random).chance(0.024999999329447746D).placeCrates(new String[] { "void_vase" });
         region.updateLiquidManager();
     }

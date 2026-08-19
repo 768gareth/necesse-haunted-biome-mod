@@ -57,6 +57,9 @@ demonic_double_street_lamp=Demonic Double Street Lamp
 deep_void_wall=Deep Void Wall
 deep_void_door=Deep Void Door
 deep_void_walltrap=Deep Void Wall <trap>
+void_crystal_cluster_small=Small Void Crystal Cluster
+void_crystal_cluster_large=Void Crystal Cluster
+void_altar_display=Void Altar
 
 [journal]
 haunted_surface=Haunted Surface
@@ -152,7 +155,7 @@ nightmare_bow_tooltip=Projectiles inflict a stack of Ruin for five seconds.\nEac
 
 // Set bonuses
 void_sentinel_melee_buff_tooltip=Melee critical hits add a stacking buff that provides +2 armour per stack. Maximum of 5 stacks.
-void_sentinel_ranged_buff_tooltip=Ranged critical hits add a stacking buff that increases critical hit chance by +5%. Maximum of 5 stacks.
+void_sentinel_ranged_buff_tooltip=Reduces ranged attack speed by 50%, but increases ranged damage by 100%.
 ancient_void_set_magic_buff_tooltip=Reduces mana usage by 50%, and increases magic attack speed by 100%,\nat the cost of -50% magic damage.
 ancient_void_set_summoner_buff=Gain +3 summon slots, but decreases summon damage by 33%.
 
@@ -164,7 +167,7 @@ corruption_potion_tooltip=+50% damage dealt, +50% damage received.
 
 // Trinkets - Caves
 ruinstone_tooltip=This stone pulses with otherworldly energy, and feels cold in your hands.\nCritical hits inflict one stack of Ruin for five seconds.\nEach stack of Ruin causes the target to take +5% damage, up to a maximum of +25% damage at 5 stacks.
-corrupted_ring=The ring feels painful to the touch. Reduces your maximum health by 10%, 
+corrupted_ring=The ring feels painful to the touch. Increases mob spawn rate by +33%.
 
 // Trinkets - Deep Caves
 amulet_of_corruption_tooltip=A powerful artifact of the Void Cult, used in channeling the power of the Void.\n+50% damage dealt, +50% damage received.
@@ -190,14 +193,15 @@ crow=Crow
 
 // Surface
 undead_cultist=Undead Cultist
+void_cultist_humanname=<name> the Void Cultist
 
 // Caves
-void_cultist=Void Cultist
+void_warrior=Void Warrior
 void_scholar=Void Scholar
 
 // Deep Caves
-void_sentinel=Void Sentinel
-void_arcanist=Void Arcanist
+deep_void_sentinel=Deep Void Sentinel
+deep_void_arcanist=Deep Void Arcanist
 
 // Boss/Miscellaneous
 void_gateway_boss=Void Gateway
@@ -210,3 +214,15 @@ void_rift1=<victim> was obliterated by <attacker>.
 
 [biome]
 haunted_biome=Haunted
+
+[mobmsg]
+void_cultist1=Ph'nglui mglw'nafh Malpleno Malhela Loko wgah'nagl fhtagn.
+void_cultist2=Ya na kadishtu nilgh'ri stell'bsna Malpleno, K'yarnak phlegethor l'ebumna syha'h n'ghft.
+
+[settlement]
+haunted_biome_tip=Void Cultists can be recruited from shrines across the surface of the Haunted Biome.
+
+[itemcategory]
+haunted_=Haunted Log
+void_=Void Stone
+deep_void_=Deep Void Stone

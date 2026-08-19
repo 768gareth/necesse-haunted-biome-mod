@@ -1,4 +1,4 @@
-package HauntedBiome.Utils;
+package HauntedBiome.Registry;
 
 import necesse.gfx.forms.presets.PresetDebugPreviewForm;
 import necesse.level.maps.presets.set.ChestRoomSet;

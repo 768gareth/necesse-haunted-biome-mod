@@ -25,7 +25,7 @@ public class RegisterJournal
         (
             new String[] 
             { 
-                "haunted_skeleton", "spider", "mouse"
+                "undead_cultist", "spider", "crow"
             }
         );
         HauntedSurface.addTreasureEntry(new LootTable[] { LootTablePresets.surfaceRuinsChest });
@@ -35,7 +35,7 @@ public class RegisterJournal
         (      
             new String[] 
             { 
-                "copperore", "ironore", "goldore", "demonic_ore", "demonicbar", "void_fragment", "voidshard"
+                "copperore", "ironore", "goldore", "demonic_ore", "void_fragment"
             }
         );
         HauntedCaves.addMobEntries
@@ -52,7 +52,7 @@ public class RegisterJournal
         (      
             new String[] 
             { 
-                "copperore", "ironore", "goldore", "demonic_ore", "nightmare_ore", "void_fragment", "voidshard"
+                "copperore", "ironore", "goldore", "demonic_ore", "tungstenore", "nightmare_ore", "void_crystal"
             }
         );
         HauntedDeepCaves.addMobEntries

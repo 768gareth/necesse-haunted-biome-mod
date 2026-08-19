@@ -21,7 +21,7 @@ public class AncientVoidCultRobeItem extends ChestArmorItem
     {
         return new ArmorModifiers(new ModifierValue[] 
             { 
-                new ModifierValue(BuffModifiers.MAGIC_CRIT_DAMAGE, 0.25f),
+                new ModifierValue(BuffModifiers.MAX_SUMMONS, 1),
                 new ModifierValue(BuffModifiers.MAX_MANA_FLAT, 30),
             });
     }

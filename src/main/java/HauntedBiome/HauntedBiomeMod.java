@@ -13,6 +13,7 @@ import HauntedBiome.Registry.RegisterMobs;
 import HauntedBiome.Registry.RegisterObjects;
 import HauntedBiome.Registry.RegisterProjectiles;
 import HauntedBiome.Registry.RegisterRecipes;
+import HauntedBiome.Registry.RegisterSettlers;
 import HauntedBiome.Registry.RegisterTiles;
 import HauntedBiome.Registry.RegisterWorldPresets;
 import HauntedBiome.World.HauntedBiome;
@@ -40,9 +41,7 @@ import necesse.entity.mobs.HumanTexture;
     17. Void Crystal Staff that launches a powerful homing explosive projectile at high mana cost, with a debuff afterwards to prevent use for a short time.
     18. Void Vessel should serve as an upgrade to the Ruinstone, crafted using a Ruinstone + Nightmare Bars.
     19. Ruinstone + at least two other items accessible via portal boss.
-    20. Special description stuff that requires a specific trinket buff, but when activated, grants additional lore and whatnot? Would be
-    very interesting to have, but how to use? Descriptions on items, objects?
-    21. 
+    20. Void Cultist settler type?
 */
 
 @ModEntry
@@ -62,6 +61,7 @@ public class HauntedBiomeMod
         RegisterJournal.Register();
         RegisterJournalChallenges.Register();
         RegisterProjectiles.Register();
+        RegisterSettlers.Register();
         System.out.println("[Haunted Biome Mod] Mod initialisation complete.");
     }
 
