@@ -1,4 +1,4 @@
-package HauntedBiome.Mobs.Caves;
+package HauntedBiome.Mobs.DeepCaves;
 
 import java.awt.Color;
 import java.awt.Rectangle;
@@ -33,13 +33,13 @@ import necesse.inventory.lootTable.lootItem.OneOfLootItems;
 import necesse.level.maps.Level;
 import necesse.level.maps.light.GameLight;
 
-public class VoidGatewayMob extends BossMob {
+public class DeepVoidGatewayMob extends BossMob {
     public static MaxHealthGetter MAX_HEALTH = new MaxHealthGetter(1500, 1750, 2000, 2250, 2500);
     public int spawnedMobCount = 0;
     public static GameTexture texture;
 
-    public VoidGatewayMob() {
-        super(2000);
+    public DeepVoidGatewayMob() {
+        super(4000);
 
         this.isSummoned = true;
         this.collision = new Rectangle(-10, -12, 20, 20);
@@ -47,6 +47,11 @@ public class VoidGatewayMob extends BossMob {
         this.selectBox = new Rectangle(-18, -58, 36, 58);
         this.setSpeed(0f);
         setKnockbackModifier(0.0F);
+    }
+
+    public void init() {
+        super.init();
+        this.ai = new BehaviourTreeAI((Mob) this, new GatewayBossAINode<>());
     }
 
     public boolean canPushMob(Mob other) {
@@ -62,14 +67,9 @@ public class VoidGatewayMob extends BossMob {
         (
             new LootItemInterface[] 
             {
-                new OneOfLootItems(new LootItem("ruinstone"), new LootItem("egg"), new LootItem("egg"))
+                new OneOfLootItems(new LootItem("egg"), new LootItem("egg"), new LootItem("egg"))
             }
         );
-    }
-
-    public void init() {
-        super.init();
-        this.ai = new BehaviourTreeAI((Mob) this, new GatewayBossAINode<>());
     }
 
     protected SoundSettings getHitDeathSound() {
@@ -104,14 +104,14 @@ public class VoidGatewayMob extends BossMob {
         }
 
         public AINodeResult tick(T mob, Blackboard<T> blackboard) {
-            VoidGatewayMinionMob portalMob = (VoidGatewayMinionMob) MobRegistry.getMob("void_gateway_minion",
-                    VoidGatewayMob.this.getLevel());
+            DeepVoidGatewayMinionMob portalMob = (DeepVoidGatewayMinionMob) MobRegistry
+                    .getMob("deep_void_gateway_minion", DeepVoidGatewayMob.this.getLevel());
             if (spawnedMobCount < 5 && GameRandom.globalRandom.getChance(0.1f)) {
-                portalMob.master = VoidGatewayMob.this;
-                (VoidGatewayMob.this.getLevel()).entityManager.addMob(portalMob,
-                        (VoidGatewayMob.this.getX() + (int) (GameRandom.globalRandom.nextGaussian() * 3.0D)),
-                        (VoidGatewayMob.this.getY() + (int) (GameRandom.globalRandom.nextGaussian() * 3.0D)));
-                VoidGatewayMob.this.spawnedMobCount = VoidGatewayMob.this.spawnedMobCount + 1;
+                portalMob.master = DeepVoidGatewayMob.this;
+                (DeepVoidGatewayMob.this.getLevel()).entityManager.addMob(portalMob,
+                        (DeepVoidGatewayMob.this.getX() + (int) (GameRandom.globalRandom.nextGaussian() * 3.0D)),
+                        (DeepVoidGatewayMob.this.getY() + (int) (GameRandom.globalRandom.nextGaussian() * 3.0D)));
+                DeepVoidGatewayMob.this.spawnedMobCount = DeepVoidGatewayMob.this.spawnedMobCount + 1;
             }
             return AINodeResult.SUCCESS;
         }

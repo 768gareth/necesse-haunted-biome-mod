@@ -1,33 +1,56 @@
 [object]
+// Rocks and Ores
 void_rock=Void Rock
 deep_void_rock=Deep Void Rock
 void_rock_small=Small Void Rock
 void_rock_large=Large Void Rock
+demonic_ore=Demonic Ore
+nightmare_ore=Nightmare Ore
+
+// Crystals
 void_fragment_cluster_small=Void Fragment Cluster
 void_fragment_cluster_large=Large Void Fragment Cluster
-demonic_ore=Demonic Ore
-void_wall=Void Wall
-void_walltrap=Void Wall <trap>
-void_door=Void Door
+void_crystal_cluster_small=Small Void Crystal Cluster
+void_crystal_cluster_large=Void Crystal Cluster
+
+// Nature
 haunted_log_bench=Haunted Log Bench
 haunted_grass=Haunted Grass
 haunted_tree=Haunted Tree
 haunted_sapling=Haunted Sapling
-haunted_caveglow=Caveglow (Haunted Biome Mod)
 bloodberry_bush=Bloodberry Bush
 bloodberry_sapling=Bloodberry Sapling
-void_column=Void Column
+void_grass=Void Grass
+
+// Walls, Doors, and Traps
+void_wall=Void Wall
+void_walltrap=Void Wall <trap>
+void_door=Void Door
+haunted_wall=Haunted Wall
+haunted_walltrap=Haunted Wall <trap>
+haunted_door=Haunted Door
+deep_void_wall=Deep Void Wall
+deep_void_door=Deep Void Door
+deep_void_walltrap=Deep Void Wall <trap>
+
+// Fences
 haunted_hedge=Haunted Hedge
 haunted_hedge_gate=Haunted Hedge Gate
 void_stone_fence=Void Stone Fence
 void_stone_fence_gate=Void Stone Fence Gate
-void_fragment_sample=Void Fragment Sample
+
+// Lighting
 haunted_candelabra=Haunted Candelabra
+void_candle=Void Candle
+void_candle_set=Void Candle Set
+void_brazier=Void Brazier
+demonic_street_lamp=Demonic Street Lamp
+demonic_double_street_lamp=Demonic Double Street Lamp
+
+// Furniture
 haunted_chair=Haunted Chair
 haunted_bench=Haunted Bench
-void_brazier=Void Brazier
 haunted_modular_table=Haunted Modular Table
-void_candle=Void Candle
 haunted_bed=Haunted Bed
 haunted_double_bed=Haunted Double Bed
 haunted_bookshelf=Haunted Bookshelf
@@ -35,31 +58,25 @@ haunted_modular_counter=Haunted Modular Counter
 haunted_cabinet=Haunted Cabinet
 haunted_display=Haunted Display
 haunted_desk=Haunted Desk
-occult_books_1=Occult Books #1
-occult_books_2=Occult Books #2
-void_display=Void Crystal Display
-occult_flask=Occult Flask
-void_candle=Void Candle
-haunted_flower_1=Haunted Flower #1
-void_vase=Void Vase
-void_thorns=Void Thorns
 haunted_dresser=Haunted Dresser
 haunted_clock=Haunted Clock
-void_candle_set=Void Candle Set
-haunted_walltrap=Haunted Wall <trap>
-nightmare_ore=Nightmare Ore
-haunted_wall=Haunted Wall
-haunted_door=Haunted Door
-void_grass=Void Grass
-void_monolith=Void Monolith
-demonic_street_lamp=Demonic Street Lamp
-demonic_double_street_lamp=Demonic Double Street Lamp
-deep_void_wall=Deep Void Wall
-deep_void_door=Deep Void Door
-deep_void_walltrap=Deep Void Wall <trap>
-void_crystal_cluster_small=Small Void Crystal Cluster
-void_crystal_cluster_large=Void Crystal Cluster
+void_column=Void Column
+haunted_bathtub=Haunted Bathtub
+haunted_toilet=Haunted Toilet
+
+// Table Decorations
+void_fragment_sample=Void Fragment Sample
+occult_books_1=Occult Books #1
+occult_books_2=Occult Books #2
+occult_flask=Occult Flask
+haunted_flower_1=Haunted Flower #1
+cursed_skull=Cursed Skull
+
+// Misc
+void_vase=Void Vase
 void_altar_display=Void Altar
+ancient_void_statue=Ancient Void Statue
+void_monolith=Void Monolith
 
 [journal]
 haunted_surface=Haunted Surface
@@ -67,17 +84,24 @@ haunted_caves=Haunted Caves
 haunted_deep_caves=Haunted Deep Caves
 
 [tile]
+// Surface
 haunted_grass_tile=Haunted Grass
-void_rock_tile=Void Rock
-void_stone_floor=Void Stone Floor
-void_stone_path=Void Stone Path
-void_gravel_tile=Void Gravel
-haunted_floor=Haunted Wood Floor
 mud_sand=Mud Sand
+
+// Caves
+void_rock_tile=Void Rock
+void_gravel_tile=Void Gravel
+
+// Deep Caves
 void_rift=Void Rift
 deep_void_rock_tile=Deep Void Rock
+
+// Crafted
+void_stone_floor=Void Stone Floor
+void_stone_path=Void Stone Path
+haunted_floor=Haunted Wood Floor
 deep_void_stone_floor=Deep Void Stone Floor
-void_essence_path=Void Essence Path
+deep_void_stone_path=Deep Void Stone Path
 
 [itemcategory]
 hauntedrocksandores=Haunted
@@ -154,7 +178,7 @@ cursed_fire_tooltip=On hit, inflicts a 3 second stacking debuff that causes the 
 nightmare_bow_tooltip=Projectiles inflict a stack of Ruin for five seconds.\nEach stack of Ruin causes the target to take +5% damage, up to a maximum of +25% damage at 5 stacks.
 
 // Set bonuses
-void_sentinel_melee_buff_tooltip=Melee critical hits add a stacking buff that provides +2 armour per stack. Maximum of 5 stacks.
+void_sentinel_melee_buff_tooltip=Reduces melee damage by 33%, but prevents resilience decay, and increases resilience gain by 100%.
 void_sentinel_ranged_buff_tooltip=Reduces ranged attack speed by 50%, but increases ranged damage by 100%.
 ancient_void_set_magic_buff_tooltip=Reduces mana usage by 50%, and increases magic attack speed by 100%,\nat the cost of -50% magic damage.
 ancient_void_set_summoner_buff=Gain +3 summon slots, but decreases summon damage by 33%.
@@ -167,13 +191,14 @@ corruption_potion_tooltip=+50% damage dealt, +50% damage received.
 
 // Trinkets - Caves
 ruinstone_tooltip=This stone pulses with otherworldly energy, and feels cold in your hands.\nCritical hits inflict one stack of Ruin for five seconds.\nEach stack of Ruin causes the target to take +5% damage, up to a maximum of +25% damage at 5 stacks.
-corrupted_ring=The ring feels painful to the touch. Increases mob spawn rate by +33%.
+corrupted_ring_tooltip=The ring feels painful to the touch.\nIncreases critical hit chance by +25%, but reduces critical damage by -50%.
+void_pauldron=
 
 // Trinkets - Deep Caves
 amulet_of_corruption_tooltip=A powerful artifact of the Void Cult, used in channeling the power of the Void.\n+50% damage dealt, +50% damage received.
-void_crystal_ring_tooltip=When equipped, summons a powerful void entity that launches 
-void_vessel_tooltip=A fragile container for channeling the unstable energies of the Void.\nUpon landing a hit on a mob, grants a stack of Corruption.\nCorruption increases damage dealt by +10% per stack, at the cost of +10% damage taken per stack.\nMaximum of 10 stacks for targets.\nMaximum of 5 stacks for the user.
-book_of_the_void_tooltip=A book containing eldritch knowledge of the Void itself.\nKilling an enemy with this trinket equipped causes them to explode in a burst of void energy.\nEnemies caught within this blast take damage, and suffer +10% damage taken for 10 seconds.
+void_pauldron_tooltip=Converts your maximum health into resilience.\nPrevents health regeneration, but also prevents resilience decay, and grants significant resilience regeneration.\n+50% resilience gain.
+void_vessel_tooltip=A fragile instrument for channeling the unstable energies of the Void.\nUpon landing a hit on a mob, grants a stack of Corruption.\nCorruption increases damage dealt by +10% per stack, at the cost of +10% damage taken per stack.\nMaximum of 10 stacks for targets.\nMaximum of 5 stacks for the user.
+book_of_the_void_tooltip=A book containing eldritch knowledge of the Void itself.\nKilling an enemy with this trinket equipped causes them to explode in a burst of void energy.\nEnemies caught within this blast take damage, and suffer +20% damage taken for 10 seconds.
 
 // Miscellaneous
 void_rift_tip=A tear in the fabric of reality itself, exposing this world to the Void.\nContact with this tile deals massive damage to anything in contact with it, unless it is otherwise immune.\nOnly available in creative mode.
@@ -189,23 +214,28 @@ void_sentinel_stack_buff=Void Sentinel set bonus
 [mob]
 // Critters
 void_caveling=Void Caveling
+deep_void_caveling=Deep Void Caveling
+void_crawler=Void Crawler
 crow=Crow
 
 // Surface
 undead_cultist=Undead Cultist
+void_cultist_human=Void Cultist
 void_cultist_humanname=<name> the Void Cultist
 
 // Caves
 void_warrior=Void Warrior
 void_scholar=Void Scholar
+void_gateway_boss=Void Gateway
+void_gateway_minion=Void Gateway Minion
 
 // Deep Caves
 deep_void_sentinel=Deep Void Sentinel
 deep_void_arcanist=Deep Void Arcanist
+deep_void_gateway_boss=Deep Void Gateway
+deep_void_gateway_minion=Deep Void Gateway Minion
 
 // Boss/Miscellaneous
-void_gateway_boss=Void Gateway
-void_gateway_minion=Void Gateway Minion
 
 [deaths]
 void_sentinel1=<victim> was crushed underfoot by <attacker>.
@@ -216,8 +246,9 @@ void_rift1=<victim> was obliterated by <attacker>.
 haunted_biome=Haunted
 
 [mobmsg]
-void_cultist1=Ph'nglui mglw'nafh Malpleno Malhela Loko wgah'nagl fhtagn.
-void_cultist2=Ya na kadishtu nilgh'ri stell'bsna Malpleno, K'yarnak phlegethor l'ebumna syha'h n'ghft.
+void_cultist1=Do you have a moment to consider the glory and splendour of the Void?
+void_cultist2=Deep beneath the earth, chasms of endless darkness connect this world to the Void. Those that embrace them are reborn, their light consumed, to serve our master faithfully.
+void_cultist3=Great power can be gained from the Void, if you are willing to make the sacrifices required.
 
 [settlement]
 haunted_biome_tip=Void Cultists can be recruited from shrines across the surface of the Haunted Biome.

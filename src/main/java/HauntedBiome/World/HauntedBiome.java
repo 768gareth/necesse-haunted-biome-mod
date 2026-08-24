@@ -38,9 +38,9 @@ public class HauntedBiome extends Biome
     public static MobSpawnTable SurfaceMobs = new MobSpawnTable().add(100, "haunted_skeleton");
     public static MobSpawnTable CaveMobs = new MobSpawnTable().add(75, "void_cultist");
     public static MobSpawnTable DeepCaveMobs = new MobSpawnTable().add(75, "void_sentinel").add(25, "void_arcanist");
-    public static MobSpawnTable SurfaceCritters = new MobSpawnTable().add(25, "spider").add(100, "crow");
-    public static MobSpawnTable CaveCritters = new MobSpawnTable().include(Biome.defaultCaveCritters).add(50, "void_caveling");
-    public static MobSpawnTable DeepCaveCritters = new MobSpawnTable().include(Biome.defaultCaveCritters).add(10, "croppleronion").add(50, "void_caveling");
+    public static MobSpawnTable SurfaceCritters = new MobSpawnTable().add(100, "crow");
+    public static MobSpawnTable CaveCritters = new MobSpawnTable().add(25, "void_caveling").add(75, "void_crawler");
+    public static MobSpawnTable DeepCaveCritters = new MobSpawnTable().add(25, "void_caveling").add(75, "void_crawler");;
 
     public HauntedBiome() {}
 

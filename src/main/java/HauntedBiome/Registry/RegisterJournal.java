@@ -42,7 +42,7 @@ public class RegisterJournal
         (
             new String[] 
             { 
-                "void_cultist", "spider", "mouse"
+                "void_gateway_boss", "void_cultist", "void_scholar", "spider", "mouse"
             }
         );
         HauntedCaves.addTreasureEntry(new LootTable[] { HauntedLootTables.HauntedCavesChest });
@@ -59,7 +59,7 @@ public class RegisterJournal
         (
             new String[] 
             { 
-                "void_sentinel", "void_arcanist", "spider", "mouse"
+                "deep_void_gateway_boss", "void_sentinel", "void_arcanist", "void_crawler"
             }
         );
         HauntedDeepCaves.addTreasureEntry(new LootTable[] { HauntedLootTables.DeepHauntedCavesChest });

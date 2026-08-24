@@ -1,4 +1,4 @@
-package HauntedBiome.Mobs.Surface;
+package HauntedBiome.Mobs.Critters;
 
 import necesse.entity.mobs.friendly.critters.BirdMob;
 import necesse.gfx.gameTexture.GameTexture;

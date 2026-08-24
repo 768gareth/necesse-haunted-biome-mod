@@ -11,7 +11,6 @@ import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.friendly.human.humanShop.BuyingShopItem;
 import necesse.entity.mobs.friendly.human.humanShop.HumanShop;
 import necesse.entity.mobs.friendly.human.humanShop.SellingShopItem;
-import necesse.gfx.HumanGender;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.lootTable.LootTable;
 
@@ -25,16 +24,14 @@ public class VoidCultistHumanMob extends HumanShop {
     this.equipmentInventory.setItem(2, new InventoryItem("void_cult_boots"));
 
     this.getPersonalities().clear();
+    this.getPersonalities().add(SettlerPersonalityRegistry.getNewSettlerPersonality(GameRandom.globalRandom.getOneOf("magician", "summoner"), this));
     this.getPersonalities().add(SettlerPersonalityRegistry.getNewSettlerPersonality(GameRandom.globalRandom.getOneOf("void_architect", "deep_void_architect", "haunted_architect"), this));
     this.getPersonalities().add(SettlerPersonalityRegistry.getNewSettlerPersonality("haunted_enthusiast", this));
 
-    this.shop.addSellingItem("amulet_of_corruption", new SellingShopItem()).setStaticPriceBasedOnHappiness(300, 400, 10);
+    this.shop.addSellingItem("amulet_of_corruption", new SellingShopItem()).setStaticPriceBasedOnHappiness(300, 400, 10); // .addJournalChallengeCompleteRequirement(JournalChallengeRegistry.getChallengeID("settlerStringID"));
 
     this.shop.addBuyingItem("void_fragment", new BuyingShopItem()).setPriceBasedOnHappiness(15, 5, 0);
     this.shop.addBuyingItem("void_crystal", new BuyingShopItem()).setPriceBasedOnHappiness(30, 15, 0);
-
-    this.gender = HumanGender.NEUTRAL;
-    this.settlerName = getRandomName(new GameRandom(this.settlerSeed));
   }
   
   public LootTable getLootTable() {
@@ -43,12 +40,12 @@ public class VoidCultistHumanMob extends HumanShop {
   
   protected ArrayList<GameMessage> getMessages(ServerClient client) 
   {
-    return getLocalMessages("void_cultist", 2);
+    return getLocalMessages("void_cultist", 3);
   }
   
   public List<InventoryItem> getRecruitItems(ServerClient client) 
   {
     GameRandom random = new GameRandom(getSettlerSeed() * 83L);
-    return Collections.singletonList(new InventoryItem("void_fragment", random.getIntBetween(8, 12))); 
+    return Collections.singletonList(new InventoryItem("void_fragment", random.getIntBetween(8, 14))); 
   }
 }

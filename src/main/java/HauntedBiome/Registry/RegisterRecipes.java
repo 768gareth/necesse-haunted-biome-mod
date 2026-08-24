@@ -10,8 +10,18 @@ public class RegisterRecipes
     public static void Register()
     {
         // Weapons
-        Recipes.registerModRecipe(new Recipe("soul_eater", 1, RecipeTechRegistry.TUNGSTEN_ANVIL, new Ingredient[] {new Ingredient("nightmare_bar", 14), new Ingredient("ectoplasm", 4)}));
-        Recipes.registerModRecipe(new Recipe("cursed_fire", 1, RecipeTechRegistry.TUNGSTEN_ANVIL, new Ingredient[] {new Ingredient("nightmare_bar", 12), new Ingredient("book", 1)}));
+        Recipes.registerModRecipe(new Recipe("soul_eater", 1, RecipeTechRegistry.TUNGSTEN_ANVIL, new Ingredient[] {new Ingredient("nightmare_bar", 14), new Ingredient("void_crystal", 4)}));
+        Recipes.registerModRecipe(new Recipe("cursed_fire", 1, RecipeTechRegistry.TUNGSTEN_ANVIL, new Ingredient[] {new Ingredient("void_crystal", 16), new Ingredient("book", 1)}));
+        Recipes.registerModRecipe(new Recipe("nightmare_bow", 1, RecipeTechRegistry.TUNGSTEN_ANVIL, new Ingredient[] {new Ingredient("nightmare_bar", 14), new Ingredient("void_crystal", 4)}));
+
+        // Armour
+        Recipes.registerModRecipe(new Recipe("void_sentinel_helmet", 1, RecipeTechRegistry.TUNGSTEN_ANVIL, new Ingredient[] {new Ingredient("nightmare_bar", 12), new Ingredient("void_crystal", 6)}));
+        Recipes.registerModRecipe(new Recipe("void_sentinel_chestplate", 1, RecipeTechRegistry.TUNGSTEN_ANVIL, new Ingredient[] {new Ingredient("nightmare_bar", 18), new Ingredient("void_crystal", 4)}));
+        Recipes.registerModRecipe(new Recipe("void_sentinel_boots", 1, RecipeTechRegistry.TUNGSTEN_ANVIL, new Ingredient[] {new Ingredient("nightmare_bar", 12), new Ingredient("void_crystal", 4)}));
+
+        Recipes.registerModRecipe(new Recipe("ancient_void_cult_hood", 1, RecipeTechRegistry.TUNGSTEN_ANVIL, new Ingredient[] {new Ingredient("void_cult_hood", 1), new Ingredient("void_crystal", 18)}));
+        Recipes.registerModRecipe(new Recipe("ancient_void_cult_robe", 1, RecipeTechRegistry.TUNGSTEN_ANVIL, new Ingredient[] {new Ingredient("void_cult_robe", 1), new Ingredient("void_crystal", 22)}));
+        Recipes.registerModRecipe(new Recipe("ancient_void_cult_boots", 1, RecipeTechRegistry.TUNGSTEN_ANVIL, new Ingredient[] {new Ingredient("void_cult_boots", 1), new Ingredient("void_crystal", 16)}));
 
         // Tools
         Recipes.registerModRecipe(new Recipe("nightmare_pickaxe", 1, RecipeTechRegistry.TUNGSTEN_ANVIL, new Ingredient[] {new Ingredient("nightmare_bar", 16)}));
@@ -30,6 +40,7 @@ public class RegisterRecipes
         
         // Trinkets
         Recipes.registerModRecipe(new Recipe("ruinstone", 1, RecipeTechRegistry.DEMONIC_WORKSTATION, new Ingredient[] { new Ingredient("void_fragment", 12), new Ingredient("demonicbar", 4)}));
+        Recipes.registerModRecipe(new Recipe("void_vessel", 1, RecipeTechRegistry.TUNGSTEN_WORKSTATION, new Ingredient[] { new Ingredient("ruinstone", 1), new Ingredient("nightmare_bar", 8)}));
 
         // Tiles
         Recipes.registerModRecipe(new Recipe("void_rock_tile", 1, RecipeTechRegistry.LANDSCAPING, new Ingredient[] { new Ingredient("void_stone", 1)}));

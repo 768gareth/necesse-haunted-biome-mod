@@ -1,4 +1,4 @@
-package HauntedBiome.Mobs.Caves;
+package HauntedBiome.Mobs.Critters;
 
 import java.awt.Color;
 
@@ -29,7 +29,7 @@ public class VoidCavelingMob extends CavelingMob
          if (GameRandom.globalRandom.getChance(0.02F)) {
             this.item = new InventoryItem("cavelingsfoot");
          } else {
-            this.item = new InventoryItem("voidshard", GameRandom.globalRandom.getIntBetween(3, 6));
+            this.item = new InventoryItem("void_fragment", GameRandom.globalRandom.getIntBetween(3, 6));
          }
       }
 

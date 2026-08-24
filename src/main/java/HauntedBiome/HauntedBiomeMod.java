@@ -1,9 +1,13 @@
 package HauntedBiome;
 
-import HauntedBiome.Mobs.Caves.VoidCavelingMob;
+import HauntedBiome.Mobs.Caves.VoidGatewayMob;
+import HauntedBiome.Mobs.Critters.CrowMob;
+import HauntedBiome.Mobs.Critters.DeepVoidCavelingMob;
+import HauntedBiome.Mobs.Critters.VoidCavelingMob;
+import HauntedBiome.Mobs.Critters.VoidCrawlerMob;
+import HauntedBiome.Mobs.DeepCaves.DeepVoidGatewayMob;
 import HauntedBiome.Mobs.DeepCaves.VoidArcanistMob;
 import HauntedBiome.Mobs.DeepCaves.VoidSentinelMob;
-import HauntedBiome.Mobs.Surface.CrowMob;
 import HauntedBiome.Mobs.Surface.UndeadCultist;
 import HauntedBiome.Registry.RegisterBuffs;
 import HauntedBiome.Registry.RegisterItems;
@@ -42,6 +46,12 @@ import necesse.entity.mobs.HumanTexture;
     18. Void Vessel should serve as an upgrade to the Ruinstone, crafted using a Ruinstone + Nightmare Bars.
     19. Ruinstone + at least two other items accessible via portal boss.
     20. Void Cultist settler type?
+
+    4. Need a carpet, plus a small painting and wide painting.
+    5. Tweak Demonic Streetlamps for lighting.
+    6. Tweak lighting saturation for table stuff
+    7. Add particle effects for portal bosses + vary them a lot more. Slow the summons, set them on a timer, and add a timed attack that launches
+    projectiles? Add faster, more numerous projectiles for deep portal.
 */
 
 @ModEntry
@@ -67,11 +77,22 @@ public class HauntedBiomeMod
 
     public void initResources() 
     {
+        // Critters
         VoidCavelingMob.TextureTemp = new HumanTexture(fromFile("void_caveling"), fromFile("void_caveling_arms_back"), fromFile("void_caveling_arms_front"));
+        DeepVoidCavelingMob.TextureTemp = new HumanTexture(fromFile("deep_void_caveling"), fromFile("deep_void_caveling_arms_back"), fromFile("deep_void_caveling_arms_front"));
+        CrowMob.texture = MobRegistry.Textures.fromFile("crow");
+        VoidCrawlerMob.texture = MobRegistry.Textures.fromFiles("void_crawler");
+
+        // Surface
+        UndeadCultist.texture = MobRegistry.Textures.humanTexture("undead_cultist", "undead_cultist_arms");
+
+        // Caves
+        VoidGatewayMob.texture = MobRegistry.Textures.fromFile("void_gateway_boss");
+
+        // Deep Caves
         VoidSentinelMob.texture = MobRegistry.Textures.humanTexture("void_sentinel", "void_sentinel_arms");
         VoidArcanistMob.texture = MobRegistry.Textures.humanTexture("void_arcanist", "void_sentinel_arms");
-        UndeadCultist.texture = MobRegistry.Textures.humanTexture("undead_cultist", "undead_cultist_arms");
-        CrowMob.texture = MobRegistry.Textures.fromFile("crow");
+        DeepVoidGatewayMob.texture = MobRegistry.Textures.fromFile("deep_void_gateway_boss");
     }
 
     public void postInit() 

@@ -33,7 +33,8 @@ public class RegisterJournalChallenges
             "haunted_caves_challenges", 
             (JournalChallenge)
             (new MultiJournalChallenge
-                (new Integer[] 
+                (
+                    new Integer[] 
                     { 
                         DESTROY_VOID_CRYSTALS, 
                         DEFEAT_VOID_GATEWAY_ID, 
