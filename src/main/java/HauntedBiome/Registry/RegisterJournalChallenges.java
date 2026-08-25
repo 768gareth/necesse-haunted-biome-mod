@@ -64,7 +64,7 @@ public class RegisterJournalChallenges
                     }
                 )
             ).setReward(DEEP_CAVES_REWARD)
-        )
+        );
 
         
     }
