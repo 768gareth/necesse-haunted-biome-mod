@@ -52,6 +52,7 @@ import necesse.entity.mobs.HumanTexture;
     6. Tweak lighting saturation for table stuff
     7. Add particle effects for portal bosses + vary them a lot more. Slow the summons, set them on a timer, and add a timed attack that launches
     projectiles? Add faster, more numerous projectiles for deep portal.
+    8. Add tooltip stuff for paintings.
 */
 
 @ModEntry

@@ -13,6 +13,7 @@ import HauntedBiome.Objects.VoidMonolithObject;
 import necesse.engine.registries.ObjectRegistry;
 import static necesse.engine.registries.ObjectRegistry.getObject;
 import static necesse.engine.registries.ObjectRegistry.registerObject;
+import necesse.inventory.item.Item;
 import necesse.inventory.item.toolItem.ToolType;
 import necesse.level.gameObject.ColumnObject;
 import necesse.level.gameObject.CrystalClusterObject;
@@ -22,6 +23,8 @@ import necesse.level.gameObject.FenceGateObject;
 import necesse.level.gameObject.FenceObject;
 import necesse.level.gameObject.FruitBushObject;
 import necesse.level.gameObject.GameObject;
+import necesse.level.gameObject.LargePaintingObject;
+import necesse.level.gameObject.ModularCarpetObject;
 import necesse.level.gameObject.RandomVaseObject;
 import necesse.level.gameObject.RockObject;
 import necesse.level.gameObject.RockOreObject;
@@ -47,6 +50,7 @@ import necesse.level.gameObject.furniture.CandlesObject;
 import necesse.level.gameObject.furniture.ChairObject;
 import necesse.level.gameObject.furniture.ClockObject;
 import necesse.level.gameObject.furniture.DeskObject;
+import necesse.level.gameObject.furniture.DinnerTableObject;
 import necesse.level.gameObject.furniture.DresserObject;
 import necesse.level.gameObject.furniture.LogBenchObject;
 import necesse.level.gameObject.furniture.ModularTableObject;
@@ -156,6 +160,11 @@ public class RegisterObjects
         ObjectRegistry.registerObject("void_column", (GameObject)new ColumnObject("void_column", new Color(111, 28, 128), ToolType.PICKAXE), 2.0F, true);
         BathtubObject.registerBathtub("haunted_bathtub", "haunted_bathtub", HauntedColour, 10.0F, FurnitureCategory);
         ObjectRegistry.registerObject("haunted_toilet", (GameObject)new ToiletObject("haunted_toilet", HauntedColour, FurnitureCategory), 5.0F, true);
+        DinnerTableObject.registerDinnerTable("haunted_dinner_table", "haunted_dinner_table", HauntedColour, 10.0f, FurnitureCategory);
+
+        // Decorations
+        ObjectRegistry.registerObject("occult_carpet", (GameObject)new ModularCarpetObject("occult_carpet", new Color(78, 30, 122)), 25.0F, true);
+        LargePaintingObject.registerLargePainting("visions_of_the_void_painting", Item.Rarity.RARE, 200.0F, true, false);
 
         // Table Decorations
         ObjectRegistry.registerObject("occult_books_1", (GameObject)new TableDecorationObject("occult_books_1", new Color(50, 50, 50), 14, 14, 0, 2), 5.0F, true);

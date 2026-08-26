@@ -50,7 +50,7 @@ public class VoidArcanistMob extends HostileItemAttackerMob
         this.swimMaskOffset = -2;
         this.swimSinkOffset = -4;
         this.weapon = new InventoryItem("cursed_fire");
-        this.helmet = new InventoryItem("ancient_void_cult_hood");
+        this.helmet = null;
         this.chest = new InventoryItem("ancient_void_cult_robe");
         this.boots = new InventoryItem("ancient_void_cult_boots");
         this.ai = new BehaviourTreeAI

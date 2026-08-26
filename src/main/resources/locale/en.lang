@@ -63,6 +63,11 @@ haunted_clock=Haunted Clock
 void_column=Void Column
 haunted_bathtub=Haunted Bathtub
 haunted_toilet=Haunted Toilet
+haunted_dinner_table=Haunted Dinner Table
+
+// Decorations
+occult_carpet=Occult Carpet
+visions_of_the_void_painting=Visions of the Void Painting
 
 // Table Decorations
 void_fragment_sample=Void Fragment Sample
@@ -199,6 +204,10 @@ amulet_of_corruption_tooltip=A powerful artifact of the Void Cult, used in chann
 void_pauldron_tooltip=Converts your maximum health into resilience.\nPrevents health regeneration, but also prevents resilience decay, and grants significant resilience regeneration.\n+50% resilience gain.
 void_vessel_tooltip=A fragile instrument for channeling the unstable energies of the Void.\nUpon landing a hit on a mob, grants a stack of Corruption.\nCorruption increases damage dealt by +10% per stack, at the cost of +10% damage taken per stack.\nMaximum of 10 stacks for targets.\nMaximum of 5 stacks for the user.
 book_of_the_void_tooltip=A book containing eldritch knowledge of the Void itself.\nKilling an enemy with this trinket equipped causes them to explode in a burst of void energy.\nEnemies caught within this blast take damage, and suffer +20% damage taken for 10 seconds.
+
+// Objects
+visions_of_the_void_painting_tooltip="I have seen the Gates of Darkness, beyond which no waking eye may see.\nBehold, in darkness, a dreadful power sweeps the land."\n- Unknown
+corruption_painting_tooltip="The power of the void is a siren's call.\nA wizard sought this power to protect his people.\nHe was a great hero, once upon a time.\nNow, he is nothing but a puppet, convinced that he is the master."\n- Unknown
 
 // Miscellaneous
 void_rift_tip=A tear in the fabric of reality itself, exposing this world to the Void.\nContact with this tile deals massive damage to anything in contact with it, unless it is otherwise immune.\nOnly available in creative mode.
