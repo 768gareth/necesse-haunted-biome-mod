@@ -25,6 +25,7 @@ import necesse.level.gameObject.FruitBushObject;
 import necesse.level.gameObject.GameObject;
 import necesse.level.gameObject.LargePaintingObject;
 import necesse.level.gameObject.ModularCarpetObject;
+import necesse.level.gameObject.PaintingObject;
 import necesse.level.gameObject.RandomVaseObject;
 import necesse.level.gameObject.RockObject;
 import necesse.level.gameObject.RockOreObject;
@@ -165,6 +166,7 @@ public class RegisterObjects
         // Decorations
         ObjectRegistry.registerObject("occult_carpet", (GameObject)new ModularCarpetObject("occult_carpet", new Color(78, 30, 122)), 25.0F, true);
         LargePaintingObject.registerLargePainting("visions_of_the_void_painting", Item.Rarity.RARE, 200.0F, true, false);
+        ObjectRegistry.registerObject("corruption_painting", (GameObject)new PaintingObject(Item.Rarity.UNCOMMON), 80.0F, true, false, new String[0]);
 
         // Table Decorations
         ObjectRegistry.registerObject("occult_books_1", (GameObject)new TableDecorationObject("occult_books_1", new Color(50, 50, 50), 14, 14, 0, 2), 5.0F, true);
