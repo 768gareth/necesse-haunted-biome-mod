@@ -211,7 +211,7 @@ visions_of_the_void_painting_tooltip="I have seen the Gates of Darkness, beyond 
 corruption_painting_tooltip="The power of the void is a siren's call.\nA wizard sought this power to protect his people.\nHe was a great hero, once upon a time.\nNow, he is nothing but a puppet, convinced that he is the master."\n- Unknown
 
 // Miscellaneous
-void_rift_tip=A tear in the fabric of reality itself, exposing this world to the Void.\nContact with this tile deals massive damage to anything in contact with it, unless it is otherwise immune.\nOnly available in creative mode.
+void_rift_tip=A tear in the fabric of reality itself, exposing this world to the Void.\nContact with this tile deals massive damage to anything in contact with it, unless it is otherwise immune.\nOnly available in creative mode due to being very buggy.
 
 [buff]
 ruinstone_stack_debuff=Ruin
@@ -249,8 +249,9 @@ deep_void_gateway_minion=Deep Void Gateway Minion
 
 [deaths]
 void_sentinel1=<victim> was crushed underfoot by <attacker>.
-void_sentinel2=<victim> was smashed to bits by <attacker>.
+void_sentinel2=<victim> was smashed into pieces by <attacker>.
 void_rift1=<victim> was obliterated by <attacker>.
+void_rift_name=Void Rift
 
 [biome]
 haunted_biome=Haunted

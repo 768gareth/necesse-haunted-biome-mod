@@ -208,6 +208,6 @@ public class VoidRiftTile extends TerrainSplatterTile
     String canPlace = super.canPlace(level, x, y, byPlayer);
     if (canPlace != null)
         return canPlace;
-    return "voidrift";
+    return null;
   }
 }

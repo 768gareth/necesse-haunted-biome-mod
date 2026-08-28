@@ -33,7 +33,7 @@ public class RegisterTiles
         TileRegistry.registerTile("deep_void_rock_tile", (GameTile) new DeepVoidRockTile(), 1f, true);
         TileRegistry.registerTile("deep_void_stone_floor", (GameTile) new SimpleFloorTile("deep_void_stone_floor", new Color(40, 0, 60)), -1.0F, true);
         TileRegistry.registerTile("deep_void_stone_path", new PathTiledTile("deep_void_stone_path", new Color(72, 7, 99)), -1.0F, true);
-        TileRegistry.registerTile("void_rift", (GameTile)new VoidRiftTile(), 1f, false);
+        TileRegistry.registerTile("void_rift", (GameTile)new VoidRiftTile(), 1f, false, false, true, (String) null);
         
 
         
