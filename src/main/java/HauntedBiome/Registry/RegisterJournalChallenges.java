@@ -4,7 +4,6 @@ import HauntedBiome.Utils.Journal.CollectHauntedCaveTrinketJournalChallenge;
 import necesse.engine.journal.DefeatMobJournalChallenge;
 import necesse.engine.journal.JournalChallenge;
 import necesse.engine.journal.MultiJournalChallenge;
-import necesse.engine.journal.ObjectsDestroyedJournalChallenge;
 import necesse.engine.registries.JournalChallengeRegistry;
 import necesse.inventory.lootTable.LootItemInterface;
 import necesse.inventory.lootTable.LootTable;
@@ -19,12 +18,12 @@ public class RegisterJournalChallenges
         LootTable DEEP_CAVES_REWARD = new LootTable(new LootItemInterface[] { new LootItem("amulet_of_corruption")});
 
         // Surface Challenges - Reward: 
-        int RECRUIT_VOID_CULTIST_SETTLER;
+        int DISCOVER_VOID_CULT_SURFACE_SHRINE;
         int COLLECT_VOID_CULTIST_SET;
         int CRAFT_BLOODBERRY_JAM;
 
         // Caves Challenges - Reward: Banner of Corruption
-        int DESTROY_VOID_CRYSTALS = JournalChallengeRegistry.registerChallenge("destroy_void_crystals", (JournalChallenge)new ObjectsDestroyedJournalChallenge(20, new String[] { "leafpile" }));
+        int RESCUE_VOID_CULTIST_SETTLER = 0;
         int DEFEAT_VOID_GATEWAY_ID = JournalChallengeRegistry.registerChallenge("defeat_void_gateway", (JournalChallenge)new DefeatMobJournalChallenge(new String[] { "void_gateway_boss" }));
         int ACQUIRE_HAUNTED_CAVES_TRINKET = JournalChallengeRegistry.registerChallenge("loot_haunted_caves_trinket", (JournalChallenge)new CollectHauntedCaveTrinketJournalChallenge());
 
@@ -37,7 +36,7 @@ public class RegisterJournalChallenges
                 (
                     new Integer[] 
                     { 
-                        DESTROY_VOID_CRYSTALS, 
+                        RESCUE_VOID_CULTIST_SETTLER, 
                         DEFEAT_VOID_GATEWAY_ID, 
                         ACQUIRE_HAUNTED_CAVES_TRINKET 
                     }

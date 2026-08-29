@@ -268,3 +268,6 @@ haunted_biome_tip=Void Cultists can be recruited from shrines across the surface
 haunted_=Haunted Log
 void_=Void Stone
 deep_void_=Deep Void Stone
+
+[misc]
+failed_to_spawn_dragon_arena=Failed to spawn Void Dragon Arena? Please post about this on the workshop page.

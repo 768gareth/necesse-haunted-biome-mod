@@ -1,6 +1,6 @@
 package HauntedBiome.Registry;
 
-import HauntedBiome.World.DeepCavesVoidFlameShrineWorldPreset;
+import HauntedBiome.World.Presets.DeepCavesVoidFlameShrineWorldPreset;
 import necesse.engine.registries.BiomeRegistry;
 import necesse.engine.registries.WorldPresetRegistry;
 import necesse.engine.util.LevelIdentifier;

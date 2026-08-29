@@ -1,4 +1,4 @@
-package HauntedBiome.World;
+package HauntedBiome.World.Presets;
 
 import necesse.level.maps.presets.Preset;
 

@@ -8,8 +8,6 @@ import HauntedBiome.Mobs.Critters.CrowMob;
 import HauntedBiome.Mobs.Critters.DeepVoidCavelingMob;
 import HauntedBiome.Mobs.Critters.VoidCavelingMob;
 import HauntedBiome.Mobs.Critters.VoidCrawlerMob;
-import HauntedBiome.Mobs.DeepCaves.DeepVoidGatewayMinionMob;
-import HauntedBiome.Mobs.DeepCaves.DeepVoidGatewayMob;
 import HauntedBiome.Mobs.DeepCaves.VoidArcanistMob;
 import HauntedBiome.Mobs.DeepCaves.VoidSentinelMob;
 import HauntedBiome.Mobs.Surface.UndeadCultist;
@@ -39,8 +37,6 @@ public class RegisterMobs
         // Deep Caves
         MobRegistry.registerMob("deep_void_arcanist", VoidArcanistMob.class, true);
         MobRegistry.registerMob("deep_void_sentinel", VoidSentinelMob.class, true);
-        MobRegistry.registerMob("deep_void_gateway_boss", DeepVoidGatewayMob.class, true);
-        MobRegistry.registerMob("deep_void_gateway_minion", DeepVoidGatewayMinionMob.class, true);
         
     }
 }
