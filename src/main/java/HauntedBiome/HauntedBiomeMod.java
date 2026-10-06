@@ -36,7 +36,6 @@ import necesse.entity.mobs.HumanTexture;
     buffing your next attack dramatically.
     12. Necromancer Staff, a Deep Caves Magic/Summoner weapon that adds a stack of Captured Souls on killing an enemy.
     right click to consume all stacks of Captured Souls, with each stack producing a temporary powerful summon for ten seconds.
-    13. Reaper's Crossbow, a Deep Caves Ranged weapon that fires very slowly, but each bolt deals very high damage.
     17. Void Crystal Staff that launches a powerful homing explosive projectile at high mana cost, with a debuff afterwards to prevent use for a short time.
     19. Ruinstone + at least two other items accessible via portal boss.
     20. Void Dragon boss for the Deep Caves? Can use the Void Dragon Shrine as an 'anchor' in which a Void Dragon Core spawns, and the player must destroy the core while surviving
@@ -46,6 +45,8 @@ import necesse.entity.mobs.HumanTexture;
     7. Add particle effects for portal bosses + vary them a lot more. Slow the summons, set them on a timer, and add a timed attack that launches
     projectiles? Add faster, more numerous projectiles for deep portal.
     8. Add tooltip stuff for paintings.
+
+    1. Void Crystal Staff 
 */
 
 @ModEntry

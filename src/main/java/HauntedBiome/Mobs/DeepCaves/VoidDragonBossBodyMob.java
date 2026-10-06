@@ -2,11 +2,30 @@ package HauntedBiome.Mobs.DeepCaves;
 
 import java.awt.Color;
 import java.awt.Rectangle;
+import java.awt.geom.Point2D;
+import java.util.List;
 
+import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.gameLoop.tickManager.TicksPerSecond;
+import necesse.engine.registries.MobRegistry;
+import necesse.engine.util.GameMath;
 import necesse.engine.util.GameRandom;
+import necesse.entity.Entity;
+import necesse.entity.mobs.Mob;
+import necesse.entity.mobs.MobDrawable;
+import necesse.entity.mobs.PlayerMob;
+import necesse.entity.mobs.WormMobHead;
 import necesse.entity.mobs.hostile.bosses.BossWormMobBody;
+import necesse.entity.particle.FleshParticle;
 import necesse.entity.particle.Particle;
+import necesse.gfx.camera.GameCamera;
+import necesse.gfx.drawOptions.texture.TextureDrawOptions;
+import necesse.gfx.drawables.Drawable;
+import necesse.gfx.drawables.OrderableDrawables;
+import necesse.gfx.gameTexture.GameSprite;
+import necesse.gfx.gameTexture.GameTexture;
+import necesse.level.maps.Level;
+import necesse.level.maps.light.GameLight;
 
 public class VoidDragonBossBodyMob extends BossWormMobBody<VoidDragonBossHeadMob, VoidDragonBossBodyMob>
 {
@@ -14,6 +33,8 @@ public class VoidDragonBossBodyMob extends BossWormMobBody<VoidDragonBossHeadMob
     public int spriteY;
     public boolean spawnsParticles;
     public TicksPerSecond particleSpawner = TicksPerSecond.ticksPerSecond(10);
+    public GameTexture textureVoidDragon;
+    public GameTexture textureAwakenedVoidDragon;
 
     public VoidDragonBossBodyMob() 
     {
@@ -47,5 +68,37 @@ public class VoidDragonBossBodyMob extends BossWormMobBody<VoidDragonBossHeadMob
   
   public int getFlyingHeight() {
     return 20;
+  }
+
+  public void spawnDeathParticles(float knockbackX, float knockbackY) {
+    if (!isVisible())
+      return; 
+    for (int i = 0; i < 4; i++)
+      (getLevel()).entityManager.addParticle((Particle)new FleshParticle(getLevel(), MobRegistry.Textures.fallenWizardDragon, 2, GameRandom.globalRandom.nextInt(6), 32, this.x, this.y, 20.0F, knockbackX, knockbackY), Particle.GType.IMPORTANT_COSMETIC); 
+  }
+  
+  protected void addDrawables(List<MobDrawable> list, OrderableDrawables tileList, OrderableDrawables topList, Level level, int x, int y, TickManager tickManager, GameCamera camera, PlayerMob perspective) {
+    super.addDrawables(list, tileList, topList, level, x, y, tickManager, camera, perspective);
+    if (!isVisible())
+      return; 
+    GameLight light = level.getLightLevel((Entity)this);
+    int drawX = camera.getDrawX(x) - 32;
+    int drawY = camera.getDrawY(y);
+    if (this.next != null) {
+      Point2D.Float dir = new Point2D.Float(((VoidDragonBossBodyMob)this.next).x - x, ((VoidDragonBossBodyMob)this.next).y - ((VoidDragonBossBodyMob)this.next).height - y - this.height);
+      float angle = GameMath.fixAngle(GameMath.getAngle(dir));
+      MobDrawable drawOptions = WormMobHead.getAngledDrawable((Mob)this, new GameSprite(MobRegistry.Textures.fallenWizardDragon, 0, this.spriteY, 64), null, light, (int)this.height, angle, drawX, drawY, 96, perspective);
+      topList.add((Drawable)drawOptions);
+    } 
+    addShadowDrawables(tileList, level, x, y, light, camera);
+  }
+  
+  protected TextureDrawOptions getShadowDrawOptions(Level level, int x, int y, GameLight light, GameCamera camera) {
+    GameTexture shadowTexture = MobRegistry.Textures.swampGuardian_shadow;
+    int res = shadowTexture.getHeight();
+    int drawX = camera.getDrawX(x) - res / 2;
+    int drawY = camera.getDrawY(y) - res / 2;
+    drawY += getBobbing(x, y);
+    return (TextureDrawOptions)shadowTexture.initDraw().sprite(this.shadowSprite, 0, res).light(light).pos(drawX, drawY);
   }
 }

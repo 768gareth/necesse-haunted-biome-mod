@@ -184,10 +184,8 @@ cursed_fire_tooltip=On hit, inflicts a 3 second stacking debuff that causes the 
 nightmare_bow_tooltip=Projectiles inflict a stack of Ruin for five seconds.\nEach stack of Ruin causes the target to take +5% damage, up to a maximum of +25% damage at 5 stacks.
 
 // Set bonuses
-void_sentinel_melee_buff_tooltip=Reduces melee damage by 33%, but prevents resilience decay, and increases resilience gain by 100%.
-void_sentinel_ranged_buff_tooltip=Reduces ranged attack speed by 50%, but increases ranged damage by 100%.
-ancient_void_set_magic_buff_tooltip=Reduces mana usage by 50%, and increases magic attack speed by 100%,\nat the cost of -50% magic damage.
-ancient_void_set_summoner_buff=Gain +3 summon slots, but decreases summon damage by 33%.
+void_sentinel_set_tooltip=Reduces melee damage by 33%, but prevents resilience decay, and increases resilience gain by 100%.
+ancient_void_cult_set_tooltip=Reduces mana usage by 50%, and increases magic attack speed by 100%,\nat the cost of -50% magic damage.
 
 // Tools
 nightmare_pickaxe_tooltip=Can mine Amber in the Deep Plains Caves.
@@ -202,7 +200,7 @@ void_pauldron=
 
 // Trinkets - Deep Caves
 amulet_of_corruption_tooltip=A powerful artifact of the Void Cult, used in channeling the power of the Void.\n+50% damage dealt, +50% damage received.
-void_pauldron_tooltip=Converts your maximum health into resilience.\nPrevents health regeneration, but also prevents resilience decay, and grants significant resilience regeneration.\n+50% resilience gain.
+void_pauldron_tooltip=Converts your maximum health into resilience.\nPrevents health regeneration, but also tremoves resilience decay.\n+50% resilience gain.
 void_vessel_tooltip=A fragile instrument for channeling the unstable energies of the Void.\nUpon landing a hit on a mob, grants a stack of Corruption.\nCorruption increases damage dealt by +10% per stack, at the cost of +10% damage taken per stack.\nMaximum of 10 stacks for targets.\nMaximum of 5 stacks for the user.
 book_of_the_void_tooltip=A book containing eldritch knowledge of the Void itself.\nKilling an enemy with this trinket equipped causes them to explode in a burst of void energy.\nEnemies caught within this blast take damage, and suffer +20% damage taken for 10 seconds.
 
@@ -242,8 +240,7 @@ void_gateway_minion=Void Gateway Minion
 // Deep Caves
 deep_void_sentinel=Deep Void Sentinel
 deep_void_arcanist=Deep Void Arcanist
-deep_void_gateway_boss=Deep Void Gateway
-deep_void_gateway_minion=Deep Void Gateway Minion
+
 
 // Boss/Miscellaneous
 
@@ -258,7 +255,7 @@ haunted_biome=Haunted
 
 [mobmsg]
 void_cultist1=Do you have a moment to consider the glory and splendour of the Void?
-void_cultist2=Deep beneath the earth, chasms of endless darkness connect this world to the Void. Those that embrace them are reborn, their light consumed, to serve our master faithfully.
+void_cultist2=Deep beneath the earth, chasms of endless darkness connect this world to the Void. Those that embrace them are reborn, their light consumed, to serve our dread master faithfully.
 void_cultist3=Great power can be gained from the Void, if you are willing to make the sacrifices required.
 
 [settlement]

@@ -12,6 +12,8 @@ import necesse.engine.sound.gameSound.GameSound;
 import necesse.entity.mobs.MaxHealthGetter;
 import necesse.entity.mobs.hostile.bosses.BossWormMobHead;
 import necesse.gfx.GameResources;
+import necesse.gfx.gameTooltips.GameTooltips;
+import necesse.gfx.gameTooltips.StringTooltips;
 import necesse.inventory.lootTable.LootTable;
 
 public class VoidDragonBossHeadMob extends BossWormMobHead<VoidDragonBossBodyMob, VoidDragonBossHeadMob> 
@@ -22,7 +24,7 @@ public class VoidDragonBossHeadMob extends BossWormMobHead<VoidDragonBossBodyMob
     public static float lengthPerBodyPart = 40.0F;
     public static float waveLength = 800.0F;
     public static final int totalBodyParts = 8;
-    public static MaxHealthGetter MAX_HEALTH = new MaxHealthGetter(9000, 15000, 21000, 27000, 33000);
+    public static MaxHealthGetter MAX_HEALTH = new MaxHealthGetter(3000, 4000, 6000, 7000, 22000);
     public Point2D.Float centerPosition;
     public float circlingAngleOffset;
     protected SoundPlayer moveSoundPlayer;
@@ -49,6 +51,12 @@ public class VoidDragonBossHeadMob extends BossWormMobHead<VoidDragonBossBodyMob
       return lengthPerBodyPart; 
     return lengthPerBodyPart;
     }
+
+    public GameTooltips getMapTooltips() {
+    if (!isVisible())
+      return null; 
+    return (GameTooltips)new StringTooltips(getDisplayName() + " " + getHealth() + "/" + getMaxHealth());
+  }
 
     protected VoidDragonBossBodyMob createNewBodyPart(int index) 
     {

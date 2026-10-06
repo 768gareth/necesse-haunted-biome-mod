@@ -1,7 +1,7 @@
 package HauntedBiome.Registry;
 
+import HauntedBiome.Buffs.SetBonuses.AncientVoidCultSetBuff;
 import HauntedBiome.Buffs.SetBonuses.VoidSentinelArmourSetBuff;
-import HauntedBiome.Buffs.SetBonuses.VoidSentinelStackBuff;
 import HauntedBiome.Buffs.Trinkets.RuinstoneBuff;
 import HauntedBiome.Buffs.Trinkets.RuinstoneStackDebuff;
 import HauntedBiome.Buffs.Trinkets.VoidVesselBuff;
@@ -27,7 +27,7 @@ public class RegisterBuffs
 
         // Armour bonuses
         BuffRegistry.registerBuff("void_sentinel_set_bonus", new VoidSentinelArmourSetBuff());
-        BuffRegistry.registerBuff("void_sentinel_stack_buff", new VoidSentinelStackBuff());
+        BuffRegistry.registerBuff("ancient_void_cult_set_bonus", new AncientVoidCultSetBuff());
 
         // Misc buffs
         BuffRegistry.registerBuff("corruption_potion_buff", new SimplePotionBuff(false, new ModifierValue[]{new ModifierValue(BuffModifiers.ALL_DAMAGE, 0.5F), new ModifierValue(BuffModifiers.INCOMING_DAMAGE_MOD, 1.5F)}));
